@@ -475,30 +475,142 @@ body {
 
 .quiz-results {
     text-align: center;
+    padding: 1rem 0.5rem;
 }
 
 .quiz-results h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
 }
 
 .quiz-results p {
     margin: 0.25rem 0;
+    font-size: 0.95rem;
 }
 
 .quiz-results-actions {
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 0.9rem;
+    margin-top: 1rem;
 }
 
-.text-soft {
-    color: var(--text-soft);
+.final-certificate-btn {
+    margin-top: 1rem;
+}
+
+/* =========================
+   TABLES (OPTIONAL)
+   ========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+table th,
+table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+table th {
+    text-align: left;
+    color: var(--neon-primary);
+}
+
+/* =========================
+   FORMS (OPTIONAL)
+   ========================= */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--bg-elevated-soft);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: border var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--neon-primary);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+    outline: none;
+}
+
+/* =========================
+   ALERT / INFO BOXES
+   ========================= */
+.alert,
+.info-box {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.alert {
+    background: rgba(255, 80, 80, 0.12);
+    border: 1px solid rgba(255, 80, 80, 0.25);
+    color: #ff6b6b;
+}
+
+.info-box {
+    background: rgba(0, 229, 255, 0.12);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    color: var(--neon-primary);
+}
+
+/* =========================
+   CARDS (OPTIONAL)
+   ========================= */
+.card {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+.center {
+    text-align: center;
+}
+
+.mt-sm {
+    margin-top: 0.5rem;
 }
 
 .mt-md {
-    margin-top: 0.9rem;
+    margin-top: 1rem;
+}
+
+.mt-lg {
+    margin-top: 1.75rem;
+}
+
+.mb-sm {
+    margin-bottom: 0.5rem;
+}
+
+.mb-md {
+    margin-bottom: 1rem;
+}
+
+.mb-lg {
+    margin-bottom: 1.75rem;
 }
 
 /* =========================
@@ -519,51 +631,4 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 840px) {
-    .layout-two-column {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .sidebar {
-        position: static;
-    }
-
-    .top-nav-inner {
-        padding-inline: 1rem;
-    }
-
-    .page-shell {
-        padding-inline: 1rem;
-    }
-}
+        transform
