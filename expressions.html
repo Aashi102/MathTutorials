@@ -1,159 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Mastery | Expressions</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expressions | Algebra Mastery</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<main class="layout-two-column fade-in-up">
+<div class="page-shell fade-in-up">
 
-    <!-- MAIN LESSON CONTENT -->
-    <section class="content-area">
+    <header class="section-header">
+        <h1>Algebraic <span class="neon">Expressions</span></h1>
+        <p>Learn how to simplify, evaluate, and manipulate expressions.</p>
+    </header>
 
-        <header class="section-header">
-            <h1 class="neon">Expressions</h1>
-            <p>Learn how to simplify, evaluate, and manipulate algebraic expressions.</p>
-        </header>
+    <div class="layout-two-column">
 
-        <!-- SECTION 1 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">What Is an Expression?</h2>
-            <p>
-                An expression is a mathematical phrase made of variables, constants, and operations.
-                Unlike an equation, it does <em>not</em> have an equals sign.
-            </p>
+        <section class="content-area">
 
-            <p class="example">
-                Examples: <span class="neon">4x - 7</span>, <span class="neon">3(x + 2)</span>, <span class="neon">2a + 5b</span>
-            </p>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">What is an Expression?</h2>
+                <p>An expression is a combination of numbers, variables, and operations.</p>
+                <p>Unlike equations, expressions do <strong>not</strong> have an equals sign.</p>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Combining Like Terms</h2>
+                <p>Terms are “like” if they have the same variable and exponent.</p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Simplify <strong>3x + 5x</strong></p>
+                    <button class="btn-secondary" data-reveal="exp1">Show Answer</button>
+                    <p id="exp1" class="answer hidden">3x + 5x = <strong>8x</strong></p>
+                </div>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Evaluating Expressions</h2>
+                <p>Substitute values for variables.</p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Evaluate <strong>2x + 3</strong> when <strong>x = 4</strong></p>
+                    <button class="btn-secondary" data-reveal="exp2">Show Answer</button>
+                    <p id="exp2" class="answer hidden">2(4) + 3 = 8 + 3 = <strong>11</strong></p>
+                </div>
+            </section>
+
         </section>
 
-        <!-- SECTION 2 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Evaluating Expressions</h2>
-            <p>To evaluate an expression, substitute a value for each variable.</p>
+        <aside class="sidebar slide-in-right">
+            <h2 class="neon">On This Page</h2>
+            <ul class="outline-list">
+                <li>What is an Expression?</li>
+                <li>Like Terms</li>
+                <li>Evaluating Expressions</li>
+            </ul>
 
-            <p class="example">
-                If <span class="neon">x = 3</span>, then  
-                <span class="neon">2x + 4 = 2(3) + 4 = 10</span>.
-            </p>
-
-            <div class="interactive-example glass slide-up">
-                <h3>Try It</h3>
-                <p>If <span class="neon">x = 6</span>, evaluate <span class="neon">5x - 8</span>.</p>
-
-                <button class="btn-outline" data-reveal="expr-eval-1">Reveal Answer</button>
-
-                <p id="expr-eval-1" class="answer hidden">
-                    <span class="neon">5(6) - 8 = 30 - 8 = 22</span>
-                </p>
+            <div class="sidebar-card">
+                <h3 class="neon">Test Yourself</h3>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('expressions')">
+                    Take Expressions Quiz
+                </button>
             </div>
-        </section>
+        </aside>
 
-        <!-- SECTION 3 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Combining Like Terms</h2>
-            <p>Like terms have the same variable raised to the same power.</p>
+    </div>
 
-            <p class="example">
-                <span class="neon">3x + 7x = 10x</span>
-            </p>
+</div>
 
-            <div class="interactive-example glass slide-up">
-                <p>Simplify <span class="neon">4x + 2 + 5x - 3</span>.</p>
-
-                <button class="btn-outline" data-reveal="expr-like-1">Reveal Answer</button>
-
-                <p id="expr-like-1" class="answer hidden">
-                    Combine x-terms: <span class="neon">4x + 5x = 9x</span><br>
-                    Combine constants: <span class="neon">2 - 3 = -1</span><br>
-                    Final: <span class="neon">9x - 1</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION 4 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Distributive Property</h2>
-            <p>
-                The distributive property lets you multiply a number by a group of terms.
-            </p>
-
-            <p class="example">
-                <span class="neon">3(x + 4) = 3x + 12</span>
-            </p>
-
-            <div class="interactive-example glass slide-up">
-                <p>Simplify <span class="neon">2(3x - 5)</span>.</p>
-
-                <button class="btn-outline" data-reveal="expr-dist-1">Reveal Answer</button>
-
-                <p id="expr-dist-1" class="answer hidden">
-                    <span class="neon">2 × 3x = 6x</span><br>
-                    <span class="neon">2 × -5 = -10</span><br>
-                    Final: <span class="neon">6x - 10</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- PRACTICE -->
-        <section id="practice" class="lesson-section fade-in">
-            <h2 class="neon">Practice</h2>
-
-            <ol class="practice-list">
-                <li>Evaluate <span class="neon">3x + 2</span> when <span class="neon">x = 4</span>.</li>
-                <li>Simplify <span class="neon">7x + 2x - 5</span>.</li>
-                <li>Use distribution to simplify <span class="neon">4(2x + 3)</span>.</li>
-                <li>Simplify <span class="neon">5a + 3b - 2a</span>.</li>
-            </ol>
-
-            <button class="btn-primary" onclick="location.href='quizzes.html'">
-                Take Expressions Quiz
-            </button>
-        </section>
-
-    </section>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar glass slide-in-right">
-        <h2 class="neon">Lesson Outline</h2>
-
-        <ol class="outline-list">
-            <li>What Is an Expression?</li>
-            <li>Evaluating Expressions</li>
-            <li>Combining Like Terms</li>
-            <li>Distributive Property</li>
-            <li><a href="#practice">Practice</a></li>
-        </ol>
-
-        <div class="sidebar-card glass">
-            <h3>Next Topic</h3>
-            <p>Move on to Equations.</p>
-            <button class="btn-secondary" onclick="location.href='equations.html'">
-                Go to Equations
-            </button>
-        </div>
-    </aside>
-
-</main>
-
-<footer class="site-footer fade-in">
+<footer class="site-footer">
     <p>Expressions are the building blocks of algebra.</p>
 </footer>
+
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
 
 </body>
 </html>
