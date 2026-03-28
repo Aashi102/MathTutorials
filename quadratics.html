@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quadratics | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,42 +29,61 @@
 
     <header class="section-header">
         <h1><span class="neon">Quadratics</span></h1>
-        <p>Explore parabolas, roots, and the quadratic formula.</p>
+        <p>
+            Quadratic functions create parabolas. They appear in physics,
+            engineering, economics, and many real‑world models.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- STANDARD FORM -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Standard Form</h2>
-                <p>A quadratic is written as <strong>ax² + bx + c</strong>.</p>
+                <p>
+                    A quadratic is written as:
+                </p>
+                <p class="neon"><strong>ax² + bx + c</strong></p>
             </section>
 
+            <!-- VERTEX -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Vertex</h2>
-                <p>The vertex is the highest or lowest point of the parabola.</p>
+                <p>
+                    The vertex is the highest or lowest point of the parabola.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> y = (x − 2)² + 3</p>
                     <button class="btn-secondary" data-reveal="quad1">Show Vertex</button>
-                    <p id="quad1" class="answer hidden">Vertex: <strong>(2, 3)</strong></p>
+                    <p id="quad1" class="answer hidden">
+                        Vertex: <strong>(2, 3)</strong>
+                    </p>
                 </div>
             </section>
 
+            <!-- QUADRATIC FORMULA -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Quadratic Formula</h2>
-                <p>x = (−b ± √(b² − 4ac)) / 2a</p>
+                <p>
+                    Use this when factoring is difficult:
+                </p>
+                <p class="neon"><strong>x = (−b ± √(b² − 4ac)) / 2a</strong></p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Solve x² − 5x + 6 = 0</p>
                     <button class="btn-secondary" data-reveal="quad2">Show Steps</button>
-                    <p id="quad2" class="answer hidden">Roots: <strong>2</strong> and <strong>3</strong></p>
+                    <p id="quad2" class="answer hidden">
+                        Roots: <strong>2</strong> and <strong>3</strong>
+                    </p>
                 </div>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
@@ -91,15 +108,8 @@
     <p>Quadratics shape the world.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
-            <h3 class="modal-title">Quiz</h3>
-            <button class="modal-close">✕</button>
-        </div>
-        <div class="modal-body"></div>
-    </div>
-</div>
-
-</body>
-</html>
+            <h3 class="
