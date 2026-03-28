@@ -3,64 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polynomials</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Polynomials</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="hero small-hero">
-    <h1>Polynomials</h1>
-    <p>Learn how to classify, add, subtract, and multiply polynomials.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <section class="content-area">
+        <header class="section-header">
+            <h1 class="neon">Polynomials</h1>
+            <p>Work with expressions that have multiple terms and powers.</p>
+        </header>
 
-<div class="container">
+        <section class="lesson-section fade-in">
+            <h2 class="neon">What Is a Polynomial?</h2>
+            <p>
+                A polynomial is a sum of terms of the form <span class="neon">ax^n</span>,  
+                where <span class="neon">n</span> is a whole number.
+            </p>
+            <p class="example">
+                Example: <span class="neon">3x^2 + 2x - 5</span>
+            </p>
+        </section>
 
-    <h2>📌 What Is a Polynomial?</h2>
-    <p>A polynomial is an expression made of terms with variables raised to whole-number exponents.</p>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Degree and Terms</h2>
+            <p>
+                The degree is the highest exponent.  
+                Each part separated by + or - is a term.
+            </p>
+            <div class="interactive-example glass slide-up">
+                <p>Find the degree of <span class="neon">4x^3 - x + 7</span>.</p>
+                <button class="btn-outline" data-reveal="poly-deg-1">Reveal Answer</button>
+                <p id="poly-deg-1" class="answer hidden">
+                    Highest exponent is 3 → degree 3.
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Examples</h3>
-        <p>✔ <strong>3x² + 2x - 7</strong></p>
-        <p>✔ <strong>5x³ - x</strong></p>
-    </div>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Adding and Subtracting Polynomials</h2>
+            <p>Combine like terms.</p>
+            <p class="example">
+                <span class="neon">(3x^2 + 2x) + (x^2 - 5x) = 4x^2 - 3x</span>
+            </p>
+        </section>
 
-    <h2>🧮 Adding & Subtracting Polynomials</h2>
-    <p>Combine like terms.</p>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Multiplying Polynomials</h2>
+            <p>Use distribution or FOIL for binomials.</p>
+            <div class="interactive-example glass slide-up">
+                <p>Multiply <span class="neon">(x + 2)(x + 3)</span>.</p>
+                <button class="btn-outline" data-reveal="poly-mult-1">Reveal Answer</button>
+                <p id="poly-mult-1" class="answer hidden">
+                    <span class="neon">x^2 + 5x + 6</span>
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>(3x + 5) + (2x - 1)</p>
-        <p>→ <strong>5x + 4</strong></p>
-    </div>
+        <section id="practice" class="lesson-section fade-in">
+            <h2 class="neon">Practice</h2>
+            <ol class="practice-list">
+                <li>Identify the degree of <span class="neon">2x^4 - x^2 + 7</span>.</li>
+                <li>Add <span class="neon">(3x^2 + x)</span> and <span class="neon">(x^2 - 4x)</span>.</li>
+                <li>Subtract <span class="neon">(5x^2 - 3)</span> from <span class="neon">(7x^2 + 1)</span>.</li>
+                <li>Multiply <span class="neon">(x - 1)(x + 4)</span>.</li>
+            </ol>
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take Polynomials Quiz
+            </button>
+        </section>
+    </section>
 
-    <h2>✖ Multiplying Polynomials (FOIL)</h2>
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>(x + 3)(x + 2)</p>
-        <p>→ x² + 5x + 6</p>
-    </div>
+    <aside class="sidebar glass slide-in-right">
+        <h2 class="neon">Lesson Outline</h2>
+        <ol class="outline-list">
+            <li>Definition</li>
+            <li>Degree & Terms</li>
+            <li>Add/Subtract</li>
+            <li>Multiply</li>
+            <li><a href="#practice">Practice</a></li>
+        </ol>
+        <div class="sidebar-card glass">
+            <h3>Next Topic</h3>
+            <p>Move on to Factoring.</p>
+            <button class="btn-secondary" onclick="location.href='factoring.html'">
+                Go to Factoring
+            </button>
+        </div>
+    </aside>
+</main>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>Simplify: <strong>(2x + 1) + (3x - 4)</strong></p>
-        <input id="poly1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('poly1', '5x-3', 'polyr1')">Check</button>
-        <p id="polyr1" class="result"></p>
-    </div>
-
-</div>
-
-<footer>
-    © 2026 Algebra Learning Hub
+<footer class="site-footer fade-in">
+    <p>Polynomials are the backbone of many algebra topics.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
