@@ -3,68 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Basics – Learn & Practice</title>
-
-    <!-- External CSS -->
+    <title>Algebra Learning Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Master Basic Algebra</h1>
-    <p>Clear explanations, examples, and interactive practice to build confidence.</p>
+<header class="hero">
+    <h1>Welcome to the Algebra Learning Hub</h1>
+    <p>Your complete guide to mastering algebra — step by step, concept by concept.</p>
+    <a href="#topics" class="btn hero-btn">Start Learning</a>
 </header>
 
 <nav>
-    <a href="#variables">Variables</a>
-    <a href="#equations">Equations</a>
-    <a href="#practice">Practice</a>
+    <a href="index.html">Home</a>
+    <a href="practice/practice.html">Practice</a>
+    <a href="practice/quizzes.html">Quizzes</a>
 </nav>
 
 <div class="container">
 
-    <section id="variables">
-        <h2>🔤 What Are Variables?</h2>
-        <p>Variables are symbols (usually letters) that represent unknown numbers.</p>
+    <!-- TOPIC GRID -->
+    <section id="topics">
+        <h2>📘 Explore Algebra Topics</h2>
+        <p>Select a topic to begin learning.</p>
 
-        <div class="example-box">
-            <h3>Example</h3>
-            <p>If <strong>x = 7</strong>, what is <strong>x + 5</strong>?</p>
-            <p><strong>Solution:</strong> 7 + 5 = <strong>12</strong></p>
+        <div class="grid">
+            <a class="card" href="lessons/foundations.html">Algebra Foundations</a>
+            <a class="card" href="lessons/expressions.html">Expressions</a>
+            <a class="card" href="lessons/equations.html">Equations</a>
+            <a class="card" href="lessons/inequalities.html">Inequalities</a>
+            <a class="card" href="lessons/graphing.html">Graphing</a>
+            <a class="card" href="lessons/polynomials.html">Polynomials</a>
+            <a class="card" href="lessons/factoring.html">Factoring</a>
+            <a class="card" href="lessons/quadratics.html">Quadratics</a>
+            <a class="card" href="lessons/functions.html">Functions</a>
+            <a class="card" href="lessons/wordproblems.html">Word Problems</a>
         </div>
     </section>
 
-    <section id="equations">
-        <h2>➗ Solving Simple Equations</h2>
-        <p>To solve an equation, isolate the variable by undoing operations.</p>
+    <!-- FEATURED LESSONS -->
+    <section>
+        <h2>⭐ Featured Lessons</h2>
 
         <div class="example-box">
-            <h3>Example</h3>
-            <p>Solve: <strong>x - 3 = 9</strong></p>
-            <p>Add 3 to both sides → <strong>x = 12</strong></p>
+            <h3>Understanding Variables</h3>
+            <p>Variables represent unknown values. Learn how to use them in expressions and equations.</p>
+            <a href="lessons/foundations.html" class="btn">Read Lesson</a>
+        </div>
+
+        <div class="example-box">
+            <h3>Solving Linear Equations</h3>
+            <p>Master the process of isolating variables and solving equations step by step.</p>
+            <a href="lessons/equations.html" class="btn">Read Lesson</a>
         </div>
     </section>
 
-    <section id="practice">
-        <h2>🔥 Try It Yourself</h2>
+    <!-- QUICK PRACTICE -->
+    <section>
+        <h2>🔥 Quick Practice</h2>
 
         <div class="try-box">
-            <p>Solve: <strong>x - 3 = 9</strong></p>
-            <input id="try1" placeholder="Enter your answer...">
-            <button class="btn" onclick="checkAnswer()">Check Answer</button>
-            <p id="result1" class="result"></p>
+            <p>Solve: <strong>x + 7 = 15</strong></p>
+            <input id="quickInput" placeholder="Enter your answer...">
+            <button class="btn" onclick="quickCheck()">Check Answer</button>
+            <p id="quickResult" class="result"></p>
         </div>
     </section>
 
 </div>
 
 <footer>
-    © 2026 Algebra Learning Hub — Keep pushing your limits.
+    © 2026 Algebra Learning Hub — Built for learners like you.
 </footer>
 
-<!-- External JS -->
 <script src="script.js"></script>
-
 </body>
 </html>
