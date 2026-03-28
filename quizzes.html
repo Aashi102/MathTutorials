@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Quizzes</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="hero small-hero">
+    <h1>Algebra Quizzes</h1>
+    <p>Test your understanding with auto‑graded quizzes.</p>
+</header>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="practice.html">Practice</a>
+    <a href="quizzes.html">Quizzes</a>
+</nav>
+
+<div class="container">
+
+    <h2>📝 Quiz 1: Basics</h2>
+
+    <div class="quiz-box">
+        <p><strong>1. What is x if x + 5 = 12?</strong></p>
+        <label><input type="radio" name="q1" value="6"> 6</label><br>
+        <label><input type="radio" name="q1" value="7"> 7</label><br>
+        <label><input type="radio" name="q1" value="8"> 8</label><br>
+    </div>
+
+    <div class="quiz-box">
+        <p><strong>2. Simplify: 3x + 4x</strong></p>
+        <label><input type="radio" name="q2" value="6x"> 6x</label><br>
+        <label><input type="radio" name="q2" value="7x"> 7x</label><br>
+        <label><input type="radio" name="q2" value="8x"> 8x</label><br>
+    </div>
+
+    <div class="quiz-box">
+        <p><strong>3. Factor: x² + 3x + 2</strong></p>
+        <label><input type="radio" name="q3" value="(x+1)(x+2)"> (x+1)(x+2)</label><br>
+        <label><input type="radio" name="q3" value="(x+2)(x+3)"> (x+2)(x+3)</label><br>
+        <label><input type="radio" name="q3" value="(x-1)(x-2)"> (x-1)(x-2)</label><br>
+    </div>
+
+    <button class="btn" onclick="gradeQuiz()">Submit Quiz</button>
+
+    <h3 id="quizResult" class="result" style="margin-top:20px;"></h3>
+
+</div>
+
+<footer>
+    © 2026 Algebra Learning Hub
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
