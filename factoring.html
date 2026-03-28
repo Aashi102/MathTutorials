@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factoring</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="hero small-hero">
+    <h1>Factoring</h1>
+    <p>Break expressions into products of simpler expressions.</p>
+</header>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="../practice/practice.html">Practice</a>
+    <a href="../practice/quizzes.html">Quizzes</a>
+</nav>
+
+<div class="container">
+
+    <h2>📌 Greatest Common Factor (GCF)</h2>
+    <p>Always start by factoring out the GCF.</p>
+
+    <div class="example-box">
+        <h3>Example</h3>
+        <p>Factor: <strong>6x + 9</strong></p>
+        <p>GCF = 3 → <strong>3(2x + 3)</strong></p>
+    </div>
+
+    <h2>🧮 Factoring Trinomials</h2>
+    <p>Look for two numbers that multiply to c and add to b.</p>
+
+    <div class="example-box">
+        <h3>Example</h3>
+        <p>x² + 5x + 6</p>
+        <p>→ (x + 2)(x + 3)</p>
+    </div>
+
+    <h2>🔥 Quick Practice</h2>
+    <div class="try-box">
+        <p>Factor: <strong>x² + 7x + 10</strong></p>
+        <input id="fac1" placeholder="Enter your answer...">
+        <button class="btn" onclick="check('fac1', '(x+5)(x+2)', 'facr1')">Check</button>
+        <p id="facr1" class="result"></p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Algebra Learning Hub
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
