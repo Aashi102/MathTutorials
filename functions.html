@@ -1,93 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Mastery | Functions</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions | Algebra Mastery</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<main class="layout-two-column fade-in-up">
-    <section class="content-area">
-        <header class="section-header">
-            <h1 class="neon">Functions</h1>
-            <p>Understand inputs, outputs, and function notation.</p>
-        </header>
+<div class="page-shell fade-in-up">
 
-        <section class="lesson-section fade-in">
-            <h2 class="neon">What Is a Function?</h2>
-            <p>
-                A function pairs each input with exactly one output.
-            </p>
-            <p class="example">
-                Example: <span class="neon">f(x) = 2x + 1</span>
-            </p>
-        </section>
+    <header class="section-header">
+        <h1><span class="neon">Functions</span></h1>
+        <p>Understand inputs, outputs, and function notation.</p>
+    </header>
 
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Function Notation</h2>
-            <div class="interactive-example glass slide-up">
-                <p>Find <span class="neon">f(3)</span> if <span class="neon">f(x) = 2x + 1</span>.</p>
-                <button class="btn-outline" data-reveal="func-not-1">Reveal Answer</button>
-                <p id="func-not-1" class="answer hidden">
-                    <span class="neon">f(3) = 2(3) + 1 = 7</span>
-                </p>
-            </div>
-        </section>
+    <div class="layout-two-column">
 
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Tables and Graphs</h2>
-            <p>
-                You can represent a function with a table of values or a graph.
-            </p>
-        </section>
+        <section class="content-area">
 
-        <section id="practice" class="lesson-section fade-in">
-            <h2 class="neon">Practice</h2>
-            <ol class="practice-list">
-                <li>Evaluate <span class="neon">f(0)</span> if <span class="neon">f(x) = 3x - 2</span>.</li>
-                <li>Is the relation {(1,2), (1,3)} a function?</li>
-                <li>Find <span class="neon">g(4)</span> if <span class="neon">g(x) = x^2</span>.</li>
-                <li>Describe how you’d graph <span class="neon">y = 2x + 1</span>.</li>
-            </ol>
-            <button class="btn-primary" onclick="location.href='quizzes.html'">
-                Take Functions Quiz
-            </button>
-        </section>
-    </section>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">What is a Function?</h2>
+                <p>A function assigns exactly one output to each input.</p>
+            </section>
 
-    <aside class="sidebar glass slide-in-right">
-        <h2 class="neon">Lesson Outline</h2>
-        <ol class="outline-list">
-            <li>Definition</li>
-            <li>Notation</li>
-            <li>Tables & Graphs</li>
-            <li><a href="#practice">Practice</a></li>
-        </ol>
-        <div class="sidebar-card glass">
-            <h3>Next Topic</h3>
-            <p>Move on to Word Problems.</p>
-            <button class="btn-secondary" onclick="location.href='wordproblems.html'">
-                Go to Word Problems
-            </button>
-        </div>
-    </aside>
-</main>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Function Notation</h2>
+                <p>f(x) means “the output when x is the input.”</p>
 
-<footer class="site-footer fade-in">
-    <p>Functions describe how quantities are related.</p>
-</footer>
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> If f(x) = 2x + 1, find f(3)</p>
+                    <button class="btn-secondary" data-reveal="fun1">Show Answer</button>
+                    <p id="fun1" class="answer hidden">f(3) = 2(3) + 1 = <strong>7</strong></p>
+                </div>
+            </section>
 
-</body>
-</html>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Domain & Range</h2>
+                <p>
