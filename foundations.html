@@ -3,71 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Foundations</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Foundations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+<body class="theme-light">
 
-<body>
-
-<header class="hero small-hero">
-    <h1>Algebra Foundations</h1>
-    <p>Start your journey by understanding what algebra really is.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <!-- Left: Lesson Content -->
+    <section class="content-area">
+        <header class="section-header">
+            <h1>Algebra Foundations</h1>
+            <p>Build the language and core ideas that everything else depends on.</p>
+        </header>
 
-<div class="container">
+        <section class="lesson-section fade-in">
+            <h2>What is Algebra?</h2>
+            <p>
+                Algebra is a way of using symbols—usually letters—to represent numbers and relationships.
+                Instead of working with only specific numbers, algebra lets us describe patterns and rules.
+            </p>
+        </section>
 
-    <h2>📌 What Is Algebra?</h2>
-    <p>Algebra is the branch of mathematics that uses symbols (usually letters) to represent numbers and relationships.</p>
+        <section class="lesson-section fade-in">
+            <h2>Key Building Blocks</h2>
+            <div class="concept-grid stagger">
+                <article class="concept-card slide-up">
+                    <h3>Variables</h3>
+                    <p>
+                        A variable is a symbol (often a letter like \( x \) or \( y \)) that stands for a number
+                        we don’t know yet or that can change.
+                    </p>
+                    <p class="example">
+                        Example: In \( 2x + 3 \), the letter \( x \) is the variable.
+                    </p>
+                </article>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>Expression: <strong>x + 4</strong></p>
-        <p>If x = 6 → <strong>6 + 4 = 10</strong></p>
-    </div>
+                <article class="concept-card slide-up">
+                    <h3>Constants</h3>
+                    <p>
+                        A constant is a fixed value—it doesn’t change in a given problem.
+                    </p>
+                    <p class="example">
+                        Example: In \( 2x + 3 \), the number \( 3 \) is a constant.
+                    </p>
+                </article>
 
-    <h2>🔤 Variables</h2>
-    <p>A variable is a symbol that represents an unknown value.</p>
+                <article class="concept-card slide-up">
+                    <h3>Expressions</h3>
+                    <p>
+                        An expression is a combination of variables, numbers, and operations (like +, −, ×, ÷)
+                        but it does not have an equals sign.
+                    </p>
+                    <p class="example">
+                        Example: \( 4x - 7 \) is an expression.
+                    </p>
+                </article>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>In <strong>2y</strong>, the variable is <strong>y</strong>.</p>
-    </div>
+                <article class="concept-card slide-up">
+                    <h3>Equations</h3>
+                    <p>
+                        An equation says that two expressions are equal. It always has an equals sign.
+                    </p>
+                    <p class="example">
+                        Example: \( 4x - 7 = 9 \) is an equation.
+                    </p>
+                </article>
+            </div>
+        </section>
 
-    <h2>🧮 Order of Operations</h2>
-    <p>Use PEMDAS:</p>
-    <ul>
-        <li>Parentheses</li>
-        <li>Exponents</li>
-        <li>Multiplication & Division</li>
-        <li>Addition & Subtraction</li>
-    </ul>
+        <section class="lesson-section fade-in">
+            <h2>Evaluating Expressions</h2>
+            <p>
+                To evaluate an expression means to find its value when you know the value of the variable.
+            </p>
+            <p class="example">
+                If \( x = 5 \), then \( 2x + 3 = 2(5) + 3 = 10 + 3 = 13 \).
+            </p>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>Simplify: <strong>3 + 2 × 5</strong></p>
-        <p>2 × 5 = 10 → 3 + 10 = <strong>13</strong></p>
-    </div>
+            <div class="interactive-example slide-up">
+                <h3>Try It Mentally</h3>
+                <p>
+                    Suppose \( x = 4 \). What is the value of \( 3x - 2 \)?
+                </p>
+                <p class="hint" data-hint>
+                    Hint: Multiply 3 by 4, then subtract 2.
+                </p>
+                <button class="btn-outline" data-reveal="foundations-eval-1">
+                    Reveal Answer
+                </button>
+                <p class="answer hidden" id="foundations-eval-1">
+                    \( 3x - 2 = 3(4) - 2 = 12 - 2 = 10 \).
+                </p>
+            </div>
+        </section>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>If x = 9, what is x − 3?</p>
-        <input id="q1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('q1', 6, 'r1')">Check</button>
-        <p id="r1" class="result"></p>
-    </div>
+        <section class="lesson-section fade-in">
+            <h2>Combining Like Terms</h2>
+            <p>
+                Terms are “like” if they have the same variable part. You can combine like terms by adding or
+                subtracting their coefficients.
+            </p>
+            <p class="example">
+                \( 2x + 5x = 7x \) because both terms are “x” terms.
+            </p>
+            <div class="interactive-example slide-up">
+                <p>
+                    Simplify \( 3x + 4 + 2x - 1 \).
+                </p>
+                <button class="btn-outline" data-reveal="foundations-like-1">
+                    Reveal Answer
+                </button>
+                <p class="answer hidden" id="foundations-like-1">
+                    Combine the \( x \)-terms: \( 3x + 2x = 5x \).  
+                    Combine the constants: \( 4 - 1 = 3 \).  
+                    Final answer: \( 5x + 3 \).
+                </p>
+            </div>
+        </section>
 
-</div>
+        <!-- Practice Anchor -->
+        <section id="practice" class="lesson-section fade-in">
+            <h2>Foundations Practice</h2>
+            <p>Try these problems to solidify the basics.</p>
+            <ol class="practice-list">
+                <li>Identify the variable and constant in \( 7x + 2 \).</li>
+                <li>Evaluate \( 4x + 1 \) when \( x = 3 \).</li>
+                <li>Simplify \( 2x + 3x - 4 \).</li>
+                <li>Write an equation to represent: “Five more than a number is 12.”</li>
+            </ol>
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take the Foundations Quiz
+            </button>
+        </section>
+    </section>
 
-<footer>
-    © 2026 Algebra Learning Hub
+    <!-- Right: Lesson Sidebar -->
+    <aside class="sidebar slide-in-right">
+        <h2>Lesson Outline</h2>
+        <ol class="outline-list">
+            <li><a href="#top">What is Algebra?</a></li>
+            <li><a href="#top">Key Building Blocks</a></li>
+            <li><a href="#top">Evaluating Expressions</a></li>
+            <li><a href="#practice">Foundations Practice</a></li>
+        </ol>
+
+        <div class="sidebar-card">
+            <h3>Next Suggested Topic</h3>
+            <p>Move on to Expressions once you feel comfortable with these ideas.</p>
+            <button class="btn-secondary" onclick="location.href='expressions.html'">
+                Go to Expressions
+            </button>
+        </div>
+    </aside>
+</main>
+
+<footer class="site-footer fade-in">
+    <p>Strong foundations make every later topic easier.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
