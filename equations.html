@@ -3,56 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solving Equations</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Equations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="hero small-hero">
-    <h1>Solving Equations</h1>
-    <p>Learn how to isolate variables and solve linear equations step by step.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
 
-<div class="container">
+    <!-- MAIN LESSON CONTENT -->
+    <section class="content-area">
 
-    <h2>📌 What Is an Equation?</h2>
-    <p>An equation states that two expressions are equal. Your goal is to find the value of the variable.</p>
+        <header class="section-header">
+            <h1 class="neon">Equations</h1>
+            <p>Learn how to solve one-step, two-step, and multi-step equations.</p>
+        </header>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>Solve: <strong>x + 5 = 12</strong></p>
-        <p>Subtract 5 → <strong>x = 7</strong></p>
-    </div>
+        <!-- SECTION 1 -->
+        <section class="lesson-section fade-in">
+            <h2 class="neon">What Is an Equation?</h2>
+            <p>
+                An equation states that two expressions are equal.  
+                Your goal is to find the value of the variable that makes the equation true.
+            </p>
 
-    <h2>🧮 Two-Step Equations</h2>
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>Solve: <strong>3x - 4 = 11</strong></p>
-        <p>Add 4 → 3x = 15</p>
-        <p>Divide by 3 → <strong>x = 5</strong></p>
-    </div>
+            <p class="example">
+                <span class="neon">3x + 4 = 19</span>
+            </p>
+        </section>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>Solve: <strong>2x + 6 = 20</strong></p>
-        <input id="eq1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('eq1', 7, 'eqr1')">Check</button>
-        <p id="eqr1" class="result"></p>
-    </div>
+        <!-- SECTION 2 -->
+        <section class="lesson-section fade-in">
+            <h2 class="neon">One-Step Equations</h2>
+            <p>Undo the operation to isolate the variable.</p>
 
-</div>
+            <p class="example">
+                <span class="neon">x + 7 = 12</span> → subtract 7 → <span class="neon">x = 5</span>
+            </p>
 
-<footer>
-    © 2026 Algebra Learning Hub
+            <div class="interactive-example glass slide-up">
+                <p>Solve <span class="neon">x - 9 = 3</span>.</p>
+
+                <button class="btn-outline" data-reveal="eq-one-1">Reveal Answer</button>
+
+                <p id="eq-one-1" class="answer hidden">
+                    Add 9 to both sides → <span class="neon">x = 12</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Two-Step Equations</h2>
+            <p>Undo addition/subtraction first, then multiplication/division.</p>
+
+            <p class="example">
+                <span class="neon">2x + 3 = 11</span>  
+                Subtract 3 → <span class="neon">2x = 8</span>  
+                Divide by 2 → <span class="neon">x = 4</span>
+            </p>
+
+            <div class="interactive-example glass slide-up">
+                <p>Solve <span class="neon">3x - 5 = 16</span>.</p>
+
+                <button class="btn-outline" data-reveal="eq-two-1">Reveal Answer</button>
+
+                <p id="eq-two-1" class="answer hidden">
+                    Add 5 → <span class="neon">3x = 21</span><br>
+                    Divide by 3 → <span class="neon">x = 7</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Equations with Distribution</h2>
+
+            <p class="example">
+                <span class="neon">2(x + 3) = 18</span>
+            </p>
+
+            <div class="interactive-example glass slide-up">
+                <p>Solve <span class="neon">4(x - 2) = 20</span>.</p>
+
+                <button class="btn-outline" data-reveal="eq-dist-1">Reveal Answer</button>
+
+                <p id="eq-dist-1" class="answer hidden">
+                    Distribute: <span class="neon">4x - 8 = 20</span><br>
+                    Add 8 → <span class="neon">4x = 28</span><br>
+                    Divide by 4 → <span class="neon">x = 7</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- PRACTICE -->
+        <section id="practice" class="lesson-section fade-in">
+            <h2 class="neon">Practice</h2>
+
+            <ol class="practice-list">
+                <li>Solve <span class="neon">x + 4 = 10</span>.</li>
+                <li>Solve <span class="neon">5x = 35</span>.</li>
+                <li>Solve <span class="neon">3x - 2 = 16</span>.</li>
+                <li>Solve <span class="neon">2(x + 5) = 26</span>.</li>
+            </ol>
+
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take Equations Quiz
+            </button>
+        </section>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar glass slide-in-right">
+        <h2 class="neon">Lesson Outline</h2>
+
+        <ol class="outline-list">
+            <li>What Is an Equation?</li>
+            <li>One-Step Equations</li>
+            <li>Two-Step Equations</li>
+            <li>Distribution</li>
+            <li><a href="#practice">Practice</a></li>
+        </ol>
+
+        <div class="sidebar-card glass">
+            <h3>Next Topic</h3>
+            <p>Move on to Inequalities.</p>
+            <button class="btn-secondary" onclick="location.href='inequalities.html'">
+                Go to Inequalities
+            </button>
+        </div>
+    </aside>
+
+</main>
+
+<footer class="site-footer fade-in">
+    <p>Solving equations is the heart of algebra.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
