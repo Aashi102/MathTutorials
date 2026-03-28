@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algebra Mastery | Final Exam</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
+</header>
+
+<div class="page-shell fade-in-up">
+
+    <header class="section-header">
+        <h1>Algebra <span class="neon">Final Exam</span></h1>
+        <p>
+            This exam pulls questions from all topics: foundations, expressions,
+            equations, inequalities, graphing, polynomials, factoring,
+            quadratics, functions, and word problems.
+        </p>
+    </header>
+
+    <section class="lesson-section fade-in center">
+        <h2 class="neon">Ready?</h2>
+        <p class="text-soft">
+            Take your time. Read each question carefully. When you finish, you’ll
+            see your score and be able to generate a certificate.
+        </p>
+
+        <button class="btn-primary mt-md" onclick="quizEngine.startFinalExam()">
+            Start Final Exam
+        </button>
+    </section>
+
+</div>
+
+<footer class="site-footer">
+    <p>One exam. All your progress.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Final Exam</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
+
+</body>
+</html>
