@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Graphing | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,64 +18,99 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
 <div class="page-shell fade-in-up">
 
     <header class="section-header">
-        <h1>Graphing <span class="neon">Basics</span></h1>
-        <p>Learn how to plot points and graph linear equations.</p>
+        <h1>Understanding <span class="neon">Graphing</span></h1>
+        <p>
+            Graphing turns algebra into pictures. It helps you visualize
+            relationships, patterns, and how quantities change.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- COORDINATE PLANE -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Plotting Points</h2>
-                <p>A point is written as <strong>(x, y)</strong>.</p>
-                <p>The x‑value moves left/right, and the y‑value moves up/down.</p>
+                <h2 class="neon">The Coordinate Plane</h2>
+                <p>
+                    The coordinate plane is made of two perpendicular number
+                    lines: the x‑axis (horizontal) and the y‑axis (vertical).
+                </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> Plot (3, −2)</p>
-                    <button class="btn-secondary" data-reveal="g1">Show Explanation</button>
-                    <p id="g1" class="answer hidden">Move 3 right, 2 down.</p>
+                    <p><strong>Example:</strong> Plot the point (3, −2)</p>
+                    <button class="btn-secondary" data-reveal="g1">Show Steps</button>
+                    <p id="g1" class="answer hidden">
+                        Move 3 units right (positive x), then 2 units down
+                        (negative y).
+                    </p>
                 </div>
             </section>
 
+            <!-- SLOPE -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Slope</h2>
-                <p>Slope measures steepness: <strong>rise / run</strong>.</p>
+                <p>
+                    Slope measures steepness. It tells you how much a line rises
+                    or falls as you move to the right.
+                </p>
+
+                <div class="example">
+                    <p><strong>Formula:</strong> slope = rise / run</p>
+                </div>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Find slope between (1, 2) and (3, 6)</p>
-                    <button class="btn-secondary" data-reveal="g2">Show Steps</button>
-                    <p id="g2" class="answer hidden">Rise = 4, Run = 2 → slope = <strong>2</strong></p>
+                    <button class="btn-secondary" data-reveal="g2">Show Answer</button>
+                    <p id="g2" class="answer hidden">
+                        Rise = 6 − 2 = 4  
+                        Run = 3 − 1 = 2  
+                        Slope = 4/2 = <strong>2</strong>
+                    </p>
                 </div>
             </section>
 
+            <!-- SLOPE-INTERCEPT FORM -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Slope‑Intercept Form</h2>
-                <p>y = mx + b</p>
+                <p>
+                    Many lines can be written as:
+                </p>
+                <p class="neon"><strong>y = mx + b</strong></p>
+
                 <ul>
-                    <li>m = slope</li>
-                    <li>b = y‑intercept</li>
+                    <li><strong>m</strong> = slope</li>
+                    <li><strong>b</strong> = y‑intercept</li>
                 </ul>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Graph y = 2x + 1</p>
+                    <button class="btn-secondary" data-reveal="g3">Show Steps</button>
+                    <p id="g3" class="answer hidden">
+                        Start at (0, 1).  
+                        Use slope 2 → up 2, right 1.  
+                        Plot several points and connect them.
+                    </p>
+                </div>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
-                <li>Plotting Points</li>
+                <li>Coordinate Plane</li>
                 <li>Slope</li>
                 <li>Slope‑Intercept Form</li>
             </ul>
@@ -96,6 +131,7 @@
     <p>Graphs reveal patterns.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
