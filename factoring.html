@@ -1,103 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Mastery | Factoring</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factoring | Algebra Mastery</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<main class="layout-two-column fade-in-up">
-    <section class="content-area">
-        <header class="section-header">
-            <h1 class="neon">Factoring</h1>
-            <p>Rewrite expressions as products of simpler factors.</p>
-        </header>
+<div class="page-shell fade-in-up">
 
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Greatest Common Factor (GCF)</h2>
-            <p>Factor out the largest common factor of all terms.</p>
-            <div class="interactive-example glass slide-up">
-                <p>Factor <span class="neon">6x + 9</span>.</p>
-                <button class="btn-outline" data-reveal="fact-gcf-1">Reveal Answer</button>
-                <p id="fact-gcf-1" class="answer hidden">
-                    GCF is 3 → <span class="neon">3(2x + 3)</span>
-                </p>
+    <header class="section-header">
+        <h1><span class="neon">Factoring</span> Techniques</h1>
+        <p>Break expressions into simpler pieces to reveal structure.</p>
+    </header>
+
+    <div class="layout-two-column">
+
+        <section class="content-area">
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Greatest Common Factor (GCF)</h2>
+                <p>Factor out the largest shared value.</p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Factor 6x + 12</p>
+                    <button class="btn-secondary" data-reveal="fac1">Show Answer</button>
+                    <p id="fac1" class="answer hidden">GCF = 6 → <strong>6(x + 2)</strong></p>
+                </div>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Factoring Trinomials</h2>
+                <p>Look for two numbers that multiply to c and add to b.</p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> x² + 5x + 6</p>
+                    <button class="btn-secondary" data-reveal="fac2">Show Steps</button>
+                    <p id="fac2" class="answer hidden">(x + 2)(x + 3)</p>
+                </div>
+            </section>
+
+        </section>
+
+        <aside class="sidebar slide-in-right">
+            <h2 class="neon">On This Page</h2>
+            <ul class="outline-list">
+                <li>GCF</li>
+                <li>Trinomials</li>
+            </ul>
+
+            <div class="sidebar-card">
+                <h3 class="neon">Try a Quiz</h3>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('factoring')">
+                    Take Factoring Quiz
+                </button>
             </div>
-        </section>
+        </aside>
 
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Factoring Trinomials</h2>
-            <p>Look for two numbers that multiply to <span class="neon">ac</span> and add to <span class="neon">b</span>.</p>
-            <div class="interactive-example glass slide-up">
-                <p>Factor <span class="neon">x^2 + 5x + 6</span>.</p>
-                <button class="btn-outline" data-reveal="fact-tri-1">Reveal Answer</button>
-                <p id="fact-tri-1" class="answer hidden">
-                    <span class="neon">(x + 2)(x + 3)</span>
-                </p>
-            </div>
-        </section>
+    </div>
 
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Difference of Squares</h2>
-            <p>
-                Pattern: <span class="neon">a^2 - b^2 = (a - b)(a + b)</span>
-            </p>
-            <div class="interactive-example glass slide-up">
-                <p>Factor <span class="neon">x^2 - 16</span>.</p>
-                <button class="btn-outline" data-reveal="fact-dos-1">Reveal Answer</button>
-                <p id="fact-dos-1" class="answer hidden">
-                    <span class="neon">(x - 4)(x + 4)</span>
-                </p>
-            </div>
-        </section>
+</div>
 
-        <section id="practice" class="lesson-section fade-in">
-            <h2 class="neon">Practice</h2>
-            <ol class="practice-list">
-                <li>Factor <span class="neon">8x + 12</span>.</li>
-                <li>Factor <span class="neon">x^2 + 7x + 10</span>.</li>
-                <li>Factor <span class="neon">x^2 - 25</span>.</li>
-                <li>Factor <span class="neon">3x^2 + 12x</span>.</li>
-            </ol>
-            <button class="btn-primary" onclick="location.href='quizzes.html'">
-                Take Factoring Quiz
-            </button>
-        </section>
-    </section>
-
-    <aside class="sidebar glass slide-in-right">
-        <h2 class="neon">Lesson Outline</h2>
-        <ol class="outline-list">
-            <li>GCF</li>
-            <li>Trinomials</li>
-            <li>Difference of Squares</li>
-            <li><a href="#practice">Practice</a></li>
-        </ol>
-        <div class="sidebar-card glass">
-            <h3>Next Topic</h3>
-            <p>Move on to Quadratics.</p>
-            <button class="btn-secondary" onclick="location.href='quadratics.html'">
-                Go to Quadratics
-            </button>
-        </div>
-    </aside>
-</main>
-
-<footer class="site-footer fade-in">
-    <p>Factoring unlocks many algebra techniques.</p>
+<footer class="site-footer">
+    <p>Factoring reveals hidden structure.</p>
 </footer>
+
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
 
 </body>
 </html>
