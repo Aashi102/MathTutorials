@@ -1,114 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algebra Mastery | Quizzes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html" class="active">Quizzes</a>
-    </nav>
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<main class="layout-single-column fade-in-up">
+<div class="page-shell fade-in-up">
 
     <header class="section-header">
-        <h1 class="neon">Topic Quizzes</h1>
-        <p>Test your understanding with focused quizzes.</p>
+        <h1>Topic <span class="neon">Quizzes</span></h1>
+        <p>Test your understanding with focused quizzes for each topic.</p>
     </header>
 
-    <section class="quiz-grid stagger">
+    <div class="layout-two-column">
 
-        <article class="quiz-card glass slide-up">
-            <h2>Foundations</h2>
-            <p>Variables, constants, basics.</p>
-            <button class="btn-primary" data-quiz="foundations">Start Quiz</button>
-        </article>
+        <section class="content-area">
 
-        <article class="quiz-card glass slide-up">
-            <h2>Expressions</h2>
-            <p>Simplifying & evaluating.</p>
-            <button class="btn-primary" data-quiz="expressions">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Foundations</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('foundations')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Equations</h2>
-            <p>Solving linear equations.</p>
-            <button class="btn-primary" data-quiz="equations">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Expressions</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('expressions')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Inequalities</h2>
-            <p>Graphing & solving.</p>
-            <button class="btn-primary" data-quiz="inequalities">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Equations</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('equations')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Graphing</h2>
-            <p>Coordinate plane & lines.</p>
-            <button class="btn-primary" data-quiz="graphing">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Inequalities</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('inequalities')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Polynomials</h2>
-            <p>Operations & structure.</p>
-            <button class="btn-primary" data-quiz="polynomials">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Graphing</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('graphing')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Factoring</h2>
-            <p>GCF & trinomials.</p>
-            <button class="btn-primary" data-quiz="factoring">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Polynomials</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('polynomials')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Quadratics</h2>
-            <p>Parabolas & equations.</p>
-            <button class="btn-primary" data-quiz="quadratics">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Factoring</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('factoring')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Functions</h2>
-            <p>Inputs & outputs.</p>
-            <button class="btn-primary" data-quiz="functions">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Quadratics</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('quadratics')">
+                    Start Quiz
+                </button>
+            </section>
 
-        <article class="quiz-card glass slide-up">
-            <h2>Word Problems</h2>
-            <p>Real-world algebra.</p>
-            <button class="btn-primary" data-quiz="wordproblems">Start Quiz</button>
-        </article>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Functions</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('functions')">
+                    Start Quiz
+                </button>
+            </section>
 
-    </section>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Word Problems</h2>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('wordproblems')">
+                    Start Quiz
+                </button>
+            </section>
 
-    <!-- QUIZ MODAL -->
-    <section id="quiz-overlay" class="quiz-overlay hidden">
-        <div class="quiz-modal glass-strong fade-in-up">
-            <header class="quiz-modal-header">
-                <h2 id="quiz-title" class="neon">Quiz</h2>
-                <button id="close-quiz" class="btn-outline">Close</button>
-            </header>
+        </section>
 
-            <div class="quiz-modal-body">
-                <p>Your quiz engine will render questions here.</p>
-            </div>
-        </div>
-    </section>
+        <aside class="sidebar slide-in-right">
+            <h2 class="neon">How It Works</h2>
+            <ul class="outline-list">
+                <li>Each quiz is 5–10 questions</li>
+                <li>Instant feedback</li>
+                <li>Final score summary</li>
+                <li>Restart anytime</li>
+            </ul>
+        </aside>
 
-</main>
+    </div>
 
-<footer class="site-footer fade-in">
-    <p>Quizzes help you measure progress.</p>
+</div>
+
+<footer class="site-footer">
+    <p>Challenge yourself. Master algebra.</p>
 </footer>
+
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
 
 </body>
 </html>
