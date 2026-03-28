@@ -3,60 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadratics</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Quadratics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="hero small-hero">
-    <h1>Quadratic Equations</h1>
-    <p>Learn how to solve quadratics using factoring, graphing, and the quadratic formula.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <section class="content-area">
+        <header class="section-header">
+            <h1 class="neon">Quadratics</h1>
+            <p>Work with parabolas and quadratic equations.</p>
+        </header>
 
-<div class="container">
+        <section class="lesson-section fade-in">
+            <h2 class="neon">What Is a Quadratic?</h2>
+            <p>
+                A quadratic is an equation with a highest power of 2, usually written  
+                <span class="neon">ax^2 + bx + c = 0</span>.
+            </p>
+        </section>
 
-    <h2>📌 What Is a Quadratic?</h2>
-    <p>A quadratic is an equation of the form <strong>ax² + bx + c = 0</strong>.</p>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Factoring to Solve</h2>
+            <div class="interactive-example glass slide-up">
+                <p>Solve <span class="neon">x^2 + 5x + 6 = 0</span>.</p>
+                <button class="btn-outline" data-reveal="quad-fact-1">Reveal Answer</button>
+                <p id="quad-fact-1" class="answer hidden">
+                    Factor: <span class="neon">(x + 2)(x + 3) = 0</span> →  
+                    <span class="neon">x = -2</span> or <span class="neon">x = -3</span>.
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>x² + 3x + 2 = 0</p>
-        <p>→ (x + 1)(x + 2)</p>
-        <p>Solutions: <strong>x = -1, -2</strong></p>
-    </div>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Vertex Form</h2>
+            <p>
+                <span class="neon">y = a(x - h)^2 + k</span> has vertex at <span class="neon">(h, k)</span>.
+            </p>
+            <div class="interactive-example glass slide-up">
+                <p>Find the vertex of <span class="neon">y = (x - 1)^2 + 4</span>.</p>
+                <button class="btn-outline" data-reveal="quad-vert-1">Reveal Answer</button>
+                <p id="quad-vert-1" class="answer hidden">
+                    Vertex: <span class="neon">(1, 4)</span>.
+                </p>
+            </div>
+        </section>
 
-    <h2>🧮 Quadratic Formula</h2>
-    <p>
-        <strong>x = (-b ± √(b² - 4ac)) / (2a)</strong>
-    </p>
+        <section id="practice" class="lesson-section fade-in">
+            <h2 class="neon">Practice</h2>
+            <ol class="practice-list">
+                <li>Identify if <span class="neon">3x^2 - x + 2</span> is quadratic.</li>
+                <li>Solve <span class="neon">x^2 - 9 = 0</span>.</li>
+                <li>Factor <span class="neon">x^2 + 7x + 10</span>.</li>
+                <li>Find the vertex of <span class="neon">y = (x + 2)^2 - 3</span>.</li>
+            </ol>
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take Quadratics Quiz
+            </button>
+        </section>
+    </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>Solve: x² - 4x + 3 = 0</p>
-        <p>Using formula → <strong>x = 1, 3</strong></p>
-    </div>
+    <aside class="sidebar glass slide-in-right">
+        <h2 class="neon">Lesson Outline</h2>
+        <ol class="outline-list">
+            <li>Definition</li>
+            <li>Factoring to Solve</li>
+            <li>Vertex Form</li>
+            <li><a href="#practice">Practice</a></li>
+        </ol>
+        <div class="sidebar-card glass">
+            <h3>Next Topic</h3>
+            <p>Move on to Functions.</p>
+            <button class="btn-secondary" onclick="location.href='functions.html'">
+                Go to Functions
+            </button>
+        </div>
+    </aside>
+</main>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>Solve: <strong>x² - 5x + 6 = 0</strong></p>
-        <input id="quad1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('quad1', 'x=2,3', 'quadr1')">Check</button>
-        <p id="quadr1" class="result"></p>
-    </div>
-
-</div>
-
-<footer>
-    © 2026 Algebra Learning Hub
+<footer class="site-footer fade-in">
+    <p>Quadratics model many real-world situations.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
