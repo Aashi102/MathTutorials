@@ -1,163 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Mastery | Foundations</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundations | Algebra Mastery</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<main class="layout-two-column fade-in-up">
+<div class="page-shell fade-in-up">
 
-    <!-- LESSON CONTENT -->
-    <section class="content-area">
+    <header class="section-header">
+        <h1>Algebra <span class="neon">Foundations</span></h1>
+        <p>Build the essential skills needed for all algebra topics.</p>
+    </header>
 
-        <header class="section-header">
-            <h1 class="neon">Algebra Foundations</h1>
-            <p>Build the core ideas that every other topic depends on.</p>
-        </header>
+    <div class="layout-two-column">
 
-        <!-- SECTION 1 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">What is Algebra?</h2>
-            <p>
-                Algebra is the language of patterns and relationships. Instead of using only numbers,
-                we use symbols to represent unknown or changing values.
-            </p>
-        </section>
+        <section class="content-area">
 
-        <!-- SECTION 2 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Key Building Blocks</h2>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">What is Algebra?</h2>
+                <p>Algebra is the language of patterns, relationships, and problem‑solving.</p>
+                <p>It uses symbols (like <strong>x</strong>) to represent unknown values.</p>
+            </section>
 
-            <div class="concept-grid stagger">
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Variables</h2>
+                <p>A variable is a letter that represents a number.</p>
 
-                <article class="concept-card glass slide-up">
-                    <h3>Variables</h3>
-                    <p>A symbol (like <span class="neon">x</span>) that represents a number.</p>
-                    <p class="example">Example: In <span class="neon">2x + 3</span>, x is the variable.</p>
-                </article>
-
-                <article class="concept-card glass slide-up">
-                    <h3>Constants</h3>
-                    <p>A fixed value that does not change.</p>
-                    <p class="example">Example: In <span class="neon">2x + 3</span>, 3 is a constant.</p>
-                </article>
-
-                <article class="concept-card glass slide-up">
-                    <h3>Expressions</h3>
-                    <p>A combination of variables, numbers, and operations.</p>
-                    <p class="example">Example: <span class="neon">4x - 7</span></p>
-                </article>
-
-                <article class="concept-card glass slide-up">
-                    <h3>Equations</h3>
-                    <p>A statement that two expressions are equal.</p>
-                    <p class="example">Example: <span class="neon">4x - 7 = 9</span></p>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- SECTION 3 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Evaluating Expressions</h2>
-            <p>To evaluate an expression, substitute a value for the variable.</p>
-
-            <p class="example">
-                If <span class="neon">x = 5</span>, then  
-                <span class="neon">2x + 3 = 2(5) + 3 = 13</span>.
-            </p>
-
-            <div class="interactive-example glass slide-up">
-                <h3>Try It</h3>
-                <p>If <span class="neon">x = 4</span>, what is <span class="neon">3x - 2</span>?</p>
-
-                <button class="btn-outline" data-reveal="found-eval-1">Reveal Answer</button>
-
-                <p id="found-eval-1" class="answer hidden">
-                    <span class="neon">3(4) - 2 = 12 - 2 = 10</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION 4 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Combining Like Terms</h2>
-            <p>Terms are “like” if they have the same variable part.</p>
-
-            <p class="example">
-                <span class="neon">2x + 5x = 7x</span>
-            </p>
-
-            <div class="interactive-example glass slide-up">
-                <p>Simplify <span class="neon">3x + 4 + 2x - 1</span>.</p>
-
-                <button class="btn-outline" data-reveal="found-like-1">Reveal Answer</button>
-
-                <p id="found-like-1" class="answer hidden">
-                    Combine x-terms: <span class="neon">3x + 2x = 5x</span><br>
-                    Combine constants: <span class="neon">4 - 1 = 3</span><br>
-                    Final: <span class="neon">5x + 3</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- PRACTICE -->
-        <section id="practice" class="lesson-section fade-in">
-            <h2 class="neon">Practice</h2>
-
-            <ol class="practice-list">
-                <li>Identify the variable in <span class="neon">7x + 2</span>.</li>
-                <li>Evaluate <span class="neon">4x + 1</span> when <span class="neon">x = 3</span>.</li>
-                <li>Simplify <span class="neon">2x + 3x - 4</span>.</li>
-                <li>Write an equation for: “Five more than a number is 12.”</li>
-            </ol>
-
-            <button class="btn-primary" onclick="location.href='quizzes.html'">
-                Take Foundations Quiz
-            </button>
-        </section>
-
-    </section>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar glass slide-in-right">
-        <h2 class="neon">Lesson Outline</h2>
-
-        <ol class="outline-list">
-            <li><a href="#top">What is Algebra?</a></li>
-            <li><a href="#top">Key Building Blocks</a></li>
-            <li><a href="#top">Evaluating Expressions</a></li>
-            <li><a href="#practice">Practice</a></li>
-        </ol>
-
-        <div class="sidebar-card glass">
-            <h3>Next Topic</h3>
-            <p>Move on to Expressions.</p>
-            <button class="btn-secondary" onclick="location.href='expressions.html'">
-                Go to Expressions
-            </button>
-        </div>
-    </aside>
-
-</main>
-
-<footer class="site-footer fade-in">
-    <p>Strong foundations make everything easier.</p>
-</footer>
-
-</body>
-</html>
