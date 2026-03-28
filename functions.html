@@ -3,57 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functions</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Functions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="hero small-hero">
-    <h1>Functions</h1>
-    <p>Understand what functions are and how to evaluate them.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <section class="content-area">
+        <header class="section-header">
+            <h1 class="neon">Functions</h1>
+            <p>Understand inputs, outputs, and function notation.</p>
+        </header>
 
-<div class="container">
+        <section class="lesson-section fade-in">
+            <h2 class="neon">What Is a Function?</h2>
+            <p>
+                A function pairs each input with exactly one output.
+            </p>
+            <p class="example">
+                Example: <span class="neon">f(x) = 2x + 1</span>
+            </p>
+        </section>
 
-    <h2>📌 What Is a Function?</h2>
-    <p>A function is a rule that assigns each input exactly one output.</p>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Function Notation</h2>
+            <div class="interactive-example glass slide-up">
+                <p>Find <span class="neon">f(3)</span> if <span class="neon">f(x) = 2x + 1</span>.</p>
+                <button class="btn-outline" data-reveal="func-not-1">Reveal Answer</button>
+                <p id="func-not-1" class="answer hidden">
+                    <span class="neon">f(3) = 2(3) + 1 = 7</span>
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>If f(x) = 2x + 3, find f(4).</p>
-        <p>→ 2(4) + 3 = <strong>11</strong></p>
-    </div>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Tables and Graphs</h2>
+            <p>
+                You can represent a function with a table of values or a graph.
+            </p>
+        </section>
 
-    <h2>🧮 Function Notation</h2>
-    <p>f(x) means “the output when x is the input.”</p>
+        <section id="practice" class="lesson-section fade-in">
+            <h2 class="neon">Practice</h2>
+            <ol class="practice-list">
+                <li>Evaluate <span class="neon">f(0)</span> if <span class="neon">f(x) = 3x - 2</span>.</li>
+                <li>Is the relation {(1,2), (1,3)} a function?</li>
+                <li>Find <span class="neon">g(4)</span> if <span class="neon">g(x) = x^2</span>.</li>
+                <li>Describe how you’d graph <span class="neon">y = 2x + 1</span>.</li>
+            </ol>
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take Functions Quiz
+            </button>
+        </section>
+    </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>f(x) = x² − 1</p>
-        <p>f(5) = 25 − 1 = <strong>24</strong></p>
-    </div>
+    <aside class="sidebar glass slide-in-right">
+        <h2 class="neon">Lesson Outline</h2>
+        <ol class="outline-list">
+            <li>Definition</li>
+            <li>Notation</li>
+            <li>Tables & Graphs</li>
+            <li><a href="#practice">Practice</a></li>
+        </ol>
+        <div class="sidebar-card glass">
+            <h3>Next Topic</h3>
+            <p>Move on to Word Problems.</p>
+            <button class="btn-secondary" onclick="location.href='wordproblems.html'">
+                Go to Word Problems
+            </button>
+        </div>
+    </aside>
+</main>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>If f(x) = 3x − 2, find f(6).</p>
-        <input id="fun1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('fun1', 16, 'funr1')">Check</button>
-        <p id="funr1" class="result"></p>
-    </div>
-
-</div>
-
-<footer>
-    © 2026 Algebra Learning Hub
+<footer class="site-footer fade-in">
+    <p>Functions describe how quantities are related.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
