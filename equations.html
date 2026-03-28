@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Equations | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,49 +29,90 @@
 
     <header class="section-header">
         <h1>Solving <span class="neon">Equations</span></h1>
-        <p>Learn how to isolate variables and solve linear equations.</p>
+        <p>
+            Equations are statements that two expressions are equal. Solving an
+            equation means finding the value of the variable that makes the
+            statement true.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- WHAT IS AN EQUATION -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">What is an Equation?</h2>
-                <p>An equation states that two expressions are equal.</p>
-                <p>It contains an equals sign (<strong>=</strong>).</p>
+                <h2 class="neon">What Is an Equation?</h2>
+                <p>
+                    An equation contains an equals sign (<strong>=</strong>). It tells us that
+                    two expressions have the same value.
+                </p>
+
+                <div class="example">
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>x + 5 = 12</li>
+                        <li>3y − 2 = 10</li>
+                        <li>2(a + 1) = 14</li>
+                    </ul>
+                </div>
             </section>
 
+            <!-- ONE-STEP EQUATIONS -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Solving One‑Step Equations</h2>
-                <p>Use inverse operations to isolate the variable.</p>
+                <h2 class="neon">One‑Step Equations</h2>
+                <p>
+                    Use inverse operations to isolate the variable. If the
+                    equation adds something, subtract it. If it multiplies,
+                    divide.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Solve <strong>x + 7 = 12</strong></p>
                     <button class="btn-secondary" data-reveal="eq1">Show Steps</button>
-                    <p id="eq1" class="answer hidden">Subtract 7 → x = <strong>5</strong></p>
+                    <p id="eq1" class="answer hidden">
+                        Subtract 7 from both sides → x = <strong>5</strong>.
+                    </p>
                 </div>
             </section>
 
+            <!-- TWO-STEP EQUATIONS -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Two‑Step Equations</h2>
-                <p>Undo addition/subtraction first, then multiplication/division.</p>
+                <p>
+                    Undo addition/subtraction first, then multiplication/division.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Solve <strong>2x − 4 = 10</strong></p>
                     <button class="btn-secondary" data-reveal="eq2">Show Steps</button>
-                    <p id="eq2" class="answer hidden">Add 4 → 2x = 14 → divide by 2 → x = <strong>7</strong></p>
+                    <p id="eq2" class="answer hidden">
+                        Add 4 → 2x = 14 → divide by 2 → x = <strong>7</strong>.
+                    </p>
                 </div>
+            </section>
+
+            <!-- PRACTICE -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Practice Problems</h2>
+                <ul class="practice-list">
+                    <li>Solve: x − 3 = 9</li>
+                    <li>Solve: 5x = 20</li>
+                    <li>Solve: 3x + 2 = 17</li>
+                    <li>Solve: 4y − 6 = 10</li>
+                </ul>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
-                <li>What is an Equation?</li>
+                <li>What Is an Equation?</li>
                 <li>One‑Step Equations</li>
                 <li>Two‑Step Equations</li>
+                <li>Practice</li>
             </ul>
 
             <div class="sidebar-card">
@@ -92,6 +131,7 @@
     <p>Every equation has a story to tell.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
