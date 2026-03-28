@@ -3,61 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Problems</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+<body class="theme-light">
 
-<body>
-
-<header class="hero small-hero">
-    <h1>Practice Problems</h1>
-    <p>Test your skills across all algebra topics.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html" class="active">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="practice.html">Practice</a>
-    <a href="quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <!-- Sidebar Filters -->
+    <aside class="sidebar slide-in-left">
+        <h2>Practice Filters</h2>
+        <div class="filter-group">
+            <h3>Difficulty</h3>
+            <label><input type="checkbox" checked> Beginner</label>
+            <label><input type="checkbox" checked> Intermediate</label>
+            <label><input type="checkbox"> Advanced</label>
+        </div>
+        <div class="filter-group">
+            <h3>Focus</h3>
+            <label><input type="checkbox" checked> Skills</label>
+            <label><input type="checkbox"> Mixed Review</label>
+            <label><input type="checkbox"> Challenge</label>
+        </div>
+        <button class="btn-outline" id="reset-filters">Reset Filters</button>
+    </aside>
 
-<div class="container">
+    <!-- Main Practice Content -->
+    <section class="content-area">
+        <header class="section-header">
+            <h1>Practice by Topic</h1>
+            <p>Choose a topic and work through carefully sequenced problems.</p>
+        </header>
 
-    <h2>🧮 Mixed Practice</h2>
+        <div class="practice-grid stagger">
+            <article class="practice-card slide-up" data-topic="foundations">
+                <h2>Algebra Foundations</h2>
+                <p>Variables, constants, and basic operations.</p>
+                <div class="practice-meta">
+                    <span class="tag">Beginner</span>
+                    <span>15 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 60%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='foundations.html#practice'">
+                    Continue Practice
+                </button>
+            </article>
 
-    <div class="try-box">
-        <p>1. Solve: <strong>x + 9 = 14</strong></p>
-        <input id="p1" placeholder="Answer...">
-        <button class="btn" onclick="check('p1', 5, 'pr1')">Check</button>
-        <p id="pr1" class="result"></p>
-    </div>
+            <article class="practice-card slide-up" data-topic="expressions">
+                <h2>Expressions</h2>
+                <p>Simplifying, combining like terms, and evaluating.</p>
+                <div class="practice-meta">
+                    <span class="tag">Beginner–Intermediate</span>
+                    <span>20 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 30%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='expressions.html#practice'">
+                    Start Expressions
+                </button>
+            </article>
 
-    <div class="try-box">
-        <p>2. Simplify: <strong>3x + 4x</strong></p>
-        <input id="p2" placeholder="Answer...">
-        <button class="btn" onclick="check('p2', '7x', 'pr2')">Check</button>
-        <p id="pr2" class="result"></p>
-    </div>
+            <article class="practice-card slide-up" data-topic="equations">
+                <h2>Equations</h2>
+                <p>One-step, two-step, and multi-step equations.</p>
+                <div class="practice-meta">
+                    <span class="tag">Intermediate</span>
+                    <span>25 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 10%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='equations.html#practice'">
+                    Practice Equations
+                </button>
+            </article>
 
-    <div class="try-box">
-        <p>3. Factor: <strong>x² + 3x + 2</strong></p>
-        <input id="p3" placeholder="Answer...">
-        <button class="btn" onclick="check('p3', '(x+1)(x+2)', 'pr3')">Check</button>
-        <p id="pr3" class="result"></p>
-    </div>
+            <article class="practice-card slide-up" data-topic="inequalities">
+                <h2>Inequalities</h2>
+                <p>Solving and graphing inequalities on a number line.</p>
+                <div class="practice-meta">
+                    <span class="tag">Intermediate</span>
+                    <span>18 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='inequalities.html#practice'">
+                    Begin Inequalities
+                </button>
+            </article>
 
-    <div class="try-box">
-        <p>4. Evaluate f(3) if f(x) = 2x − 1</strong></p>
-        <input id="p4" placeholder="Answer...">
-        <button class="btn" onclick="check('p4', 5, 'pr4')">Check</button>
-        <p id="pr4" class="result"></p>
-    </div>
+            <article class="practice-card slide-up" data-topic="graphing">
+                <h2>Graphing</h2>
+                <p>Plotting points and graphing linear equations.</p>
+                <div class="practice-meta">
+                    <span class="tag">Intermediate</span>
+                    <span>22 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 5%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='graphing.html#practice'">
+                    Practice Graphing
+                </button>
+            </article>
 
-</div>
+            <article class="practice-card slide-up" data-topic="polynomials">
+                <h2>Polynomials</h2>
+                <p>Operations with polynomials and degree.</p>
+                <div class="practice-meta">
+                    <span class="tag">Intermediate</span>
+                    <span>20 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='polynomials.html#practice'">
+                    Start Polynomials
+                </button>
+            </article>
 
-<footer>
-    © 2026 Algebra Learning Hub
+            <article class="practice-card slide-up" data-topic="factoring">
+                <h2>Factoring</h2>
+                <p>GCF, factoring trinomials, and special products.</p>
+                <div class="practice-meta">
+                    <span class="tag">Intermediate–Advanced</span>
+                    <span>24 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='factoring.html#practice'">
+                    Practice Factoring
+                </button>
+            </article>
+
+            <article class="practice-card slide-up" data-topic="quadratics">
+                <h2>Quadratics</h2>
+                <p>Solving and graphing quadratic equations.</p>
+                <div class="practice-meta">
+                    <span class="tag">Advanced</span>
+                    <span>26 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='quadratics.html#practice'">
+                    Quadratic Practice
+                </button>
+            </article>
+
+            <article class="practice-card slide-up" data-topic="functions">
+                <h2>Functions</h2>
+                <p>Function notation, tables, and graphs.</p>
+                <div class="practice-meta">
+                    <span class="tag">Intermediate</span>
+                    <span>18 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='functions.html#practice'">
+                    Practice Functions
+                </button>
+            </article>
+
+            <article class="practice-card slide-up" data-topic="wordproblems">
+                <h2>Word Problems</h2>
+                <p>Translate real-world situations into algebra.</p>
+                <div class="practice-meta">
+                    <span class="tag">Mixed</span>
+                    <span>30 problems</span>
+                </div>
+                <div class="progress-bar small">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+                <button class="btn-primary" onclick="location.href='wordproblems.html#practice'">
+                    Start Word Problems
+                </button>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer fade-in">
+    <p>Practice is where understanding becomes confidence.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
