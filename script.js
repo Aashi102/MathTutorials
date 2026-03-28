@@ -1,10 +1,10 @@
 /* =========================================================
-   Algebra Mastery – Global Script
+   Algebra Mastery – Global Script (Final)
    - Manual theme toggle + animation
    - Scroll reveal animations
    - Interactive example reveal
    - Modal system
-   - Full quiz engine (topics + final exam)
+   - Full quiz engine (topics + final exam + certificate)
    ========================================================= */
 
 /* ------------------------------
@@ -25,17 +25,19 @@ if (savedTheme === "light") {
     body.classList.add("theme-light");
 }
 
-// Toggle theme with subtle animation
+// Toggle theme with subtle animation + glow
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
         body.classList.add("theme-switching");
-        body.classList.toggle("theme-light");
+        themeToggle.classList.add("theme-toggle-active");
 
+        body.classList.toggle("theme-light");
         const isLight = body.classList.contains("theme-light");
         localStorage.setItem("theme", isLight ? "light" : "dark");
 
         setTimeout(() => {
             body.classList.remove("theme-switching");
+            themeToggle.classList.remove("theme-toggle-active");
         }, 320);
     });
 }
@@ -248,7 +250,6 @@ const quizBank = {
     ],
 };
 
-/* Build final exam as union of all questions */
 const finalExamQuestions = Object.values(quizBank).flat();
 
 /* ------------------------------
@@ -379,7 +380,8 @@ window.quizEngine = {
             console.warn("No quiz found for topic:", topic);
             return;
         }
-        renderQuiz(questions, `${topic[0].toUpperCase()}${topic.slice(1)} Quiz`);
+        const label = topic[0].toUpperCase() + topic.slice(1);
+        renderQuiz(questions, `${label} Quiz`);
     },
 
     startFinalExam() {
