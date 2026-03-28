@@ -3,55 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Problems</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Word Problems</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="hero small-hero">
-    <h1>Word Problems</h1>
-    <p>Translate real-world situations into algebraic equations.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <section class="content-area">
+        <header class="section-header">
+            <h1 class="neon">Word Problems</h1>
+            <p>Translate real situations into algebraic equations and expressions.</p>
+        </header>
 
-<div class="container">
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Reading the Problem</h2>
+            <p>
+                Identify what is being asked, what is known, and what is unknown.
+            </p>
+        </section>
 
-    <h2>📌 Translating Words to Algebra</h2>
-    <p>Many problems describe relationships that can be written as equations.</p>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Setting Up an Equation</h2>
+            <div class="interactive-example glass slide-up">
+                <p>
+                    “A number plus 5 is 12.”  
+                    Let the number be <span class="neon">x</span>. Write an equation.
+                </p>
+                <button class="btn-outline" data-reveal="wp-eq-1">Reveal Answer</button>
+                <p id="wp-eq-1" class="answer hidden">
+                    <span class="neon">x + 5 = 12</span>
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>“A number increased by 7 is 20.”</p>
-        <p>Equation: x + 7 = 20 → <strong>x = 13</strong></p>
-    </div>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Multi-Step Problems</h2>
+            <div class="interactive-example glass slide-up">
+                <p>
+                    “Twice a number minus 3 is 11.”  
+                    Write and solve the equation.
+                </p>
+                <button class="btn-outline" data-reveal="wp-multi-1">Reveal Answer</button>
+                <p id="wp-multi-1" class="answer hidden">
+                    Equation: <span class="neon">2x - 3 = 11</span><br>
+                    Add 3 → <span class="neon">2x = 14</span><br>
+                    Divide by 2 → <span class="neon">x = 7</span>
+                </p>
+            </div>
+        </section>
 
-    <h2>🧮 Rate Problems</h2>
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>A car travels 60 miles per hour. How far in 3 hours?</p>
-        <p>Distance = rate × time → <strong>180 miles</strong></p>
-    </div>
+        <section id="practice" class="lesson-section fade-in">
+            <h2 class="neon">Practice</h2>
+            <ol class="practice-list">
+                <li>
+                    “A number decreased by 4 is 9.”  
+                    Write and solve an equation.
+                </li>
+                <li>
+                    “Three times a number is 27.”  
+                    Write and solve an equation.
+                </li>
+                <li>
+                    “A number divided by 5 is 6.”  
+                    Write and solve an equation.
+                </li>
+                <li>
+                    Create your own word problem and solve it.
+                </li>
+            </ol>
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take Word Problems Quiz
+            </button>
+        </section>
+    </section>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>“A number minus 4 is 15.” Solve for the number.</p>
-        <input id="wp1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('wp1', 19, 'wpr1')">Check</button>
-        <p id="wpr1" class="result"></p>
-    </div>
+    <aside class="sidebar glass slide-in-right">
+        <h2 class="neon">Lesson Outline</h2>
+        <ol class="outline-list">
+            <li>Reading the Problem</li>
+            <li>Setting Up Equations</li>
+            <li>Multi-Step Problems</li>
+            <li><a href="#practice">Practice</a></li>
+        </ol>
+        <div class="sidebar-card glass">
+            <h3>Next Step</h3>
+            <p>Review any topic and take quizzes.</p>
+            <button class="btn-secondary" onclick="location.href='index.html'">
+                Back to Home
+            </button>
+        </div>
+    </aside>
+</main>
 
-</div>
-
-<footer>
-    © 2026 Algebra Learning Hub
+<footer class="site-footer fade-in">
+    <p>Word problems connect algebra to real life.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
