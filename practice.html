@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body class="theme-light">
+
+<body>
 
 <header class="top-nav fade-in">
     <div class="logo">Algebra<span>Mastery</span></div>
@@ -19,187 +20,154 @@
 </header>
 
 <main class="layout-two-column fade-in-up">
-    <!-- Sidebar Filters -->
-    <aside class="sidebar slide-in-left">
-        <h2>Practice Filters</h2>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar glass slide-in-left">
+        <h2 class="neon">Filters</h2>
+
         <div class="filter-group">
             <h3>Difficulty</h3>
             <label><input type="checkbox" checked> Beginner</label>
             <label><input type="checkbox" checked> Intermediate</label>
             <label><input type="checkbox"> Advanced</label>
         </div>
+
         <div class="filter-group">
             <h3>Focus</h3>
             <label><input type="checkbox" checked> Skills</label>
             <label><input type="checkbox"> Mixed Review</label>
             <label><input type="checkbox"> Challenge</label>
         </div>
-        <button class="btn-outline" id="reset-filters">Reset Filters</button>
+
+        <button id="reset-filters" class="btn-outline">Reset Filters</button>
     </aside>
 
-    <!-- Main Practice Content -->
+    <!-- MAIN CONTENT -->
     <section class="content-area">
         <header class="section-header">
-            <h1>Practice by Topic</h1>
-            <p>Choose a topic and work through carefully sequenced problems.</p>
+            <h1 class="neon">Practice by Topic</h1>
+            <p>Choose a topic and work through sequenced problems.</p>
         </header>
 
         <div class="practice-grid stagger">
-            <article class="practice-card slide-up" data-topic="foundations">
-                <h2>Algebra Foundations</h2>
-                <p>Variables, constants, and basic operations.</p>
-                <div class="practice-meta">
-                    <span class="tag">Beginner</span>
-                    <span>15 problems</span>
-                </div>
+
+            <!-- Each card links to the topic page's #practice section -->
+            <article class="practice-card glass slide-up">
+                <h2>Foundations</h2>
+                <p>Variables, constants, and basics.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 60%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='foundations.html#practice'">
-                    Continue Practice
+                    Continue
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="expressions">
+            <article class="practice-card glass slide-up">
                 <h2>Expressions</h2>
-                <p>Simplifying, combining like terms, and evaluating.</p>
-                <div class="practice-meta">
-                    <span class="tag">Beginner–Intermediate</span>
-                    <span>20 problems</span>
-                </div>
+                <p>Simplifying & evaluating.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 30%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='expressions.html#practice'">
-                    Start Expressions
+                    Start
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="equations">
+            <article class="practice-card glass slide-up">
                 <h2>Equations</h2>
-                <p>One-step, two-step, and multi-step equations.</p>
-                <div class="practice-meta">
-                    <span class="tag">Intermediate</span>
-                    <span>25 problems</span>
-                </div>
+                <p>One-step to multi-step.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 10%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='equations.html#practice'">
-                    Practice Equations
+                    Practice
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="inequalities">
+            <article class="practice-card glass slide-up">
                 <h2>Inequalities</h2>
-                <p>Solving and graphing inequalities on a number line.</p>
-                <div class="practice-meta">
-                    <span class="tag">Intermediate</span>
-                    <span>18 problems</span>
-                </div>
+                <p>Graphing & solving.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 0%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='inequalities.html#practice'">
-                    Begin Inequalities
+                    Begin
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="graphing">
+            <article class="practice-card glass slide-up">
                 <h2>Graphing</h2>
-                <p>Plotting points and graphing linear equations.</p>
-                <div class="practice-meta">
-                    <span class="tag">Intermediate</span>
-                    <span>22 problems</span>
-                </div>
+                <p>Coordinate plane & lines.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 5%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='graphing.html#practice'">
-                    Practice Graphing
+                    Practice
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="polynomials">
+            <article class="practice-card glass slide-up">
                 <h2>Polynomials</h2>
-                <p>Operations with polynomials and degree.</p>
-                <div class="practice-meta">
-                    <span class="tag">Intermediate</span>
-                    <span>20 problems</span>
-                </div>
+                <p>Operations & structure.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 0%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='polynomials.html#practice'">
-                    Start Polynomials
+                    Start
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="factoring">
+            <article class="practice-card glass slide-up">
                 <h2>Factoring</h2>
-                <p>GCF, factoring trinomials, and special products.</p>
-                <div class="practice-meta">
-                    <span class="tag">Intermediate–Advanced</span>
-                    <span>24 problems</span>
-                </div>
+                <p>GCF & trinomials.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 0%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='factoring.html#practice'">
-                    Practice Factoring
+                    Practice
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="quadratics">
+            <article class="practice-card glass slide-up">
                 <h2>Quadratics</h2>
-                <p>Solving and graphing quadratic equations.</p>
-                <div class="practice-meta">
-                    <span class="tag">Advanced</span>
-                    <span>26 problems</span>
-                </div>
+                <p>Parabolas & equations.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 0%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='quadratics.html#practice'">
-                    Quadratic Practice
+                    Begin
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="functions">
+            <article class="practice-card glass slide-up">
                 <h2>Functions</h2>
-                <p>Function notation, tables, and graphs.</p>
-                <div class="practice-meta">
-                    <span class="tag">Intermediate</span>
-                    <span>18 problems</span>
-                </div>
+                <p>Inputs & outputs.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 0%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='functions.html#practice'">
-                    Practice Functions
+                    Practice
                 </button>
             </article>
 
-            <article class="practice-card slide-up" data-topic="wordproblems">
+            <article class="practice-card glass slide-up">
                 <h2>Word Problems</h2>
-                <p>Translate real-world situations into algebra.</p>
-                <div class="practice-meta">
-                    <span class="tag">Mixed</span>
-                    <span>30 problems</span>
-                </div>
+                <p>Real-world algebra.</p>
                 <div class="progress-bar small">
                     <div class="progress-fill" style="width: 0%;"></div>
                 </div>
                 <button class="btn-primary" onclick="location.href='wordproblems.html#practice'">
-                    Start Word Problems
+                    Start
                 </button>
             </article>
+
         </div>
     </section>
 </main>
 
 <footer class="site-footer fade-in">
-    <p>Practice is where understanding becomes confidence.</p>
+    <p>Practice builds mastery.</p>
 </footer>
 
 </body>
