@@ -3,61 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphing</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Graphing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="hero small-hero">
-    <h1>Graphing Linear Equations</h1>
-    <p>Understand slope, intercepts, and how to graph lines.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../practice/practice.html">Practice</a>
-    <a href="../practice/quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-two-column fade-in-up">
+    <section class="content-area">
+        <header class="section-header">
+            <h1 class="neon">Graphing</h1>
+            <p>Work with the coordinate plane and graph linear equations.</p>
+        </header>
 
-<div class="container">
+        <section class="lesson-section fade-in">
+            <h2 class="neon">The Coordinate Plane</h2>
+            <p>
+                The coordinate plane has an x-axis (horizontal) and y-axis (vertical).
+                A point is written as <span class="neon">(x, y)</span>.
+            </p>
+            <p class="example">
+                Example: <span class="neon">(3, -2)</span> is 3 units right, 2 units down.
+            </p>
+        </section>
 
-    <h2>📌 Slope</h2>
-    <p>The slope tells you how steep a line is. Formula:</p>
-    <p><strong>m = rise / run</strong></p>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Plotting Points</h2>
+            <div class="interactive-example glass slide-up">
+                <p>Describe where the point <span class="neon">(-4, 1)</span> is located.</p>
+                <button class="btn-outline" data-reveal="graph-pt-1">Reveal Answer</button>
+                <p id="graph-pt-1" class="answer hidden">
+                    4 units left, 1 unit up from the origin.
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>Points: (2, 3) and (5, 9)</p>
-        <p>m = (9 − 3) / (5 − 2) = <strong>6 / 3 = 2</strong></p>
-    </div>
+        <section class="lesson-section fade-in">
+            <h2 class="neon">Graphing Linear Equations</h2>
+            <p>
+                A linear equation can be written as <span class="neon">y = mx + b</span>,  
+                where <span class="neon">m</span> is the slope and <span class="neon">b</span> is the y-intercept.
+            </p>
+            <p class="example">
+                Example: <span class="neon">y = 2x + 1</span> has slope 2 and y-intercept 1.
+            </p>
 
-    <h2>📌 Slope-Intercept Form</h2>
-    <p><strong>y = mx + b</strong></p>
-    <ul>
-        <li>m = slope</li>
-        <li>b = y-intercept</li>
-    </ul>
+            <div class="interactive-example glass slide-up">
+                <p>What is the slope and y-intercept of <span class="neon">y = -3x + 4</span>?</p>
+                <button class="btn-outline" data-reveal="graph-lin-1">Reveal Answer</button>
+                <p id="graph-lin-1" class="answer hidden">
+                    Slope: <span class="neon">-3</span>, y-intercept: <span class="neon">4</span>.
+                </p>
+            </div>
+        </section>
 
-    <div class="example-box">
-        <h3>Example</h3>
-        <p>y = 2x + 1 → slope = 2, intercept = 1</p>
-    </div>
+        <section id="practice" class="lesson-section fade-in">
+            <h2 class="neon">Practice</h2>
+            <ol class="practice-list">
+                <li>Plot the point <span class="neon">(2, 5)</span>.</li>
+                <li>Identify the coordinates of a point 3 left and 4 down from the origin.</li>
+                <li>Find the slope and intercept of <span class="neon">y = x - 2</span>.</li>
+                <li>Graph <span class="neon">y = -2x + 3</span>.</li>
+            </ol>
+            <button class="btn-primary" onclick="location.href='quizzes.html'">
+                Take Graphing Quiz
+            </button>
+        </section>
+    </section>
 
-    <h2>🔥 Quick Practice</h2>
-    <div class="try-box">
-        <p>Find the slope: (1, 2) and (3, 6)</p>
-        <input id="gr1" placeholder="Enter your answer...">
-        <button class="btn" onclick="check('gr1', 2, 'grr1')">Check</button>
-        <p id="grr1" class="result"></p>
-    </div>
+    <aside class="sidebar glass slide-in-right">
+        <h2 class="neon">Lesson Outline</h2>
+        <ol class="outline-list">
+            <li>Coordinate Plane</li>
+            <li>Plotting Points</li>
+            <li>Linear Equations</li>
+            <li><a href="#practice">Practice</a></li>
+        </ol>
+        <div class="sidebar-card glass">
+            <h3>Next Topic</h3>
+            <p>Move on to Polynomials.</p>
+            <button class="btn-secondary" onclick="location.href='polynomials.html'">
+                Go to Polynomials
+            </button>
+        </div>
+    </aside>
+</main>
 
-</div>
-
-<footer>
-    © 2026 Algebra Learning Hub
+<footer class="site-footer fade-in">
+    <p>Graphing turns algebra into pictures.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
