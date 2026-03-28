@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Functions | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,50 +29,89 @@
 
     <header class="section-header">
         <h1><span class="neon">Functions</span></h1>
-        <p>Understand inputs, outputs, and function notation.</p>
+        <p>
+            A function is a rule that assigns exactly one output to each input.
+            Functions help us describe relationships between quantities.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- WHAT IS A FUNCTION -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">What is a Function?</h2>
-                <p>A function assigns exactly one output to each input.</p>
-                <p>Think of it like a machine: you put in x, you get out f(x).</p>
-            </section>
+                <h2 class="neon">What Is a Function?</h2>
+                <p>
+                    A function takes an input (usually x) and produces an output
+                    (usually f(x)). Every input must have exactly one output.
+                </p>
 
-            <section class="lesson-section fade-in">
-                <h2 class="neon">Function Notation</h2>
-                <p>f(x) means “the output when x is the input.”</p>
-
-                <div class="interactive-example">
-                    <p><strong>Example:</strong> If f(x) = 2x + 1, find f(3)</p>
-                    <button class="btn-secondary" data-reveal="fun1">Show Answer</button>
-                    <p id="fun1" class="answer hidden">f(3) = 2(3) + 1 = <strong>7</strong></p>
+                <div class="example">
+                    <p><strong>Example:</strong> f(x) = 2x + 1</p>
+                    <p>If x = 3, then f(3) = 7.</p>
                 </div>
             </section>
 
+            <!-- FUNCTION NOTATION -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Domain & Range</h2>
-                <p>The domain is all possible inputs.</p>
-                <p>The range is all possible outputs.</p>
+                <h2 class="neon">Function Notation</h2>
+                <p>
+                    f(x) is read as “f of x.” It simply means “the output when x
+                    is the input.”
+                </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> For f(x) = x², what is the range?</p>
-                    <button class="btn-secondary" data-reveal="fun2">Show Answer</button>
-                    <p id="fun2" class="answer hidden">All values ≥ <strong>0</strong></p>
+                    <p><strong>Example:</strong> If f(x) = x² − 4, find f(5).</p>
+                    <button class="btn-secondary" data-reveal="fun1">Show Answer</button>
+                    <p id="fun1" class="answer hidden">
+                        f(5) = 25 − 4 = <strong>21</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- DOMAIN & RANGE -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Domain & Range</h2>
+                <p>
+                    The <strong>domain</strong> is all possible inputs.  
+                    The <strong>range</strong> is all possible outputs.
+                </p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> For f(x) = x², the range is all numbers ≥ 0.</p>
+                    <button class="btn-secondary" data-reveal="fun2">Explain</button>
+                    <p id="fun2" class="answer hidden">
+                        Squaring any number gives a non‑negative result, so the
+                        smallest output is 0.
+                    </p>
+                </div>
+            </section>
+
+            <!-- REAL-WORLD FUNCTIONS -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Functions in the Real World</h2>
+                <p>
+                    Functions appear everywhere: pricing models, physics
+                    formulas, population growth, and more.
+                </p>
+
+                <div class="example">
+                    <p><strong>Example:</strong> A taxi charges $3 plus $2 per mile.</p>
+                    <p>Cost function: C(m) = 3 + 2m</p>
                 </div>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
-                <li>What is a Function?</li>
+                <li>What Is a Function?</li>
                 <li>Function Notation</li>
                 <li>Domain & Range</li>
+                <li>Real‑World Functions</li>
             </ul>
 
             <div class="sidebar-card">
@@ -93,6 +130,7 @@
     <p>Functions describe relationships.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
