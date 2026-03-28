@@ -1,151 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Mastery | Inequalities</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inequalities | Algebra Mastery</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<main class="layout-two-column fade-in-up">
+<div class="page-shell fade-in-up">
 
-    <!-- MAIN LESSON CONTENT -->
-    <section class="content-area">
+    <header class="section-header">
+        <h1>Solving <span class="neon">Inequalities</span></h1>
+        <p>Learn how to compare values and solve inequality statements.</p>
+    </header>
 
-        <header class="section-header">
-            <h1 class="neon">Inequalities</h1>
-            <p>Learn how to solve, manipulate, and graph inequalities.</p>
-        </header>
+    <div class="layout-two-column">
 
-        <!-- SECTION 1 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">What Is an Inequality?</h2>
-            <p>
-                An inequality compares two values using symbols:
-            </p>
+        <section class="content-area">
 
-            <ul>
-                <li><span class="neon">&lt;</span> — less than</li>
-                <li><span class="neon">&gt;</span> — greater than</li>
-                <li><span class="neon">≤</span> — less than or equal to</li>
-                <li><span class="neon">≥</span> — greater than or equal to</li>
+            <section class="lesson-section fade-in">
+                <h2 class="neon">What is an Inequality?</h2>
+                <p>An inequality compares two values using symbols like:</p>
+                <ul>
+                    <li>&lt; (less than)</li>
+                    <li>&gt; (greater than)</li>
+                    <li>≤ (less than or equal to)</li>
+                    <li>≥ (greater than or equal to)</li>
+                </ul>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Solving Inequalities</h2>
+                <p>Treat inequalities like equations — except when multiplying or dividing by a negative.</p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Solve <strong>x + 3 &gt; 7</strong></p>
+                    <button class="btn-secondary" data-reveal="ineq1">Show Steps</button>
+                    <p id="ineq1" class="answer hidden">Subtract 3 → x &gt; <strong>4</strong></p>
+                </div>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Important Rule</h2>
+                <p>If you multiply or divide both sides by a negative number, the inequality sign flips.</p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Solve <strong>−2x ≤ 10</strong></p>
+                    <button class="btn-secondary" data-reveal="ineq2">Show Steps</button>
+                    <p id="ineq2" class="answer hidden">Divide by −2 → x ≥ <strong>−5</strong></p>
+                </div>
+            </section>
+
+        </section>
+
+        <aside class="sidebar slide-in-right">
+            <h2 class="neon">On This Page</h2>
+            <ul class="outline-list">
+                <li>What is an Inequality?</li>
+                <li>Solving Inequalities</li>
+                <li>Flipping the Sign</li>
             </ul>
 
-            <p class="example">
-                Example: <span class="neon">x + 3 &gt; 7</span>
-            </p>
-        </section>
-
-        <!-- SECTION 2 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Solving Inequalities</h2>
-            <p>
-                Solve inequalities just like equations — with one important exception.
-            </p>
-
-            <div class="glass example" style="padding: 16px;">
-                <strong class="neon">If you multiply or divide by a negative number, flip the inequality sign.</strong>
+            <div class="sidebar-card">
+                <h3 class="neon">Test Yourself</h3>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('inequalities')">
+                    Take Inequalities Quiz
+                </button>
             </div>
+        </aside>
 
-            <div class="interactive-example glass slide-up">
-                <p>Solve <span class="neon">x - 5 &lt; 2</span>.</p>
+    </div>
 
-                <button class="btn-outline" data-reveal="ineq-one-1">Reveal Answer</button>
+</div>
 
-                <p id="ineq-one-1" class="answer hidden">
-                    Add 5 → <span class="neon">x &lt; 7</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION 3 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Inequalities with Negatives</h2>
-
-            <div class="interactive-example glass slide-up">
-                <p>Solve <span class="neon">-3x ≥ 12</span>.</p>
-
-                <button class="btn-outline" data-reveal="ineq-neg-1">Reveal Answer</button>
-
-                <p id="ineq-neg-1" class="answer hidden">
-                    Divide by -3 → flip sign → <span class="neon">x ≤ -4</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION 4 -->
-        <section class="lesson-section fade-in">
-            <h2 class="neon">Graphing Solutions</h2>
-            <p>
-                Use:
-            </p>
-
-            <ul>
-                <li><strong>Open circle</strong> for <span class="neon">&lt;</span> or <span class="neon">&gt;</span></li>
-                <li><strong>Closed circle</strong> for <span class="neon">≤</span> or <span class="neon">≥</span></li>
-            </ul>
-
-            <p class="example">
-                <span class="neon">x ≥ 2</span> → closed circle at 2, shade right
-            </p>
-        </section>
-
-        <!-- PRACTICE -->
-        <section id="practice" class="lesson-section fade-in">
-            <h2 class="neon">Practice</h2>
-
-            <ol class="practice-list">
-                <li>Solve <span class="neon">x + 4 &gt; 9</span>.</li>
-                <li>Solve <span class="neon">2x ≤ 10</span>.</li>
-                <li>Solve <span class="neon">-5x &gt; 20</span>.</li>
-                <li>Graph the solution to <span class="neon">x &lt; -1</span>.</li>
-            </ol>
-
-            <button class="btn-primary" onclick="location.href='quizzes.html'">
-                Take Inequalities Quiz
-            </button>
-        </section>
-
-    </section>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar glass slide-in-right">
-        <h2 class="neon">Lesson Outline</h2>
-
-        <ol class="outline-list">
-            <li>What Is an Inequality?</li>
-            <li>Solving Inequalities</li>
-            <li>Inequalities with Negatives</li>
-            <li>Graphing Solutions</li>
-            <li><a href="#practice">Practice</a></li>
-        </ol>
-
-        <div class="sidebar-card glass">
-            <h3>Next Topic</h3>
-            <p>Move on to Graphing.</p>
-            <button class="btn-secondary" onclick="location.href='graphing.html'">
-                Go to Graphing
-            </button>
-        </div>
-    </aside>
-
-</main>
-
-<footer class="site-footer fade-in">
-    <p>Inequalities help describe ranges of possible values.</p>
+<footer class="site-footer">
+    <p>Comparisons reveal relationships.</p>
 </footer>
+
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
 
 </body>
 </html>
