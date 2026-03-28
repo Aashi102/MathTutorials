@@ -31,7 +31,9 @@
         <h1><span class="neon">Quadratics</span></h1>
         <p>
             Quadratic functions create parabolas. They appear in physics,
-            engineering, economics, and many real‑world models.
+            engineering, economics, and many real‑world models. Understanding
+            quadratics gives you the power to analyze curved motion, optimize
+            values, and solve a wide range of problems.
         </p>
     </header>
 
@@ -43,23 +45,75 @@
             <section class="lesson-section fade-in">
                 <h2 class="neon">Standard Form</h2>
                 <p>
-                    A quadratic is written as:
+                    A quadratic expression or function is written in the form:
                 </p>
-                <p class="neon"><strong>ax² + bx + c</strong></p>
+
+                <p class="neon" style="font-size: 1.4rem; margin-top: 10px;">
+                    <strong>ax² + bx + c</strong>
+                </p>
+
+                <p>
+                    Where:
+                </p>
+                <ul>
+                    <li><strong>a</strong> controls the width and direction of the parabola</li>
+                    <li><strong>b</strong> affects the tilt and position</li>
+                    <li><strong>c</strong> is the y‑intercept</li>
+                </ul>
+
+                <div class="example">
+                    <p><strong>Example:</strong> In the quadratic <strong>2x² − 3x + 1</strong>:</p>
+                    <ul>
+                        <li>a = 2</li>
+                        <li>b = −3</li>
+                        <li>c = 1</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- VERTEX -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Vertex</h2>
+                <h2 class="neon">Vertex of a Parabola</h2>
                 <p>
                     The vertex is the highest or lowest point of the parabola.
+                    If <strong>a > 0</strong>, the parabola opens upward (minimum).  
+                    If <strong>a < 0</strong>, it opens downward (maximum).
+                </p>
+
+                <p>
+                    For a quadratic in standard form, the x‑coordinate of the
+                    vertex is:
+                </p>
+
+                <p class="neon" style="font-size: 1.4rem; margin-top: 10px;">
+                    <strong>x = −b / (2a)</strong>
                 </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> y = (x − 2)² + 3</p>
-                    <button class="btn-secondary" data-reveal="quad1">Show Vertex</button>
-                    <p id="quad1" class="answer hidden">
-                        Vertex: <strong>(2, 3)</strong>
+                    <p><strong>Example:</strong> Find the vertex of <strong>y = x² − 4x + 3</strong></p>
+                    <button class="btn-secondary" data-reveal="quad-vertex">Show Steps</button>
+                    <p id="quad-vertex" class="answer hidden">
+                        a = 1, b = −4  
+                        x = −(−4) / (2 × 1) = 4 / 2 = 2  
+                        y = 2² − 4(2) + 3 = 4 − 8 + 3 = −1  
+                        Vertex: <strong>(2, −1)</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- FACTORING METHOD -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Solving by Factoring</h2>
+                <p>
+                    If a quadratic can be factored, set each factor equal to zero.
+                </p>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Solve <strong>x² − 5x + 6 = 0</strong></p>
+                    <button class="btn-secondary" data-reveal="quad-factor">Show Steps</button>
+                    <p id="quad-factor" class="answer hidden">
+                        Factor: (x − 2)(x − 3) = 0  
+                        Solutions: x = <strong>2</strong> or x = <strong>3</strong>
                     </p>
                 </div>
             </section>
@@ -68,16 +122,42 @@
             <section class="lesson-section fade-in">
                 <h2 class="neon">Quadratic Formula</h2>
                 <p>
-                    Use this when factoring is difficult:
+                    When factoring is difficult or impossible, use the quadratic formula:
                 </p>
-                <p class="neon"><strong>x = (−b ± √(b² − 4ac)) / 2a</strong></p>
+
+                <p class="neon" style="font-size: 1.4rem; margin-top: 10px;">
+                    <strong>x = (−b ± √(b² − 4ac)) / (2a)</strong>
+                </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> Solve x² − 5x + 6 = 0</p>
-                    <button class="btn-secondary" data-reveal="quad2">Show Steps</button>
-                    <p id="quad2" class="answer hidden">
-                        Roots: <strong>2</strong> and <strong>3</strong>
+                    <p><strong>Example:</strong> Solve <strong>2x² + 3x − 2 = 0</strong></p>
+                    <button class="btn-secondary" data-reveal="quad-formula">Show Steps</button>
+                    <p id="quad-formula" class="answer hidden">
+                        a = 2, b = 3, c = −2  
+                        Discriminant = 3² − 4(2)(−2) = 9 + 16 = 25  
+                        x = (−3 ± √25) / 4  
+                        x = (−3 ± 5) / 4  
+                        Solutions: x = <strong>1/2</strong> or x = <strong>−2</strong>
                     </p>
+                </div>
+            </section>
+
+            <!-- DISCRIMINANT -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">The Discriminant</h2>
+                <p>
+                    The discriminant <strong>(b² − 4ac)</strong> tells you how many real solutions a quadratic has.
+                </p>
+
+                <ul>
+                    <li><strong>&gt; 0</strong> → two real solutions</li>
+                    <li><strong>= 0</strong> → one real solution</li>
+                    <li><strong>&lt; 0</strong> → no real solutions</li>
+                </ul>
+
+                <div class="example">
+                    <p><strong>Example:</strong> For x² + 2x + 5:</p>
+                    <p>b² − 4ac = 4 − 20 = −16 → no real solutions</p>
                 </div>
             </section>
 
@@ -89,7 +169,9 @@
             <ul class="outline-list">
                 <li>Standard Form</li>
                 <li>Vertex</li>
+                <li>Factoring</li>
                 <li>Quadratic Formula</li>
+                <li>Discriminant</li>
             </ul>
 
             <div class="sidebar-card">
@@ -112,7 +194,9 @@
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
-            <h3 class="
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
         <div class="modal-body"></div>
     </div>
 </div>
