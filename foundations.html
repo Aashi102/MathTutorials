@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundations | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,20 +29,127 @@
 
     <header class="section-header">
         <h1>Algebra <span class="neon">Foundations</span></h1>
-        <p>Build the essential skills needed for all algebra topics.</p>
+        <p>
+            Before you can solve equations or graph lines, you need to understand
+            the basic building blocks of algebra: variables, expressions, and
+            the order of operations.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- WHAT IS ALGEBRA -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">What is Algebra?</h2>
-                <p>Algebra is the language of patterns, relationships, and problem‑solving.</p>
-                <p>It uses symbols (like <strong>x</strong>) to represent unknown values.</p>
+                <h2 class="neon">What Is Algebra?</h2>
+                <p>
+                    Algebra is the language of patterns and relationships. It lets
+                    us describe how quantities change and how they relate to each
+                    other. Instead of working with specific numbers, we work with
+                    symbols that can represent many possible values.
+                </p>
+
+                <div class="example">
+                    <p><strong>Example:</strong></p>
+                    <p>
+                        If a movie ticket costs <strong>$x</strong> and you buy 3 tickets,
+                        the total cost is <strong>3x</strong>. This works whether the ticket
+                        costs $5, $10, or $12.50.
+                    </p>
+                </div>
             </section>
 
+            <!-- VARIABLES -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Variables</h2>
-                <p>A variable is a letter that represents a number.</p>
+                <p>
+                    A variable is a letter that represents a number. It allows us
+                    to write general rules instead of specific cases.
+                </p>
 
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> In the expression <strong>x + 5</strong>, the variable is <strong>x</strong>.</p>
+                    <button class="btn-secondary" data-reveal="var1">Show Explanation</button>
+                    <p id="var1" class="answer hidden">
+                        Variables make algebra flexible. Instead of solving one
+                        problem, you solve a whole family of problems at once.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ORDER OF OPERATIONS -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Order of Operations</h2>
+                <p>
+                    To avoid confusion, mathematicians agreed on a standard order
+                    for evaluating expressions. You may know it as PEMDAS:
+                </p>
+
+                <ul>
+                    <li>Parentheses</li>
+                    <li>Exponents</li>
+                    <li>Multiplication & Division</li>
+                    <li>Addition & Subtraction</li>
+                </ul>
+
+                <div class="interactive-example">
+                    <p><strong>Example:</strong> Evaluate <strong>3 + 2 × 4</strong></p>
+                    <button class="btn-secondary" data-reveal="pem1">Show Answer</button>
+                    <p id="pem1" class="answer hidden">
+                        Multiply first: 2 × 4 = 8 → then add: 3 + 8 = <strong>11</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- PRACTICE PROMPTS -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Try These</h2>
+                <ul class="practice-list">
+                    <li>Identify the variable in <strong>7 + y</strong>.</li>
+                    <li>Evaluate <strong>2(3 + 4)</strong>.</li>
+                    <li>Simplify <strong>5 + 3 × 2</strong>.</li>
+                </ul>
+            </section>
+
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar slide-in-right">
+            <h2 class="neon">On This Page</h2>
+            <ul class="outline-list">
+                <li>What Is Algebra?</li>
+                <li>Variables</li>
+                <li>Order of Operations</li>
+                <li>Practice</li>
+            </ul>
+
+            <div class="sidebar-card">
+                <h3 class="neon">Test Yourself</h3>
+                <button class="btn-primary" onclick="quizEngine.startQuiz('foundations')">
+                    Take Foundations Quiz
+                </button>
+            </div>
+        </aside>
+
+    </div>
+
+</div>
+
+<footer class="site-footer">
+    <p>Strong foundations lead to strong mastery.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
+
+</body>
+</html>
