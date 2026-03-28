@@ -1,71 +1,122 @@
-/* ============================================================
-   FUTURISTIC INTERACTION SYSTEM
-   Global Script for Algebra Mastery Platform
-   ============================================================ */
+/* =========================================================
+   Algebra Mastery – Global Script
+   - Manual theme toggle
+   - Scroll reveal animations
+   - Interactive example reveal
+   - Modal system (for quizzes)
+   - Utility helpers
+   ========================================================= */
 
 /* ------------------------------
-   Scroll-triggered animations
+   Utility Helpers
 ------------------------------ */
-const animatedElements = document.querySelectorAll(
-    ".fade-in, .fade-in-up, .slide-up, .slide-in-right, .stagger > *"
-);
+const qs = (sel, parent = document) => parent.querySelector(sel);
+const qsa = (sel, parent = document) => [...parent.querySelectorAll(sel)];
 
-function revealOnScroll() {
-    const trigger = window.innerHeight * 0.88;
+/* ------------------------------
+   Theme Toggle (Manual Only)
+------------------------------ */
+const themeToggle = qs(".theme-toggle");
+const body = document.body;
 
-    animatedElements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < trigger) el.classList.add("visible");
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+    body.classList.add("theme-light");
+}
+
+// Toggle theme
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        body.classList.toggle("theme-light");
+
+        // Save preference
+        const isLight = body.classList.contains("theme-light");
+        localStorage.setItem("theme", isLight ? "light" : "dark");
     });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+/* ------------------------------
+   Scroll Reveal Animations
+------------------------------ */
+const revealElements = qsa(
+    ".fade-in, .fade-in-up, .slide-in-right, .slide-up"
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+revealElements.forEach((el) => observer.observe(el));
 
 /* ------------------------------
-   Reveal Answer Buttons
+   Interactive Example Reveal
 ------------------------------ */
-document.querySelectorAll("[data-reveal]").forEach(btn => {
+qsa("[data-reveal]").forEach((btn) => {
     btn.addEventListener("click", () => {
         const id = btn.getAttribute("data-reveal");
-        document.getElementById(id).classList.remove("hidden");
-        btn.style.display = "none";
+        const answer = qs(`#${id}`);
+        if (answer) {
+            answer.classList.remove("hidden");
+            answer.style.opacity = "0";
+            answer.style.transform = "translateY(6px)";
+            setTimeout(() => {
+                answer.style.transition = "320ms ease-out";
+                answer.style.opacity = "1";
+                answer.style.transform = "translateY(0)";
+            }, 10);
+        }
     });
 });
 
 /* ------------------------------
-   Quiz Modal Engine
+   Modal System (Quiz Engine Ready)
 ------------------------------ */
-const quizOverlay = document.getElementById("quiz-overlay");
-const closeQuiz = document.getElementById("close-quiz");
-const quizButtons = document.querySelectorAll("[data-quiz]");
+const modalBackdrop = qs(".modal-backdrop");
+const modalCloseBtn = qs(".modal-close");
 
-quizButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        quizOverlay.classList.remove("hidden");
-        document.getElementById("quiz-title").textContent =
-            btn.dataset.quiz.charAt(0).toUpperCase() +
-            btn.dataset.quiz.slice(1) +
-            " Quiz";
+export function openModal() {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.add("active");
+}
+
+export function closeModal() {
+    if (!modalBackdrop) return;
+    modalBackdrop.classList.remove("active");
+}
+
+// Close button
+if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", closeModal);
+}
+
+// Click outside to close
+if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", (e) => {
+        if (e.target === modalBackdrop) closeModal();
     });
-});
+}
 
-closeQuiz.addEventListener("click", () => {
-    quizOverlay.classList.add("hidden");
+// Escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
 });
 
 /* ------------------------------
-   Theme Toggle
+   Quiz Engine Hook
 ------------------------------ */
-document.getElementById("toggle-theme")?.addEventListener("click", () => {
-    document.body.classList.toggle("theme-light");
-});
-
-/* ------------------------------
-   Sidebar Filters (Practice Page)
------------------------------- */
-document.getElementById("reset-filters")?.addEventListener("click", () => {
-    document.querySelectorAll(".sidebar input[type='checkbox']").forEach(cb => {
-        cb.checked = true;
-    });
-});
+window.quizEngine = {
+    startQuiz(topic) {
+        console.log("Quiz starting:", topic);
+        openModal();
+        // The full engine will plug in here
+    },
+};
