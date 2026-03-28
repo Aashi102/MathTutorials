@@ -1,169 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algebra Mastery | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="top-nav fade-in">
-    <div class="logo">Algebra<span>Mastery</span></div>
-    <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
-    <button id="toggle-theme" class="btn-outline">Toggle Theme</button>
+<!-- NAVIGATION -->
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <div class="logo">Algebra<span>Mastery</span></div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
+    </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero-section fade-in-up">
-    <div class="hero-content">
-        <h1 class="hero-title neon">Master Algebra with Confidence</h1>
-        <p class="hero-subtitle">
-            A futuristic learning experience with guided lessons, interactive practice, and smart quizzes.
-        </p>
+<!-- PAGE CONTENT -->
+<div class="page-shell fade-in-up">
 
-        <div class="hero-actions">
-            <a href="foundations.html" class="btn-primary">Start Learning</a>
-            <a href="practice.html" class="btn-secondary">Practice Problems</a>
+    <header class="section-header">
+        <h1>Welcome to <span class="neon">Algebra Mastery</span></h1>
+        <p>Your futuristic learning platform for mastering algebra with clarity, structure, and style.</p>
+    </header>
+
+    <section class="lesson-section fade-in">
+        <h2 class="neon">Start Learning</h2>
+        <p>Choose a topic and begin your journey through clean explanations, interactive examples, and structured practice.</p>
+
+        <div class="content-area" style="gap: var(--space-md); margin-top: var(--space-md);">
+            <a class="btn-primary" href="practice.html">Go to Practice</a>
+            <a class="btn-secondary" href="quizzes.html">Take a Quiz</a>
         </div>
+    </section>
 
-        <div class="hero-meta">
-            <span>✔ Interactive Lessons</span>
-            <span>✔ Smart Feedback</span>
-            <span>✔ Track Progress</span>
-        </div>
-    </div>
+    <section class="lesson-section fade-in">
+        <h2 class="neon">Topics Covered</h2>
+        <ul>
+            <li>Foundations</li>
+            <li>Expressions</li>
+            <li>Equations</li>
+            <li>Inequalities</li>
+            <li>Graphing</li>
+            <li>Polynomials</li>
+            <li>Factoring</li>
+            <li>Quadratics</li>
+            <li>Functions</li>
+            <li>Word Problems</li>
+        </ul>
+    </section>
 
-    <div class="hero-visual slide-in-right">
-        <div class="glass hero-card glow-border">
-            <h2 class="neon">Today’s Focus</h2>
-            <p>Simplifying Expressions</p>
+</div>
 
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 45%;"></div>
-            </div>
-            <p class="progress-label">45% Complete</p>
-
-            <button class="btn-secondary" onclick="location.href='expressions.html'">
-                Continue Expressions
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- STATS STRIP -->
-<section class="stats-strip stagger">
-    <div class="stat-card glass slide-up">
-        <h3 class="neon">10+</h3>
-        <p>Core Topics</p>
-    </div>
-    <div class="stat-card glass slide-up">
-        <h3 class="neon">100+</h3>
-        <p>Practice Problems</p>
-    </div>
-    <div class="stat-card glass slide-up">
-        <h3 class="neon">Smart</h3>
-        <p>Step-by-Step Hints</p>
-    </div>
-</section>
-
-<!-- TOPIC GRID -->
-<section class="topics-section fade-in">
-    <div class="section-header">
-        <h2 class="neon">Explore Topics</h2>
-        <p>Move through Algebra in a structured, futuristic learning flow.</p>
-    </div>
-
-    <div class="topics-grid stagger">
-        <a class="topic-card glass slide-up" href="foundations.html">
-            <h3>Algebra Foundations</h3>
-            <p>Start with the basics.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="expressions.html">
-            <h3>Expressions</h3>
-            <p>Simplify and evaluate expressions.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="equations.html">
-            <h3>Equations</h3>
-            <p>Solve linear and multi-step equations.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="inequalities.html">
-            <h3>Inequalities</h3>
-            <p>Graph and solve inequalities.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="graphing.html">
-            <h3>Graphing</h3>
-            <p>Coordinate plane & linear graphs.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="polynomials.html">
-            <h3>Polynomials</h3>
-            <p>Operations & structure.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="factoring.html">
-            <h3>Factoring</h3>
-            <p>Factor expressions & trinomials.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="quadratics.html">
-            <h3>Quadratics</h3>
-            <p>Parabolas & quadratic equations.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="functions.html">
-            <h3>Functions</h3>
-            <p>Inputs, outputs, and notation.</p>
-        </a>
-
-        <a class="topic-card glass slide-up" href="wordproblems.html">
-            <h3>Word Problems</h3>
-            <p>Apply algebra to real life.</p>
-        </a>
-    </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how-it-works fade-in-up">
-    <div class="section-header">
-        <h2 class="neon">How It Works</h2>
-        <p>A structured, supportive learning system.</p>
-    </div>
-
-    <div class="steps-grid stagger">
-        <div class="step-card glass slide-up">
-            <span class="step-number neon">1</span>
-            <h3>Learn</h3>
-            <p>Short, focused lessons with examples.</p>
-        </div>
-
-        <div class="step-card glass slide-up">
-            <span class="step-number neon">2</span>
-            <h3>Practice</h3>
-            <p>Targeted problems with hints.</p>
-        </div>
-
-        <div class="step-card glass slide-up">
-            <span class="step-number neon">3</span>
-            <h3>Quiz</h3>
-            <p>Check your understanding.</p>
-        </div>
-    </div>
-</section>
-
-<footer class="site-footer fade-in">
-    <p>Algebra Mastery • Built for the future of learning.</p>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <p>Built for clarity. Designed for mastery.</p>
 </footer>
+
+<!-- MODAL (Quiz Engine Ready) -->
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body">
+            <!-- Quiz engine will inject content here -->
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
