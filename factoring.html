@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factoring | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,37 +29,51 @@
 
     <header class="section-header">
         <h1><span class="neon">Factoring</span> Techniques</h1>
-        <p>Break expressions into simpler pieces to reveal structure.</p>
+        <p>
+            Factoring breaks expressions into simpler pieces. It’s the reverse of
+            multiplying and is essential for solving many equations.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- GCF -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Greatest Common Factor (GCF)</h2>
-                <p>Factor out the largest shared value.</p>
+                <p>
+                    The GCF is the largest value that divides all terms.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Factor 6x + 12</p>
                     <button class="btn-secondary" data-reveal="fac1">Show Answer</button>
-                    <p id="fac1" class="answer hidden">GCF = 6 → <strong>6(x + 2)</strong></p>
+                    <p id="fac1" class="answer hidden">
+                        GCF = 6 → <strong>6(x + 2)</strong>
+                    </p>
                 </div>
             </section>
 
+            <!-- TRINOMIALS -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Factoring Trinomials</h2>
-                <p>Look for two numbers that multiply to c and add to b.</p>
+                <p>
+                    Look for two numbers that multiply to c and add to b.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> x² + 5x + 6</p>
                     <button class="btn-secondary" data-reveal="fac2">Show Steps</button>
-                    <p id="fac2" class="answer hidden">(x + 2)(x + 3)</p>
+                    <p id="fac2" class="answer hidden">
+                        Numbers: 2 and 3 → (x + 2)(x + 3)
+                    </p>
                 </div>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
@@ -82,9 +94,10 @@
 </div>
 
 <footer class="site-footer">
-    <p>Factoring reveals hidden structure.</p>
+    <p>Factoring reveals structure.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
