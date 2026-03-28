@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problems</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header class="hero small-hero">
+    <h1>Practice Problems</h1>
+    <p>Test your skills across all algebra topics.</p>
+</header>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="practice.html">Practice</a>
+    <a href="quizzes.html">Quizzes</a>
+</nav>
+
+<div class="container">
+
+    <h2>🧮 Mixed Practice</h2>
+
+    <div class="try-box">
+        <p>1. Solve: <strong>x + 9 = 14</strong></p>
+        <input id="p1" placeholder="Answer...">
+        <button class="btn" onclick="check('p1', 5, 'pr1')">Check</button>
+        <p id="pr1" class="result"></p>
+    </div>
+
+    <div class="try-box">
+        <p>2. Simplify: <strong>3x + 4x</strong></p>
+        <input id="p2" placeholder="Answer...">
+        <button class="btn" onclick="check('p2', '7x', 'pr2')">Check</button>
+        <p id="pr2" class="result"></p>
+    </div>
+
+    <div class="try-box">
+        <p>3. Factor: <strong>x² + 3x + 2</strong></p>
+        <input id="p3" placeholder="Answer...">
+        <button class="btn" onclick="check('p3', '(x+1)(x+2)', 'pr3')">Check</button>
+        <p id="pr3" class="result"></p>
+    </div>
+
+    <div class="try-box">
+        <p>4. Evaluate f(3) if f(x) = 2x − 1</strong></p>
+        <input id="p4" placeholder="Answer...">
+        <button class="btn" onclick="check('p4', 5, 'pr4')">Check</button>
+        <p id="pr4" class="result"></p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Algebra Learning Hub
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
