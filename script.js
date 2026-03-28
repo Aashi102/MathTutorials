@@ -1,54 +1,71 @@
-// Basic input check for short answers
-function check(inputId, correctAnswer, resultId) {
-    const user = document.getElementById(inputId).value.trim();
-    const result = document.getElementById(resultId);
+/* ============================================================
+   FUTURISTIC INTERACTION SYSTEM
+   Global Script for Algebra Mastery Platform
+   ============================================================ */
 
-    // Normalize answers
-    const normalizedUser = user.replace(/\s+/g, '').toLowerCase();
-    const normalizedCorrect = String(correctAnswer).replace(/\s+/g, '').toLowerCase();
+/* ------------------------------
+   Scroll-triggered animations
+------------------------------ */
+const animatedElements = document.querySelectorAll(
+    ".fade-in, .fade-in-up, .slide-up, .slide-in-right, .stagger > *"
+);
 
-    if (normalizedUser === normalizedCorrect) {
-        result.textContent = "🎉 Correct!";
-        result.style.color = "green";
-    } else {
-        result.textContent = "❌ Try again.";
-        result.style.color = "red";
-    }
+function revealOnScroll() {
+    const trigger = window.innerHeight * 0.88;
+
+    animatedElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add("visible");
+    });
 }
 
-// Quick practice on homepage
-function quickCheck() {
-    const user = document.getElementById("quickInput").value;
-    const result = document.getElementById("quickResult");
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-    if (parseInt(user) === 8) {
-        result.textContent = "🎉 Correct!";
-        result.style.color = "green";
-    } else {
-        result.textContent = "❌ Try again.";
-        result.style.color = "red";
-    }
-}
+/* ------------------------------
+   Reveal Answer Buttons
+------------------------------ */
+document.querySelectorAll("[data-reveal]").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-reveal");
+        document.getElementById(id).classList.remove("hidden");
+        btn.style.display = "none";
+    });
+});
 
-// Quiz grading
-function gradeQuiz() {
-    const answers = {
-        q1: "7",
-        q2: "7x",
-        q3: "(x+1)(x+2)"
-    };
+/* ------------------------------
+   Quiz Modal Engine
+------------------------------ */
+const quizOverlay = document.getElementById("quiz-overlay");
+const closeQuiz = document.getElementById("close-quiz");
+const quizButtons = document.querySelectorAll("[data-quiz]");
 
-    let score = 0;
-    let total = Object.keys(answers).length;
+quizButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        quizOverlay.classList.remove("hidden");
+        document.getElementById("quiz-title").textContent =
+            btn.dataset.quiz.charAt(0).toUpperCase() +
+            btn.dataset.quiz.slice(1) +
+            " Quiz";
+    });
+});
 
-    for (let q in answers) {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value.replace(/\s+/g, '') === answers[q].replace(/\s+/g, '')) {
-            score++;
-        }
-    }
+closeQuiz.addEventListener("click", () => {
+    quizOverlay.classList.add("hidden");
+});
 
-    const result = document.getElementById("quizResult");
-    result.textContent = `You scored ${score} out of ${total}.`;
-    result.style.color = score === total ? "green" : "blue";
-}
+/* ------------------------------
+   Theme Toggle
+------------------------------ */
+document.getElementById("toggle-theme")?.addEventListener("click", () => {
+    document.body.classList.toggle("theme-light");
+});
+
+/* ------------------------------
+   Sidebar Filters (Practice Page)
+------------------------------ */
+document.getElementById("reset-filters")?.addEventListener("click", () => {
+    document.querySelectorAll(".sidebar input[type='checkbox']").forEach(cb => {
+        cb.checked = true;
+    });
+});
