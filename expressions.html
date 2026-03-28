@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expressions | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,49 +29,105 @@
 
     <header class="section-header">
         <h1>Algebraic <span class="neon">Expressions</span></h1>
-        <p>Learn how to simplify, evaluate, and manipulate expressions.</p>
+        <p>
+            Expressions are the building blocks of algebra. They represent
+            quantities that may change and allow us to describe patterns,
+            relationships, and rules.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- WHAT IS AN EXPRESSION -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">What is an Expression?</h2>
-                <p>An expression is a combination of numbers, variables, and operations.</p>
-                <p>Unlike equations, expressions do <strong>not</strong> have an equals sign.</p>
+                <h2 class="neon">What Is an Expression?</h2>
+                <p>
+                    An expression is a combination of numbers, variables, and
+                    operations. Unlike equations, expressions do <strong>not</strong> have an
+                    equals sign.
+                </p>
+
+                <div class="example">
+                    <p><strong>Examples:</strong></p>
+                    <ul>
+                        <li>3x + 5</li>
+                        <li>7 − y</li>
+                        <li>2(a + 4)</li>
+                    </ul>
+                </div>
             </section>
 
+            <!-- LIKE TERMS -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Combining Like Terms</h2>
-                <p>Terms are “like” if they have the same variable and exponent.</p>
+                <p>
+                    Terms are “like” if they have the same variable part. You can
+                    combine them by adding or subtracting their coefficients.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Simplify <strong>3x + 5x</strong></p>
                     <button class="btn-secondary" data-reveal="exp1">Show Answer</button>
                     <p id="exp1" class="answer hidden">3x + 5x = <strong>8x</strong></p>
                 </div>
+
+                <div class="example">
+                    <p><strong>More examples:</strong></p>
+                    <ul>
+                        <li>4y − 2y = 2y</li>
+                        <li>7a + 3a = 10a</li>
+                        <li>9m − m = 8m</li>
+                    </ul>
+                </div>
             </section>
 
+            <!-- EVALUATING EXPRESSIONS -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Evaluating Expressions</h2>
-                <p>Substitute values for variables.</p>
+                <p>
+                    To evaluate an expression, substitute a value for the
+                    variable and simplify.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> Evaluate <strong>2x + 3</strong> when <strong>x = 4</strong></p>
                     <button class="btn-secondary" data-reveal="exp2">Show Answer</button>
                     <p id="exp2" class="answer hidden">2(4) + 3 = 8 + 3 = <strong>11</strong></p>
                 </div>
+
+                <div class="example">
+                    <p><strong>Try these:</strong></p>
+                    <ul>
+                        <li>Evaluate 5x − 2 when x = 3</li>
+                        <li>Evaluate 3(a + 1) when a = 7</li>
+                        <li>Evaluate 10 − y when y = 6</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- PRACTICE -->
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Practice Problems</h2>
+                <ul class="practice-list">
+                    <li>Simplify: 6x + 2x</li>
+                    <li>Simplify: 9y − 4y</li>
+                    <li>Evaluate: 3x + 1 when x = 5</li>
+                    <li>Evaluate: 2(a − 3) when a = 10</li>
+                </ul>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
-                <li>What is an Expression?</li>
+                <li>What Is an Expression?</li>
                 <li>Like Terms</li>
                 <li>Evaluating Expressions</li>
+                <li>Practice</li>
             </ul>
 
             <div class="sidebar-card">
@@ -89,9 +143,10 @@
 </div>
 
 <footer class="site-footer">
-    <p>Expressions are the building blocks of algebra.</p>
+    <p>Expressions are the language of algebra.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
