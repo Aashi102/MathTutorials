@@ -710,6 +710,7 @@ function buildFinalExamQuestions() {
             topic: topicKey
         })));
     });
+    // Simple shuffle
     for (let i = allQuestions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
@@ -718,43 +719,7 @@ function buildFinalExamQuestions() {
 }
 
 // =========================
-// AI ENGINE (MASTERY MODEL)
-// =========================
-const AIEngine = {
-    userModel: {
-        attempts: 0,
-        correct: 0,
-        accuracy: 1,
-        history: []
-    },
-
-    reset() {
-        this.userModel = {
-            attempts: 0,
-            correct: 0,
-            accuracy: 1,
-            history: []
-        };
-    },
-
-    record(isCorrect) {
-        const m = this.userModel;
-        m.attempts++;
-        if (isCorrect) m.correct++;
-        m.history.push(isCorrect);
-        m.accuracy = m.correct / m.attempts;
-    },
-
-    masteryLabel(percent) {
-        if (percent >= 90) return 'Expert';
-        if (percent >= 80) return 'Strong';
-        if (percent >= 60) return 'Developing';
-        return 'Needs Practice';
-    }
-};
-
-// =========================
-// QUIZ ENGINE + TIMER + EXAM
+// QUIZ ENGINE + TIMER
 // =========================
 const quizEngine = (function () {
     let currentQuiz = null;
@@ -775,7 +740,6 @@ const quizEngine = (function () {
         currentIndex = 0;
         userAnswers = new Array(currentQuestions.length).fill(null);
         timeRemaining = quiz.timeLimitSeconds;
-        AIEngine.reset();
 
         renderQuizModal();
         startTimer();
@@ -791,7 +755,6 @@ const quizEngine = (function () {
         currentIndex = 0;
         userAnswers = new Array(currentQuestions.length).fill(null);
         timeRemaining = finalExamConfig.timeLimitSeconds;
-        AIEngine.reset();
 
         renderQuizModal();
         startTimer();
@@ -897,22 +860,20 @@ const quizEngine = (function () {
     function manualSubmit() {
         const confirmSubmit = confirm('Are you sure you want to submit?');
         if (!confirmSubmit) return;
-        finishQuiz(false);
+        finishQuiz();
     }
 
     function autoSubmit() {
         alert('Time is up! Your quiz will be submitted automatically.');
-        finishQuiz(true);
+        finishQuiz();
     }
 
-    function finishQuiz(autoSubmitted) {
+    function finishQuiz() {
         if (timerId) clearInterval(timerId);
 
         let correct = 0;
         currentQuestions.forEach((q, idx) => {
-            const isCorrect = userAnswers[idx] === q.answer;
-            if (isCorrect) correct++;
-            AIEngine.record(isCorrect);
+            if (userAnswers[idx] === q.answer) correct++;
         });
 
         const total = currentQuestions.length;
@@ -920,8 +881,6 @@ const quizEngine = (function () {
         const timeUsed = (currentQuiz.timeLimitSeconds || finalExamConfig.timeLimitSeconds) - timeRemaining;
         const minutesUsed = Math.floor(timeUsed / 60);
         const secondsUsed = timeUsed % 60;
-
-        const mastery = AIEngine.masteryLabel(percent);
 
         let message = '';
         if (percent === 100) message = 'Perfect score! Incredible work.';
@@ -931,56 +890,55 @@ const quizEngine = (function () {
 
         let extra = '';
         if (isFinalExam) {
-            if (percent >= 80) {
-                extra = `<p class="exam-pass">You passed the final exam! You qualify for a certificate.</p>`;
-            } else {
-                extra = `<p class="exam-fail">You did not reach the passing threshold. Review and try the exam again.</p>`;
-            }
+            extra = `
+                <div class="mt-md">
+                    <button class="btn-primary final-certificate-btn">Generate Certificate</button>
+                </div>
+            `;
         }
 
-        const content = `
+        const resultHTML = `
             <div class="quiz-results">
-                <h2>${currentQuiz.title} — Results</h2>
-                <p><strong>Score:</strong> ${correct} / ${total} (${percent}%)</p>
-                <p><strong>Mastery:</strong> ${mastery}</p>
-                <p><strong>Time Used:</strong> ${minutesUsed}:${secondsUsed.toString().padStart(2, '0')}</p>
-                <p>${message}</p>
-                ${autoSubmitted ? '<p>(Auto-submitted due to time.)</p>' : ''}
-                ${extra}
+                <h3>Your Score</h3>
+                <p><strong>${correct}</strong> out of <strong>${total}</strong> (${percent}%)</p>
+                <p>Time used: ${minutesUsed}:${secondsUsed.toString().padStart(2, '0')}</p>
+                <p class="text-soft">${message}</p>
                 <div class="quiz-results-actions">
-                    <button class="btn-secondary quiz-close">Close</button>
-                    <button class="btn-primary quiz-retry">Retry</button>
+                    <button class="btn-secondary quiz-retake">Retake</button>
+                    <button class="btn-outline quiz-close">Close</button>
                 </div>
+                ${extra}
             </div>
         `;
 
-        openModal('Results', content);
+        openModal(currentQuiz.title, resultHTML);
 
+        const retakeBtn = modalBody.querySelector('.quiz-retake');
         const closeBtn = modalBody.querySelector('.quiz-close');
-        const retryBtn = modalBody.querySelector('.quiz-retry');
+        const certBtn = modalBody.querySelector('.final-certificate-btn');
 
-        closeBtn.addEventListener('click', () => {
-            closeModal();
-        });
-
-        retryBtn.addEventListener('click', () => {
+        retakeBtn.addEventListener('click', () => {
             if (isFinalExam) {
                 startFinalExam();
             } else {
-                // restart same topic
-                const topicKey = currentQuestions[0].topic || null;
-                if (topicKey && quizBank[topicKey]) {
-                    startQuiz(topicKey);
-                } else {
-                    // fallback: restart current quiz object
-                    isFinalExam ? startFinalExam() : startQuiz(findTopicKeyForQuiz(currentQuiz));
-                }
+                startQuiz(getCurrentTopicKey());
             }
         });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        if (certBtn && isFinalExam) {
+            certBtn.addEventListener('click', () => {
+                alert('Certificate generated! (Hook this into your certificate system.)');
+            });
+        }
     }
 
-    function findTopicKeyForQuiz(quizObj) {
-        return Object.keys(quizBank).find(k => quizBank[k] === quizObj) || null;
+    function getCurrentTopicKey() {
+        if (isFinalExam) return null;
+        // best-effort: match by title
+        const entry = Object.entries(quizBank).find(([key, val]) => val.title === currentQuiz.title);
+        return entry ? entry[0] : null;
     }
 
     return {
@@ -989,134 +947,5 @@ const quizEngine = (function () {
     };
 })();
 
-// =========================
-// ANIMATED GRAPH ENGINE
-// =========================
-class AnimatedGraph {
-    constructor(canvasId, fn, options = {}) {
-        this.canvas = document.getElementById(canvasId);
-        if (!this.canvas) return;
-
-        this.ctx = this.canvas.getContext("2d");
-        this.fn = fn;
-
-        const rootStyles = getComputedStyle(document.documentElement);
-        this.color = options.color || rootStyles.getPropertyValue("--accent").trim() || "#4f46e5";
-        this.axisColor = options.axisColor || rootStyles.getPropertyValue("--border").trim() || "#cccccc";
-
-        this.duration = options.duration || 1200;
-        this.steps = options.steps || 200;
-        this.scale = options.scale || 40;
-        this.padding = options.padding || 40;
-
-        this.resize = this.resize.bind(this);
-        this.animatePlot = this.animatePlot.bind(this);
-
-        this.resize();
-        window.addEventListener("resize", this.resize);
-    }
-
-    resize() {
-        const rect = this.canvas.getBoundingClientRect();
-        this.canvas.width = rect.width;
-        this.canvas.height = rect.height || 300;
-        this.drawAxes();
-        this.animatePlot();
-    }
-
-    drawAxes() {
-        const ctx = this.ctx;
-        const w = this.canvas.width;
-        const h = this.canvas.height;
-
-        ctx.clearRect(0, 0, w, h);
-
-        ctx.strokeStyle = this.axisColor;
-        ctx.lineWidth = 1;
-
-        // X-axis
-        ctx.beginPath();
-        ctx.moveTo(0, h / 2);
-        ctx.lineTo(w, h / 2);
-        ctx.stroke();
-
-        // Y-axis
-        ctx.beginPath();
-        ctx.moveTo(w / 2, 0);
-        ctx.lineTo(w / 2, h);
-        ctx.stroke();
-    }
-
-    animatePlot() {
-        const ctx = this.ctx;
-        const w = this.canvas.width;
-        const h = this.canvas.height;
-
-        let progress = 0;
-        const step = 1 / this.steps;
-
-        const animate = () => {
-            progress += step;
-            if (progress > 1) progress = 1;
-
-            this.drawAxes();
-
-            ctx.strokeStyle = this.color;
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-
-            for (let x = 0; x < w * progress; x++) {
-                const graphX = (x - w / 2) / this.scale;
-                const graphY = this.fn(graphX);
-                const y = h / 2 - graphY * this.scale;
-
-                if (x === 0) ctx.moveTo(x, y);
-                else ctx.lineTo(x, y);
-            }
-
-            ctx.stroke();
-
-            if (progress < 1) requestAnimationFrame(animate);
-        };
-
-        animate();
-    }
-}
-
-// =========================
-// GRAPH DEMOS (OPTIONAL)
-// =========================
-function initGraphs() {
-    if (document.getElementById("graph-quadratic")) {
-        new AnimatedGraph("graph-quadratic", x => x * x);
-    }
-    if (document.getElementById("graph-sine")) {
-        new AnimatedGraph("graph-sine", x => Math.sin(x), { color: "#f97316" });
-    }
-    if (document.getElementById("graph-absolute")) {
-        new AnimatedGraph("graph-absolute", x => Math.abs(x), { color: "#22c55e" });
-    }
-}
-
-// =========================
-// INIT HOOKS
-// =========================
-document.addEventListener('DOMContentLoaded', () => {
-    // Quiz topic buttons: <button data-quiz-topic="foundations">
-    document.querySelectorAll('[data-quiz-topic]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const topic = btn.getAttribute('data-quiz-topic');
-            quizEngine.startQuiz(topic);
-        });
-    });
-
-    // Final exam button: <button data-final-exam>
-    const finalExamBtn = document.querySelector('[data-final-exam]');
-    if (finalExamBtn) {
-        finalExamBtn.addEventListener('click', () => {
-            quizEngine.startFinalExam();
-        });
-    }
-
-    initGraphs();
-});
+// Expose globally for inline onclick handlers
+window.quizEngine = quizEngine;
