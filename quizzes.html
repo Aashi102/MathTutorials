@@ -3,58 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Quizzes</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Algebra Mastery | Quizzes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+<body class="theme-light">
 
-<body>
-
-<header class="hero small-hero">
-    <h1>Algebra Quizzes</h1>
-    <p>Test your understanding with auto‑graded quizzes.</p>
+<header class="top-nav fade-in">
+    <div class="logo">Algebra<span>Mastery</span></div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="practice.html">Practice</a>
+        <a href="quizzes.html" class="active">Quizzes</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="practice.html">Practice</a>
-    <a href="quizzes.html">Quizzes</a>
-</nav>
+<main class="layout-single-column fade-in-up">
+    <header class="section-header">
+        <h1>Topic Quizzes</h1>
+        <p>Use these quizzes to check your understanding after working through lessons and practice.</p>
+    </header>
 
-<div class="container">
+    <section class="quiz-grid stagger">
+        <article class="quiz-card slide-up">
+            <h2>Foundations Quiz</h2>
+            <p>Variables, constants, and basic operations.</p>
+            <div class="quiz-meta">
+                <span>10 questions</span>
+                <span class="tag">Beginner</span>
+            </div>
+            <button class="btn-primary" data-quiz="foundations">
+                Start Quiz
+            </button>
+        </article>
 
-    <h2>📝 Quiz 1: Basics</h2>
+        <article class="quiz-card slide-up">
+            <h2>Expressions Quiz</h2>
+            <p>Simplifying and evaluating expressions.</p>
+            <div class="quiz-meta">
+                <span>12 questions</span>
+                <span class="tag">Beginner–Intermediate</span>
+            </div>
+            <button class="btn-primary" data-quiz="expressions">
+                Start Quiz
+            </button>
+        </article>
 
-    <div class="quiz-box">
-        <p><strong>1. What is x if x + 5 = 12?</strong></p>
-        <label><input type="radio" name="q1" value="6"> 6</label><br>
-        <label><input type="radio" name="q1" value="7"> 7</label><br>
-        <label><input type="radio" name="q1" value="8"> 8</label><br>
-    </div>
+        <article class="quiz-card slide-up">
+            <h2>Equations Quiz</h2>
+            <p>Solving linear equations.</p>
+            <div class="quiz-meta">
+                <span>12 questions</span>
+                <span class="tag">Intermediate</span>
+            </div>
+            <button class="btn-primary" data-quiz="equations">
+                Start Quiz
+            </button>
+        </article>
 
-    <div class="quiz-box">
-        <p><strong>2. Simplify: 3x + 4x</strong></p>
-        <label><input type="radio" name="q2" value="6x"> 6x</label><br>
-        <label><input type="radio" name="q2" value="7x"> 7x</label><br>
-        <label><input type="radio" name="q2" value="8x"> 8x</label><br>
-    </div>
+        <article class="quiz-card slide-up">
+            <h2>Inequalities Quiz</h2>
+            <p>Solving and graphing inequalities.</p>
+            <div class="quiz-meta">
+                <span>10 questions</span>
+                <span class="tag">Intermediate</span>
+            </div>
+            <button class="btn-primary" data-quiz="inequalities">
+                Start Quiz
+            </button>
+        </article>
 
-    <div class="quiz-box">
-        <p><strong>3. Factor: x² + 3x + 2</strong></p>
-        <label><input type="radio" name="q3" value="(x+1)(x+2)"> (x+1)(x+2)</label><br>
-        <label><input type="radio" name="q3" value="(x+2)(x+3)"> (x+2)(x+3)</label><br>
-        <label><input type="radio" name="q3" value="(x-1)(x-2)"> (x-1)(x-2)</label><br>
-    </div>
+        <article class="quiz-card slide-up">
+            <h2>Graphing Quiz</h2>
+            <p>Coordinate plane and linear graphs.</p>
+            <div class="quiz-meta">
+                <span>10 questions</span>
+                <span class="tag">Intermediate</span>
+            </div>
+            <button class="btn-primary" data-quiz="graphing">
+                Start Quiz
+            </button>
+        </article>
 
-    <button class="btn" onclick="gradeQuiz()">Submit Quiz</button>
+        <article class="quiz-card slide-up">
+            <h2>Polynomials Quiz</h2>
+            <p>Operations with polynomials.</p>
+            <div class="quiz-meta">
+                <span>12 questions</span>
+                <span class="tag">Intermediate</span>
+            </div>
+            <button class="btn-primary" data-quiz="polynomials">
+                Start Quiz
+            </button>
+        </article>
 
-    <h3 id="quizResult" class="result" style="margin-top:20px;"></h3>
+        <article class="quiz-card slide-up">
+            <h2>Factoring Quiz</h2>
+            <p>Factoring expressions and trinomials.</p>
+            <div class="quiz-meta">
+                <span>12 questions</span>
+                <span class="tag">Intermediate–Advanced</span>
+            </div>
+            <button class="btn-primary" data-quiz="factoring">
+                Start Quiz
+            </button>
+        </article>
 
-</div>
+        <article class="quiz-card slide-up">
+            <h2>Quadratics Quiz</h2>
+            <p>Solving and graphing quadratics.</p>
+            <div class="quiz-meta">
+                <span>14 questions</span>
+                <span class="tag">Advanced</span>
+            </div>
+            <button class="btn-primary" data-quiz="quadratics">
+                Start Quiz
+            </button>
+        </article>
 
-<footer>
-    © 2026 Algebra Learning Hub
+        <article class="quiz-card slide-up">
+            <h2>Functions Quiz</h2>
+            <p>Function notation and representations.</p>
+            <div class="quiz-meta">
+                <span>10 questions</span>
+                <span class="tag">Intermediate</span>
+            </div>
+            <button class="btn-primary" data-quiz="functions">
+                Start Quiz
+            </button>
+        </article>
+
+        <article class="quiz-card slide-up">
+            <h2>Word Problems Quiz</h2>
+            <p>Apply algebra to real-world situations.</p>
+            <div class="quiz-meta">
+                <span>15 questions</span>
+                <span class="tag">Mixed</span>
+            </div>
+            <button class="btn-primary" data-quiz="wordproblems">
+                Start Quiz
+            </button>
+        </article>
+    </section>
+
+    <!-- Placeholder for quiz modal / overlay -->
+    <section id="quiz-overlay" class="quiz-overlay hidden">
+        <div class="quiz-modal fade-in-up">
+            <header class="quiz-modal-header">
+                <h2 id="quiz-title">Quiz</h2>
+                <button class="close-btn" id="close-quiz">&times;</button>
+            </header>
+            <div class="quiz-modal-body">
+                <p>This is where your quiz engine (in script.js) will render questions.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer fade-in">
+    <p>Quizzes help you see what’s really sticking.</p>
 </footer>
 
-<script src="../script.js"></script>
 </body>
 </html>
