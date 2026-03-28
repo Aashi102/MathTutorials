@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Polynomials | Algebra Mastery</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -18,12 +18,10 @@
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
             <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <button class="theme-toggle">
-            <span class="theme-toggle-icon"></span>
-            Theme
-        </button>
+        <button class="theme-toggle">Theme</button>
     </div>
 </header>
 
@@ -31,47 +29,71 @@
 
     <header class="section-header">
         <h1><span class="neon">Polynomials</span></h1>
-        <p>Learn how to classify, add, subtract, and multiply polynomials.</p>
+        <p>
+            Polynomials are expressions with multiple terms. They form the
+            foundation for factoring, quadratics, and more advanced algebra.
+        </p>
     </header>
 
     <div class="layout-two-column">
 
         <section class="content-area">
 
+            <!-- WHAT IS A POLYNOMIAL -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">What is a Polynomial?</h2>
-                <p>A polynomial is an expression with multiple terms.</p>
-                <p>Example: <strong>3x² − 5x + 2</strong></p>
+                <h2 class="neon">What Is a Polynomial?</h2>
+                <p>
+                    A polynomial is a sum of terms, each made of a coefficient,
+                    a variable, and an exponent.
+                </p>
+
+                <div class="example">
+                    <p><strong>Example:</strong> 3x² − 5x + 2</p>
+                </div>
             </section>
 
+            <!-- ADDING POLYNOMIALS -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Adding Polynomials</h2>
-                <p>Combine like terms.</p>
+                <p>
+                    Combine like terms — terms with the same variable and
+                    exponent.
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> (3x + 2) + (5x − 1)</p>
                     <button class="btn-secondary" data-reveal="poly1">Show Answer</button>
-                    <p id="poly1" class="answer hidden">3x + 5x = 8x → 2 − 1 = 1 → <strong>8x + 1</strong></p>
+                    <p id="poly1" class="answer hidden">
+                        3x + 5x = 8x  
+                        2 − 1 = 1  
+                        Final: <strong>8x + 1</strong>
+                    </p>
                 </div>
             </section>
 
+            <!-- MULTIPLYING POLYNOMIALS -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Multiplying Polynomials</h2>
-                <p>Use the distributive property or FOIL.</p>
+                <p>
+                    Use distribution or FOIL (First, Outer, Inner, Last).
+                </p>
 
                 <div class="interactive-example">
                     <p><strong>Example:</strong> (x + 3)(x + 2)</p>
                     <button class="btn-secondary" data-reveal="poly2">Show Steps</button>
-                    <p id="poly2" class="answer hidden">x² + 2x + 3x + 6 = <strong>x² + 5x + 6</strong></p>
+                    <p id="poly2" class="answer hidden">
+                        x² + 2x + 3x + 6 = <strong>x² + 5x + 6</strong>
+                    </p>
                 </div>
             </section>
 
         </section>
 
+        <!-- SIDEBAR -->
         <aside class="sidebar slide-in-right">
             <h2 class="neon">On This Page</h2>
             <ul class="outline-list">
-                <li>What is a Polynomial?</li>
+                <li>What Is a Polynomial?</li>
                 <li>Adding Polynomials</li>
                 <li>Multiplying Polynomials</li>
             </ul>
@@ -92,6 +114,7 @@
     <p>Polynomials build structure.</p>
 </footer>
 
+<!-- MODAL -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
