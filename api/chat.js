@@ -1,19 +1,18 @@
-import OpenAI from "openai";
+import Groq from "groq-sdk";
 
 export default async function handler(req, res) {
   const { message } = req.body;
 
-  const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+  const client = new Groq({
+    apiKey: process.env.GROQ_API_KEY
   });
 
   const completion = await client.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "llama3-8b-8192",
     messages: [
       {
         role: "system",
-        content:
-          "You are a friendly algebra tutor. Explain concepts clearly and show steps."
+        content: "You are a friendly algebra tutor. Explain concepts clearly and show steps."
       },
       { role: "user", content: message }
     ]
