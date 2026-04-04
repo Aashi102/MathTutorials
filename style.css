@@ -706,17 +706,4 @@ textarea:focus {
   opacity: 0.9;
 }
 
-       .cta-button {
-  display: inline-block;
-  padding: 12px 20px;
-  background: var(--accent);
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.cta-button:hover {
-  opacity: 0.9;
-}
-
+   
