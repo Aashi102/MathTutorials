@@ -1,179 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algebra Mastery | Home</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
 </head>
-<body class="theme-light">
 
-<!-- Top Navigation -->
-<header class="top-nav fade-in">
-    <div class="nav-left">
+<body>
+
+<header class="top-nav">
+    <div class="top-nav-inner">
         <div class="logo">Algebra<span>Mastery</span></div>
-    </div>
-    <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="practice.html">Practice</a>
-        <a href="quizzes.html">Quizzes</a>
-    </nav>
-    <div class="nav-right">
-        <button class="btn-ghost" id="toggle-theme">Toggle Theme</button>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="quizzes.html">Quizzes</a>
+            <a href="finalexam.html">Final Exam</a>
+        </nav>
+
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon"></span>
+            Theme
+        </button>
     </div>
 </header>
 
-<!-- Hero Section -->
-<section class="hero-section fade-in-up">
-    <div class="hero-content">
-        <h1 class="hero-title">Master Algebra with Confidence</h1>
-        <p class="hero-subtitle">
-            Interactive lessons, guided practice, and smart quizzes—designed to build real understanding, step by step.
+<div class="page-shell fade-in-up">
+
+    <!-- HERO -->
+    <header class="section-header">
+        <h1>Welcome to <span class="neon">Algebra Mastery</span></h1>
+        <p>
+            A complete, modern, structured learning system designed to help you
+            understand algebra deeply — not just memorize steps.
         </p>
-        <div class="hero-actions">
-            <a href="foundations.html" class="btn-primary">Start with Foundations</a>
-            <a href="practice.html" class="btn-secondary">Jump into Practice</a>
+    </header>
+
+    <!-- WHY ALGEBRA -->
+    <section class="lesson-section fade-in">
+        <h2 class="neon">Why Algebra Matters</h2>
+        <p>
+            Algebra is the foundation of logical thinking. It teaches you how to
+            break down problems, recognize patterns, and build relationships
+            between quantities. These skills show up everywhere — science,
+            programming, finance, engineering, and everyday decisions.
+        </p>
+
+        <div class="example">
+            <p><strong>Example:</strong></p>
+            <p>
+                A phone plan charges a base fee plus a cost per gigabyte. That’s
+                an algebraic relationship. When you write it as an equation, you
+                can compare plans and predict costs.
+            </p>
         </div>
-        <div class="hero-meta">
-            <span>✔ Guided explanations</span>
-            <span>✔ Instant feedback</span>
-            <span>✔ Progress tracking</span>
-        </div>
-    </div>
-    <div class="hero-visual slide-in-right">
-        <div class="hero-card">
-            <h2>Today’s Focus</h2>
-            <p>Simplifying expressions with variables</p>
-            <div class="hero-progress">
-                <span>Lesson progress</span>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 45%;"></div>
-                </div>
-                <span class="progress-label">45% complete</span>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="lesson-section fade-in">
+        <h2 class="neon">How This Platform Works</h2>
+        <p>
+            Each topic page follows a consistent structure so you always know
+            what to expect:
+        </p>
+        <ul>
+            <li><strong>Concept Overview</strong> — What the idea means.</li>
+            <li><strong>Guided Examples</strong> — Step‑by‑step walkthroughs.</li>
+            <li><strong>Practice Problems</strong> — Try it yourself.</li>
+            <li><strong>Topic Quiz</strong> — Check your understanding.</li>
+        </ul>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section class="lesson-section fade-in">
+        <h2 class="neon">Your Learning Path</h2>
+        <ol class="practice-list">
+            <li>Foundations</li>
+            <li>Expressions</li>
+            <li>Equations</li>
+            <li>Inequalities</li>
+            <li>Graphing</li>
+            <li>Polynomials</li>
+            <li>Factoring</li>
+            <li>Quadratics</li>
+            <li>Functions</li>
+            <li>Word Problems</li>
+        </ol>
+        <p class="text-soft">
+            After completing the topics, take the <strong>Final Exam</strong> and
+            earn your certificate.
+        </p>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="lesson-section fade-in">
+        <h2 class="neon">What Makes This Different</h2>
+
+        <div class="content-area" style="gap: var(--space-md);">
+            <div class="lesson-section" style="padding: var(--space-md);">
+                <h3 class="neon">Clarity First</h3>
+                <p>
+                    Every explanation is written to be direct and understandable.
+                </p>
             </div>
-            <button class="btn-outline" onclick="location.href='expressions.html'">
-                Continue Expressions
-            </button>
-        </div>
-    </div>
-</section>
 
-<!-- Stats Strip -->
-<section class="stats-strip stagger">
-    <div class="stat-card slide-up">
-        <h3>10+</h3>
-        <p>Core Algebra Topics</p>
-    </div>
-    <div class="stat-card slide-up">
-        <h3>100+</h3>
-        <p>Practice Problems</p>
-    </div>
-    <div class="stat-card slide-up">
-        <h3>Smart</h3>
-        <p>Step-by-step Hints</p>
-    </div>
-</section>
+            <div class="lesson-section" style="padding: var(--space-md);">
+                <h3 class="neon">Structured Progress</h3>
+                <p>
+                    Topics build on each other so you never feel lost.
+                </p>
+            </div>
 
-<!-- Topic Grid -->
-<section class="topics-section fade-in">
-    <div class="section-header">
-        <h2>Explore Topics</h2>
-        <p>Move through Algebra in a structured, logical progression.</p>
-    </div>
+            <div class="lesson-section" style="padding: var(--space-md);">
+                <h3 class="neon">Active Learning</h3>
+                <p>
+                    Interactive examples and quizzes help you learn by doing.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <div class="topics-grid stagger">
-        <a class="topic-card slide-up" href="foundations.html">
-            <h3>Algebra Foundations</h3>
-            <p>Variables, constants, and the language of algebra.</p>
-            <span class="tag">Start here</span>
-        </a>
-        <a class="topic-card slide-up" href="expressions.html">
-            <h3>Expressions</h3>
-            <p>Simplify, evaluate, and manipulate algebraic expressions.</p>
-        </a>
-        <a class="topic-card slide-up" href="equations.html">
-            <h3>Equations</h3>
-            <p>Linear equations, multi-step equations, and more.</p>
-        </a>
-        <a class="topic-card slide-up" href="inequalities.html">
-            <h3>Inequalities</h3>
-            <p>Compare quantities and represent solution sets.</p>
-        </a>
-        <a class="topic-card slide-up" href="graphing.html">
-            <h3>Graphing</h3>
-            <p>Coordinate plane, lines, and visual representations.</p>
-        </a>
-        <a class="topic-card slide-up" href="polynomials.html">
-            <h3>Polynomials</h3>
-            <p>Add, subtract, and multiply polynomials.</p>
-        </a>
-        <a class="topic-card slide-up" href="factoring.html">
-            <h3>Factoring</h3>
-            <p>Factor expressions and prepare for quadratics.</p>
-        </a>
-        <a class="topic-card slide-up" href="quadratics.html">
-            <h3>Quadratics</h3>
-            <p>Parabolas, roots, and quadratic equations.</p>
-        </a>
-        <a class="topic-card slide-up" href="functions.html">
-            <h3>Functions</h3>
-            <p>Inputs, outputs, and function notation.</p>
-        </a>
-        <a class="topic-card slide-up" href="wordproblems.html">
-            <h3>Word Problems</h3>
-            <p>Translate real situations into algebra.</p>
-        </a>
-    </div>
-</section>
+    <!-- CTA -->
+    <section class="lesson-section fade-in center">
+        <h2 class="neon">Ready to Begin?</h2>
+        <div class="mt-md" style="display:flex; justify-content:center; gap: var(--space-sm); flex-wrap:wrap;">
+            <a class="btn-primary" href="practice.html">Start Practicing</a>
+            <a class="btn-secondary" href="quizzes.html">Take a Quiz</a>
+            <a class="btn-outline" href="finalexam.html">Final Exam</a>
+        </div>
+    </section>
 
-<!-- How It Works -->
-<section class="how-it-works fade-in-up">
-    <div class="section-header">
-        <h2>How This Platform Works</h2>
-        <p>Each topic follows a consistent, supportive flow.</p>
-    </div>
-    <div class="steps-grid stagger">
-        <div class="step-card slide-up">
-            <span class="step-number">1</span>
-            <h3>Learn the Concept</h3>
-            <p>Short, focused explanations with visuals and examples.</p>
-        </div>
-        <div class="step-card slide-up">
-            <span class="step-number">2</span>
-            <h3>Practice Intentionally</h3>
-            <p>Targeted problems with hints and instant feedback.</p>
-        </div>
-        <div class="step-card slide-up">
-            <span class="step-number">3</span>
-            <h3>Check Understanding</h3>
-            <p>Quizzes that highlight strengths and gaps.</p>
-        </div>
-    </div>
-</section>
+</div>
 
-<!-- Testimonials / Motivation -->
-<section class="testimonials fade-in">
-    <div class="section-header">
-        <h2>Build Real Confidence</h2>
-        <p>Algebra doesn’t have to feel overwhelming.</p>
-    </div>
-    <div class="testimonial-grid stagger">
-        <div class="testimonial-card slide-up">
-            <p>“Breaking topics into small steps made everything click.”</p>
-            <span class="testimonial-name">– Student</span>
-        </div>
-        <div class="testimonial-card slide-up">
-            <p>“The structure mirrors how I’d teach in class.”</p>
-            <span class="testimonial-name">– Teacher</span>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="site-footer fade-in">
-    <p>Algebra Mastery • Built for deep understanding, not memorization.</p>
+<footer class="site-footer">
+    <p>Built for clarity. Designed for mastery.</p>
 </footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Quiz</h3>
+            <button class="modal-close">✕</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+</div>
 
 </body>
 </html>
