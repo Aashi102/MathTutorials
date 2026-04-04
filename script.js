@@ -949,4 +949,3 @@ const quizEngine = (function () {
 
 // Expose globally for inline onclick handlers
 window.quizEngine = quizEngine;
-
