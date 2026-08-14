@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- basic setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algebra Mastery | Home</title>
 
-    <!-- Link to main stylesheet -->
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="AFAVICON.png" sizes="48x48" />
+
+    <!-- main stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Extra styles used for visual effects -->
+    <!-- extra visual effects -->
     <style>
-        .glow {
-            text-shadow: 0 0 12px rgba(0,255,255,0.6);
-        }
+        /* glowing text */
+        .glow { text-shadow: 0 0 12px rgba(0,255,255,0.6); }
+
+        /* hero gradient background */
         .hero-gradient {
             background: linear-gradient(135deg, #0a0a0a, #1a1a1a 40%, #111 80%);
             padding: 4rem 2rem;
             border-radius: 16px;
             box-shadow: 0 0 40px rgba(0,255,255,0.15);
         }
+
+        /* section cards */
         .section-card {
             background: rgba(255,255,255,0.03);
             padding: 2rem;
@@ -31,9 +38,11 @@
             transform: translateY(-6px);
             box-shadow: 0 0 20px rgba(0,255,255,0.25);
         }
-        .neon {
-            color: #00eaff;
-        }
+
+        /* neon color */
+        .neon { color: #00eaff; }
+
+        /* list hover animation */
         .practice-list li {
             padding: .4rem 0;
             transition: color .3s ease, transform .3s ease;
@@ -42,22 +51,51 @@
             color: #00eaff;
             transform: translateX(6px);
         }
+
+        /* smooth fade animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s forwards;
+        }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* button glow */
+        .btn-primary:hover, .btn-secondary:hover, .btn-outline:hover {
+            box-shadow: 0 0 12px #00eaff;
+            transform: scale(1.05);
+        }
+
+        /* progress bar */
+        .progress-bar {
+            width: 80%;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #00eaff;
+            transition: width 1s ease;
+        }
     </style>
 
-    <!-- Main JavaScript file -->
+    <!-- main script -->
     <script type="module" src="script.js"></script>
 </head>
 
 <body>
 
-<!-- Top navigation bar -->
+<!-- top navigation -->
 <header class="top-nav">
     <div class="top-nav-inner">
-
-        <!-- Logo -->
         <div class="logo glow">Algebra<span>Mastery</span></div>
 
-        <!-- Navigation links -->
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
@@ -65,7 +103,6 @@
             <a href="finalexam.html">Final Exam</a>
         </nav>
 
-        <!-- Theme toggle button -->
         <button class="theme-toggle">
             <span class="theme-toggle-icon"></span>
             Theme
@@ -73,102 +110,102 @@
     </div>
 </header>
 
-<!-- Main page wrapper -->
+<!-- main content -->
 <div class="page-shell fade-in-up">
 
-    <!-- Hero section -->
+    <!-- hero section -->
     <header class="section-header hero-gradient fade-in">
         <h1 class="glow">Welcome to <span class="neon">Algebra Mastery</span></h1>
         <p>
-            A complete, modern learning system designed to help you understand algebra deeply —
-            not just memorize steps.
+            Discover a modern learning system that transforms algebra from confusing formulas into clear, visual logic.
+            Learn how numbers interact, how patterns form, and how equations describe the world around you.
         </p>
+        <p>
+            Every concept is explained step‑by‑step with interactive examples, guided practice, and instant feedback.
+            Build confidence, accuracy, and speed — one topic at a time.
+        </p>
+
+        <!-- animated progress bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
     </header>
 
-    <!-- Why algebra matters section -->
+    <!-- why algebra matters -->
     <section class="lesson-section fade-in">
         <h2 class="neon glow">Why Algebra Matters</h2>
         <p>
-            Algebra builds logical thinking. It teaches you how to break down problems,
-            recognize patterns, and understand relationships between quantities.
+            Algebra is the foundation of logical reasoning. It helps you break down problems, recognize patterns,
+            and connect quantities — skills that power science, technology, and everyday decisions.
         </p>
-
-        <!-- Example box -->
         <div class="example section-card">
             <p><strong>Example:</strong></p>
             <p>
                 A phone plan charges a base fee plus a cost per gigabyte.
-                That’s an algebraic relationship — write it as an equation,
-                and you can compare plans and predict costs.
+                Write it as <strong>y = 10 + 5x</strong> — now you can predict costs and compare plans instantly.
             </p>
         </div>
     </section>
 
-    <!-- How the platform works section -->
+    <!-- how it works -->
     <section class="lesson-section fade-in">
         <h2 class="neon glow">How This Platform Works</h2>
-        <p>Each topic follows a consistent structure so you always know what to expect:</p>
-
-        <!-- List of learning components -->
+        <p>
+            Each topic follows a structured learning path designed to build mastery through repetition, exploration, and challenge.
+        </p>
         <ul>
-            <li><strong>Concept Overview</strong> — What the idea means.</li>
-            <li><strong>Guided Examples</strong> — Step‑by‑step walkthroughs.</li>
-            <li><strong>Practice Problems</strong> — Try it yourself.</li>
-            <li><strong>Topic Quiz</strong> — Check your understanding.</li>
+            <li><strong>Concept Overview</strong> — Learn the meaning and purpose behind each idea.</li>
+            <li><strong>Guided Examples</strong> — Watch step‑by‑step solutions unfold with explanations.</li>
+            <li><strong>Practice Problems</strong> — Apply what you’ve learned and get instant feedback.</li>
+            <li><strong>Topic Quiz</strong> — Test your understanding and track your progress.</li>
         </ul>
     </section>
 
-    <!-- Learning path section -->
+    <!-- learning path -->
     <section class="lesson-section fade-in">
         <h2 class="neon glow">Your Learning Path</h2>
-
-        <!-- Ordered list of topics -->
+        <p>
+            Follow a clear roadmap — each topic builds on the last, guiding you from fundamentals to advanced problem‑solving.
+        </p>
         <ol class="practice-list">
-            <li>Foundations</li>
-            <li>Expressions</li>
-            <li>Equations</li>
-            <li>Inequalities</li>
-            <li>Graphing</li>
-            <li>Polynomials</li>
-            <li>Factoring</li>
-            <li>Quadratics</li>
-            <li>Functions</li>
-            <li>Word Problems</li>
+            <li>Foundations — Variables and operations</li>
+            <li>Expressions — Simplifying and combining terms</li>
+            <li>Equations — Solving for unknowns</li>
+            <li>Inequalities — Comparing values and ranges</li>
+            <li>Graphing — Visualizing relationships</li>
+            <li>Polynomials — Working with multi‑term expressions</li>
+            <li>Factoring — Breaking down complex expressions</li>
+            <li>Quadratics — Exploring parabolas and roots</li>
+            <li>Functions — Mapping inputs to outputs</li>
+            <li>Word Problems — Translating real‑world scenarios</li>
         </ol>
-
         <p class="text-soft">
-            After completing the topics, take the <strong>Final Exam</strong> and earn your certificate.
+            Complete all topics, take the <strong>Final Exam</strong>, and earn your certificate of mastery.
         </p>
     </section>
 
-    <!-- Features section -->
+    <!-- features -->
     <section class="lesson-section fade-in">
         <h2 class="neon glow">What Makes This Different</h2>
-
-        <!-- Three feature cards -->
         <div class="content-area" style="gap: var(--space-md);">
             <div class="section-card">
                 <h3 class="neon">Clarity First</h3>
-                <p>Every explanation is written to be direct and understandable.</p>
+                <p>Every explanation is written to be direct, visual, and easy to follow.</p>
             </div>
-
             <div class="section-card">
                 <h3 class="neon">Structured Progress</h3>
-                <p>Topics build on each other so you never feel lost.</p>
+                <p>Topics build logically so you never feel lost or overwhelmed.</p>
             </div>
-
             <div class="section-card">
                 <h3 class="neon">Active Learning</h3>
-                <p>Interactive examples and quizzes help you learn by doing.</p>
+                <p>Interactive examples and quizzes help you learn by doing, not just reading.</p>
             </div>
         </div>
     </section>
 
-    <!-- Call to action section -->
+    <!-- call to action -->
     <section class="lesson-section fade-in center">
         <h2 class="neon glow">Ready to Begin?</h2>
-
-        <!-- Buttons for navigation -->
         <div class="mt-md" style="display:flex; justify-content:center; gap: var(--space-sm); flex-wrap:wrap;">
             <a class="btn-primary" href="practice.html">Start Practicing</a>
             <a class="btn-secondary" href="quizzes.html">Take a Quiz</a>
@@ -178,23 +215,25 @@
 
 </div>
 
-<!-- Footer -->
+<!-- footer -->
 <footer class="site-footer">
     <p>Built for clarity. Designed for mastery.</p>
 </footer>
 
-<!-- Modal for quizzes -->
+<!-- quiz modal -->
 <div class="modal-backdrop">
     <div class="modal">
 
-        <!-- Modal header -->
+        <!-- modal header -->
         <div class="modal-header">
             <h3 class="modal-title">Quiz</h3>
             <button class="modal-close">✕</button>
         </div>
 
-        <!-- Modal content -->
-        <div class="modal-body"></div>
+        <!-- modal body -->
+        <div class="modal-body">
+            <!-- dynamic quiz content loads here -->
+        </div>
     </div>
 </div>
 
