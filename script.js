@@ -965,29 +965,29 @@ document.addEventListener("click", (e) => {
 });
 
 // =========================
-// FIXED LIVE EQUATION BALANCE SIMULATOR
+// LIVE EQUATION BALANCE SIMULATOR
 // =========================
 
-// Converts algebra syntax into JS-friendly syntax
-function cleanExpression(expr) {
-    return expr
-        .replace(/\s+/g, "")        // remove spaces
-        .replace(/(\d)([a-zA-Z])/g, "$1*$2") // 2x → 2*x
-        .replace(/\^/g, "**");      // ^ → **
-}
-
-// Evaluate an expression safely
-function safeEval(expr) {
+function evaluateSide(expr) {
     try {
-        expr = cleanExpression(expr);
+        // 1. Sanitize input: allow only math characters, numbers, and 'x'
+        let sanitized = expr.toLowerCase().trim();
 
-        // If expression contains a variable, assume x = 1
-        if (/[a-zA-Z]/.test(expr)) {
-            return Function("x", "return " + expr)(1);
+        // Block execution if empty or containing unauthorized letters/symbols
+        if (!sanitized || /[^0-9x+\-*/^().\s]/.test(sanitized)) {
+            return null;
         }
 
-        // Otherwise evaluate normally
-        return Function("return " + expr)();
+        // 2. Preprocess algebra notation to valid JavaScript syntax
+        sanitized = sanitized
+            .replace(/\^/g, "**")                   // Exponents: x^2 -> x**2
+            .replace(/(\d)\s*([x(])/g, "$1*$2")     // 2x or 2( -> 2*x or 2*(
+            .replace(/([x)])\s*(\d)/g, "$1*$2")     // x2 or )2 -> x*2 or )*2
+            .replace(/([x)])\s*\(/g, "$1*(")        // x( or )( -> x*( or )*(
+            .replace(/\)\s*x/g, ")*x");             // )x -> )*x
+
+        // 3. Evaluate safely with x = 1 placeholder
+        return Function("x", `"use strict"; return (${sanitized});`)(1);
     } catch {
         return null;
     }
@@ -1009,11 +1009,11 @@ document.addEventListener("click", (e) => {
         }
 
         const [left, right] = input.split("=").map(s => s.trim());
-        const L = safeEval(left);
-        const R = safeEval(right);
+        const L = evaluateSide(left);
+        const R = evaluateSide(right);
 
         if (L === null || R === null) {
-            output.textContent = "I couldn't understand part of your equation.";
+            output.textContent = "I couldn't understand part of your equation. Make sure you are using valid math expression.";
             output.classList.remove("hidden");
             return;
         }
@@ -1050,14 +1050,14 @@ document.addEventListener("click", (e) => {
 
         output.classList.remove("hidden");
         output.innerHTML = `
-            <strong>General Solving Guide:</strong><br><br>
+            <strong>Solving Steps (General Guide):</strong><br><br>
             1. Start with your equation: <strong>${input}</strong><br>
             2. Identify the variable and isolate it.<br>
             3. Undo addition/subtraction first.<br>
             4. Undo multiplication/division next.<br>
-            5. Keep both sides balanced.<br>
+            5. Keep the equation balanced by doing the same to both sides.<br>
             6. Simplify until the variable stands alone.<br><br>
-            <em>Use the examples above for exact solving steps.</em>
+            <em>This simulator gives a general solving path. For exact steps, use the examples above!</em>
         `;
     }
 });
