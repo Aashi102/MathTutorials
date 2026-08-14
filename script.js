@@ -968,46 +968,33 @@ document.addEventListener("click", (e) => {
 // LIVE EQUATION BALANCE SIMULATOR
 // ==========================================
 
-/**
- * Safely parses and evaluates a single side of an algebraic expression.
- * Replaces any single variable letter with `x = 1` for balance comparison.
- * * @param {string} expr - The mathematical side of the equation (e.g., "2x + 3").
- * @returns {number|null} - Evaluated numeric result or null if parsing fails.
- */
 function evaluateSide(expr) {
     try {
         if (!expr || expr.trim() === "") return null;
 
-        // 1. Lowercase and trim white space
         let sanitized = expr.toLowerCase().trim();
 
-        // 2. Normalize unicode math characters (e.g., copied from Google or Word)
         sanitized = sanitized
             .replace(/×/g, "*")
             .replace(/÷/g, "/")
             .replace(/−/g, "-");
 
-        // 3. Normalize any variable letter (a-z) to 'x' for uniform evaluation
         sanitized = sanitized.replace(/[a-z]/g, "x");
 
-        // 4. Security Check: Allow ONLY digits, x, standard operators, parentheses, decimals, and spaces
         if (/[^0-9x+\-*/^().\s]/.test(sanitized)) {
             console.warn("Invalid character detected:", sanitized);
             return null;
         }
 
-        // 5. Transform standard math notation into valid JavaScript syntax
         sanitized = sanitized
-            .replace(/\^/g, "**")                   // Exponents: x^2 -> x**2
-            .replace(/(\d)\s*([x(])/g, "$1*$2")     // Implicit multiplication: 2x -> 2*x, 2( -> 2*(
-            .replace(/([x)])\s*(\d)/g, "$1*$2")     // Reverse implicit: x2 -> x*2, )2 -> )*2
-            .replace(/([x)])\s*\(/g, "$1*(")        // Parentheses multiplication: x( -> x*(, )( -> )*(
-            .replace(/\)\s*x/g, ")*x");             // Close parent x: )x -> )*x
+            .replace(/\^/g, "**")
+            .replace(/(\d)\s*([x(])/g, "$1*$2")
+            .replace(/([x)])\s*(\d)/g, "$1*$2")
+            .replace(/([x)])\s*\(/g, "$1*(")
+            .replace(/\)\s*x/g, ")*x");
 
-        // 6. Evaluate expression setting variable x = 1 as a placeholder check
         const result = Function("x", `"use strict"; return (${sanitized});`)(1);
 
-        // Return null if evaluation resulted in NaN or Infinity
         return typeof result === "number" && !isNaN(result) && isFinite(result) ? result : null;
     } catch (err) {
         console.error("Evaluation Error:", err);
@@ -1017,7 +1004,7 @@ function evaluateSide(expr) {
 
 // Global Click Listener
 document.addEventListener("click", (e) => {
-    // Check if "Check Balance" button was clicked (or a child element inside it)
+    // 1. Check Balance Button
     const checkBtn = e.target.closest("#balance-check");
     if (checkBtn) {
         const inputEl = document.getElementById("balance-input");
@@ -1028,14 +1015,12 @@ document.addEventListener("click", (e) => {
 
         const input = inputEl.value.trim();
 
-        // Validate presence of equals sign
         if (!input.includes("=")) {
             output.textContent = "Your equation must include an equals sign (=).";
             output.classList.remove("hidden");
             return;
         }
 
-        // Split into left and right sides
         const sides = input.split("=");
         if (sides.length !== 2) {
             output.textContent = "Please include only ONE equals sign (=).";
@@ -1051,7 +1036,6 @@ document.addEventListener("click", (e) => {
             return;
         }
 
-        // Evaluate both sides
         const L = evaluateSide(left);
         const R = evaluateSide(right);
 
@@ -1063,7 +1047,6 @@ document.addEventListener("click", (e) => {
 
         output.classList.remove("hidden");
 
-        // Display visual scale tilt based on evaluated values
         if (L === R) {
             output.textContent = "Balanced! Both sides equal the same value.";
             visual.style.transform = "rotate(0deg)";
@@ -1079,7 +1062,7 @@ document.addEventListener("click", (e) => {
         }
     }
 
-    // Check if "Show Solving Steps" button was clicked
+    // 2. Show Steps Button
     const stepsBtn = e.target.closest("#balance-steps");
     if (stepsBtn) {
         const inputEl = document.getElementById("balance-input");
@@ -1105,5 +1088,23 @@ document.addEventListener("click", (e) => {
             6. Simplify until the variable stands alone.<br><br>
             <em>This simulator gives a general solving path. For exact steps, use the examples above!</em>
         `;
+    }
+
+    // 3. Reset Button (Clears input and restores visual scale)
+    const resetBtn = e.target.closest("#balance-reset");
+    if (resetBtn) {
+        const inputEl = document.getElementById("balance-input");
+        const output = document.getElementById("balance-output");
+        const visual = document.getElementById("balance-visual");
+
+        if (inputEl) inputEl.value = "";
+        if (output) {
+            output.textContent = "";
+            output.classList.add("hidden");
+        }
+        if (visual) {
+            visual.style.transform = "rotate(0deg)";
+            visual.textContent = "⚖️ Balance Scale Waiting...";
+        }
     }
 });
