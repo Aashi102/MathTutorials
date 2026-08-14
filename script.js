@@ -698,7 +698,7 @@ const quizBank = {
 // =========================
 const finalExamConfig = {
     title: 'Algebra Final Exam',
-    timeLimitSeconds: 1800, // 30 minutes
+    timeLimitSeconds: 1800,
     questionCount: 25
 };
 
@@ -710,7 +710,6 @@ function buildFinalExamQuestions() {
             topic: topicKey
         })));
     });
-    // Simple shuffle
     for (let i = allQuestions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
@@ -730,46 +729,62 @@ const quizEngine = (function () {
     let timeRemaining = 0;
     let isFinalExam = false;
 
-   function startQuiz(topicKey) {
-    const quiz = quizBank[topicKey];
-    if (!quiz) return;
+    function startQuiz(topicKey) {
+        const quiz = quizBank[topicKey];
+        if (!quiz) return;
 
-    isFinalExam = false;
-    currentQuiz = quiz;
-    currentQuestions = quiz.questions;
-    currentIndex = 0;
-    userAnswers = new Array(currentQuestions.length).fill(null);
-    timeRemaining = quiz.timeLimitSeconds;
+        isFinalExam = false;
+        currentQuiz = quiz;
+        currentQuestions = quiz.questions;
+        currentIndex = 0;
+        userAnswers = new Array(currentQuestions.length).fill(null);
+        timeRemaining = quiz.timeLimitSeconds;
 
-    renderQuizModal();   // loads question
-    startTimer();        // starts timer ONCE
-}
+        renderQuizModal();
+        startTimer();
+    }
 
-function startFinalExam() {
-    isFinalExam = true;
-    currentQuiz = {
-        title: finalExamConfig.title,
-        timeLimitSeconds: finalExamConfig.timeLimitSeconds
-    };
-    currentQuestions = buildFinalExamQuestions();
-    currentIndex = 0;
-    userAnswers = new Array(currentQuestions.length).fill(null);
-    timeRemaining = finalExamConfig.timeLimitSeconds;
+    function startFinalExam() {
+        isFinalExam = true;
+        currentQuiz = {
+            title: finalExamConfig.title,
+            timeLimitSeconds: finalExamConfig.timeLimitSeconds
+        };
+        currentQuestions = buildFinalExamQuestions();
+        currentIndex = 0;
+        userAnswers = new Array(currentQuestions.length).fill(null);
+        timeRemaining = finalExamConfig.timeLimitSeconds;
 
-    renderQuizModal();   // loads question
-    startTimer();        // starts timer ONCE
-}
+        renderQuizModal();
+        startTimer();
+    }
 
-function renderQuizModal() {
-    // ❌ REMOVE startTimer() from here
-    // DO NOT restart timer when switching questions
+    function startTimer() {
+        const timerEl = modalBody.querySelector('.quiz-timer');
+        updateTimerDisplay(timerEl);
 
-    const q = currentQuestions[currentIndex];
-    const total = currentQuestions.length;
+        if (timerId) clearInterval(timerId);
+        timerId = setInterval(() => {
+            timeRemaining--;
+            updateTimerDisplay(timerEl);
+            if (timeRemaining <= 0) {
+                clearInterval(timerId);
+                autoSubmit();
+            }
+        }, 1000);
+    }
 
-    const timerEl = modalBody.querySelector('.quiz-timer');
-    updateTimerDisplay(timerEl); // ✔️ only update display
-}
+    function updateTimerDisplay(el) {
+        if (!el) return;
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+        el.textContent = `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+        if (timeRemaining <= 30) {
+            el.classList.add('timer-warning');
+        } else {
+            el.classList.remove('timer-warning');
+        }
+    }
 
     function renderQuizModal() {
         const q = currentQuestions[currentIndex];
@@ -869,29 +884,24 @@ function renderQuizModal() {
         let message = '';
         if (percent === 100) message = 'Perfect score! Incredible work.';
         else if (percent >= 80) message = 'Great job! You really understand this topic.';
-        else if (percent >= 60) message = 'Solid start. Review a few areas and try again.';
-        else message = 'This is a good baseline. Review the lesson and retake the quiz.';
-
-        let extra = '';
-        if (isFinalExam) {
-            extra = `
-                <div class="mt-md">
-                    <button class="btn-primary final-certificate-btn">Generate Certificate</button>
-                </div>
-            `;
-        }
+        else if (percent >= 60) message = 'Nice effort. Review a few questions and try again.';
+        else message = 'Don’t worry. Use this as a guide for what to review.';
 
         const resultHTML = `
             <div class="quiz-results">
-                <h3>Your Score</h3>
-                <p><strong>${correct}</strong> out of <strong>${total}</strong> (${percent}%)</p>
-                <p>Time used: ${minutesUsed}:${secondsUsed.toString().padStart(2, '0')}</p>
-                <p class="text-soft">${message}</p>
+                <h3>Your Results</h3>
+                <p><strong>Score:</strong> ${correct} / ${total} (${percent}%)</p>
+                <p><strong>Time Used:</strong> ${minutesUsed}m ${secondsUsed}s</p>
+                <p>${message}</p>
                 <div class="quiz-results-actions">
-                    <button class="btn-secondary quiz-retake">Retake</button>
+                    <button class="btn-secondary quiz-retake">Retake Quiz</button>
                     <button class="btn-outline quiz-close">Close</button>
                 </div>
-                ${extra}
+                ${isFinalExam ? `
+                    <button class="btn-primary final-certificate-btn">
+                        Generate Certificate
+                    </button>
+                ` : ''}
             </div>
         `;
 
@@ -920,7 +930,6 @@ function renderQuizModal() {
 
     function getCurrentTopicKey() {
         if (isFinalExam) return null;
-        // best-effort: match by title
         const entry = Object.entries(quizBank).find(([key, val]) => val.title === currentQuiz.title);
         return entry ? entry[0] : null;
     }
@@ -934,11 +943,9 @@ function renderQuizModal() {
 // Expose globally for inline onclick handlers
 window.quizEngine = quizEngine;
 
-
 // =========================
 // REVEAL BUTTONS FOR SUBJECT PAGES
 // =========================
-
 document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-reveal]");
     if (!btn) return;
@@ -950,7 +957,6 @@ document.addEventListener("click", (e) => {
 
     answer.classList.toggle("hidden");
 
-    // Optional: change button text
     if (answer.classList.contains("hidden")) {
         btn.textContent = "Show Steps";
     } else {
@@ -958,14 +964,12 @@ document.addEventListener("click", (e) => {
     }
 });
 
-
 // =========================
 // LIVE EQUATION BALANCE SIMULATOR
 // =========================
-
 function evaluateSide(expr) {
     try {
-        return Function("x", "return " + expr)(1); // x=1 placeholder
+        return Function("x", "return " + expr)(1); // x = 1 placeholder
     } catch {
         return null;
     }
@@ -973,9 +977,12 @@ function evaluateSide(expr) {
 
 document.addEventListener("click", (e) => {
     if (e.target.id === "balance-check") {
-        const input = document.getElementById("balance-input").value;
+        const inputEl = document.getElementById("balance-input");
         const output = document.getElementById("balance-output");
         const visual = document.getElementById("balance-visual");
+        if (!inputEl || !output || !visual) return;
+
+        const input = inputEl.value;
 
         if (!input.includes("=")) {
             output.textContent = "Your equation must include an equals sign (=).";
@@ -1011,8 +1018,11 @@ document.addEventListener("click", (e) => {
     }
 
     if (e.target.id === "balance-steps") {
-        const input = document.getElementById("balance-input").value;
+        const inputEl = document.getElementById("balance-input");
         const output = document.getElementById("balance-output");
+        if (!inputEl || !output) return;
+
+        const input = inputEl.value;
 
         if (!input.includes("=")) {
             output.textContent = "Your equation must include an equals sign (=).";
@@ -1035,4 +1045,3 @@ document.addEventListener("click", (e) => {
         `;
     }
 });
-
