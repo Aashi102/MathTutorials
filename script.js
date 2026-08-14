@@ -964,62 +964,106 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// =========================
+// ==========================================
 // LIVE EQUATION BALANCE SIMULATOR
-// =========================
+// ==========================================
 
+/**
+ * Safely parses and evaluates a single side of an algebraic expression.
+ * Replaces any single variable letter with `x = 1` for balance comparison.
+ * * @param {string} expr - The mathematical side of the equation (e.g., "2x + 3").
+ * @returns {number|null} - Evaluated numeric result or null if parsing fails.
+ */
 function evaluateSide(expr) {
     try {
-        // 1. Sanitize input: allow only math characters, numbers, and 'x'
+        if (!expr || expr.trim() === "") return null;
+
+        // 1. Lowercase and trim white space
         let sanitized = expr.toLowerCase().trim();
 
-        // Block execution if empty or containing unauthorized letters/symbols
-        if (!sanitized || /[^0-9x+\-*/^().\s]/.test(sanitized)) {
+        // 2. Normalize unicode math characters (e.g., copied from Google or Word)
+        sanitized = sanitized
+            .replace(/×/g, "*")
+            .replace(/÷/g, "/")
+            .replace(/−/g, "-");
+
+        // 3. Normalize any variable letter (a-z) to 'x' for uniform evaluation
+        sanitized = sanitized.replace(/[a-z]/g, "x");
+
+        // 4. Security Check: Allow ONLY digits, x, standard operators, parentheses, decimals, and spaces
+        if (/[^0-9x+\-*/^().\s]/.test(sanitized)) {
+            console.warn("Invalid character detected:", sanitized);
             return null;
         }
 
-        // 2. Preprocess algebra notation to valid JavaScript syntax
+        // 5. Transform standard math notation into valid JavaScript syntax
         sanitized = sanitized
             .replace(/\^/g, "**")                   // Exponents: x^2 -> x**2
-            .replace(/(\d)\s*([x(])/g, "$1*$2")     // 2x or 2( -> 2*x or 2*(
-            .replace(/([x)])\s*(\d)/g, "$1*$2")     // x2 or )2 -> x*2 or )*2
-            .replace(/([x)])\s*\(/g, "$1*(")        // x( or )( -> x*( or )*(
-            .replace(/\)\s*x/g, ")*x");             // )x -> )*x
+            .replace(/(\d)\s*([x(])/g, "$1*$2")     // Implicit multiplication: 2x -> 2*x, 2( -> 2*(
+            .replace(/([x)])\s*(\d)/g, "$1*$2")     // Reverse implicit: x2 -> x*2, )2 -> )*2
+            .replace(/([x)])\s*\(/g, "$1*(")        // Parentheses multiplication: x( -> x*(, )( -> )*(
+            .replace(/\)\s*x/g, ")*x");             // Close parent x: )x -> )*x
 
-        // 3. Evaluate safely with x = 1 placeholder
-        return Function("x", `"use strict"; return (${sanitized});`)(1);
-    } catch {
+        // 6. Evaluate expression setting variable x = 1 as a placeholder check
+        const result = Function("x", `"use strict"; return (${sanitized});`)(1);
+
+        // Return null if evaluation resulted in NaN or Infinity
+        return typeof result === "number" && !isNaN(result) && isFinite(result) ? result : null;
+    } catch (err) {
+        console.error("Evaluation Error:", err);
         return null;
     }
 }
 
+// Global Click Listener
 document.addEventListener("click", (e) => {
-    if (e.target.id === "balance-check") {
+    // Check if "Check Balance" button was clicked (or a child element inside it)
+    const checkBtn = e.target.closest("#balance-check");
+    if (checkBtn) {
         const inputEl = document.getElementById("balance-input");
         const output = document.getElementById("balance-output");
         const visual = document.getElementById("balance-visual");
+
         if (!inputEl || !output || !visual) return;
 
-        const input = inputEl.value;
+        const input = inputEl.value.trim();
 
+        // Validate presence of equals sign
         if (!input.includes("=")) {
             output.textContent = "Your equation must include an equals sign (=).";
             output.classList.remove("hidden");
             return;
         }
 
-        const [left, right] = input.split("=").map(s => s.trim());
+        // Split into left and right sides
+        const sides = input.split("=");
+        if (sides.length !== 2) {
+            output.textContent = "Please include only ONE equals sign (=).";
+            output.classList.remove("hidden");
+            return;
+        }
+
+        const [left, right] = sides.map(s => s.trim());
+
+        if (!left || !right) {
+            output.textContent = "Both sides of the equation must contain an expression.";
+            output.classList.remove("hidden");
+            return;
+        }
+
+        // Evaluate both sides
         const L = evaluateSide(left);
         const R = evaluateSide(right);
 
         if (L === null || R === null) {
-            output.textContent = "I couldn't understand part of your equation. Make sure you are using valid math expression.";
+            output.textContent = "I couldn't understand part of your equation. Please check for missing operations or unbalanced parentheses.";
             output.classList.remove("hidden");
             return;
         }
 
         output.classList.remove("hidden");
 
+        // Display visual scale tilt based on evaluated values
         if (L === R) {
             output.textContent = "Balanced! Both sides equal the same value.";
             visual.style.transform = "rotate(0deg)";
@@ -1035,12 +1079,14 @@ document.addEventListener("click", (e) => {
         }
     }
 
-    if (e.target.id === "balance-steps") {
+    // Check if "Show Solving Steps" button was clicked
+    const stepsBtn = e.target.closest("#balance-steps");
+    if (stepsBtn) {
         const inputEl = document.getElementById("balance-input");
         const output = document.getElementById("balance-output");
         if (!inputEl || !output) return;
 
-        const input = inputEl.value;
+        const input = inputEl.value.trim();
 
         if (!input.includes("=")) {
             output.textContent = "Your equation must include an equals sign (=).";
@@ -1055,7 +1101,7 @@ document.addEventListener("click", (e) => {
             2. Identify the variable and isolate it.<br>
             3. Undo addition/subtraction first.<br>
             4. Undo multiplication/division next.<br>
-            5. Keep the equation balanced by doing the same to both sides.<br>
+            5. Keep the equation balanced by performing identical operations to both sides.<br>
             6. Simplify until the variable stands alone.<br><br>
             <em>This simulator gives a general solving path. For exact steps, use the examples above!</em>
         `;
