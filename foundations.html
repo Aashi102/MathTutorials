@@ -30,9 +30,10 @@
     <header class="section-header">
         <h1>Algebra <span class="neon">Foundations</span></h1>
         <p>
-            Before you can solve equations or graph lines, you need to understand
-            the basic building blocks of algebra: variables, expressions, and
-            the order of operations.
+            Welcome to the essential starting line of algebraic thinking. Before we manipulate variables, balance complex equations, or plot functions across coordinate grids, we must solidify our bedrock understanding of fundamental numeric laws.
+        </p>
+        <p>
+            In this foundational module, you will explore the visual mechanics of the real number system, master signed number operations, demystify absolute values as geometric distances, and rigorously execute the operational hierarchy known as PEMDAS/BODMAS.
         </p>
     </header>
 
@@ -40,115 +41,258 @@
 
         <section class="content-area">
 
-            <!-- WHAT IS ALGEBRA -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">What Is Algebra?</h2>
+                <h2 class="neon">Interactive Number Line & Absolute Distance Explorer</h2>
                 <p>
-                    Algebra is the language of patterns and relationships. It lets
-                    us describe how quantities change and how they relate to each
-                    other. Instead of working with specific numbers, we work with
-                    symbols that can represent many possible values.
+                    In algebra, the distance between two numbers $a$ and $b$ on a number line is given by the absolute value of their difference: $|a - b|$. Distance is fundamentally non-negative because it measures magnitude rather than direction.
                 </p>
-
-                <div class="example">
-                    <p><strong>Example:</strong></p>
-                    <p>
-                        If a movie ticket costs <strong>$x</strong> and you buy 3 tickets,
-                        the total cost is <strong>3x</strong>. This works whether the ticket
-                        costs $5, $10, or $12.50.
-                    </p>
-                </div>
-            </section>
-
-            <!-- VARIABLES -->
-            <section class="lesson-section fade-in">
-                <h2 class="neon">Variables</h2>
                 <p>
-                    A variable is a letter that represents a number. It allows us
-                    to write general rules instead of specific cases.
+                    Use the tool below to pick two points on the integer line. Watch how the formula computes absolute distance and projects the geometric displacement visually.
                 </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> In the expression <strong>x + 5</strong>, the variable is <strong>x</strong>.</p>
-                    <button class="btn-secondary" data-reveal="var1">Show Explanation</button>
-                    <p id="var1" class="answer hidden">
-                        Variables make algebra flexible. Instead of solving one
-                        problem, you solve a whole family of problems at once.
-                    </p>
+                    <p><strong>Try it:</strong> Select two integer coordinates between -15 and +15:</p>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                        <label style="flex: 1; min-width: 160px; color: var(--text-soft);">
+                            Point A Coordinate:
+                            <input type="number" id="num1" value="-6" min="-15" max="15" style="width: 100%; margin-top: 6px; padding: 0.6rem; border-radius: 8px; background: rgba(0,0,0,0.4); color: #fff; border: 1px solid rgba(255,255,255,0.2);" />
+                        </label>
+                        <label style="flex: 1; min-width: 160px; color: var(--text-soft);">
+                            Point B Coordinate:
+                            <input type="number" id="num2" value="8" min="-15" max="15" style="width: 100%; margin-top: 6px; padding: 0.6rem; border-radius: 8px; background: rgba(0,0,0,0.4); color: #fff; border: 1px solid rgba(255,255,255,0.2);" />
+                        </label>
+                    </div>
+
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                        <button class="btn-secondary" id="find-distance">Compute Absolute Distance</button>
+                        <button class="btn-secondary" id="reset-distance">Reset Scale</button>
+                    </div>
+
+                    <div id="distance-output" class="answer hidden"></div>
+
+                    <div id="numberline-visual" style="
+                        margin-top: 1.5rem;
+                        padding: 1rem 1.5rem;
+                        background: rgba(255,255,255,0.03);
+                        border: 1px solid rgba(255,255,255,0.1);
+                        border-radius: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.8rem;
+                    ">
+                        <div style="display: flex; justify-content: space-between; font-family: monospace; color: var(--text-soft); border-bottom: 2px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                            <span>-15</span>
+                            <span>-10</span>
+                            <span>-5</span>
+                            <span style="color: #00f2fe; font-weight: bold;">0</span>
+                            <span>+5</span>
+                            <span>+10</span>
+                            <span>+15</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-soft);">
+                            <span>← Negative Direction</span>
+                            <span>Scale: Real Integer Axis</span>
+                            <span>Positive Direction →</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- ORDER OF OPERATIONS -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Order of Operations</h2>
+                <h2 class="neon">The Real Number System Taxonomy</h2>
                 <p>
-                    To avoid confusion, mathematicians agreed on a standard order
-                    for evaluating expressions. You may know it as PEMDAS:
+                    Numbers are categorized into nested sets based on their mathematical properties. Recognizing which set a number belongs to allows us to understand what operational rules apply.
                 </p>
 
-                <ul>
-                    <li>Parentheses</li>
-                    <li>Exponents</li>
-                    <li>Multiplication & Division</li>
-                    <li>Addition & Subtraction</li>
-                </ul>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 10px;">
+                        <h3 style="color: #00f2fe; margin-bottom: 0.5rem;">Natural Numbers ($\mathbb{N}$)</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            The counting numbers starting from $1, 2, 3, 4, \dots$ Used exclusively for discrete counting tasks.
+                        </p>
+                    </div>
 
-                <div class="interactive-example">
-                    <p><strong>Example:</strong> Evaluate <strong>3 + 2 × 4</strong></p>
-                    <button class="btn-secondary" data-reveal="pem1">Show Answer</button>
-                    <p id="pem1" class="answer hidden">
-                        Multiply first: 2 × 4 = 8 → then add: 3 + 8 = <strong>11</strong>.
-                    </p>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 10px;">
+                        <h3 style="color: #00f2fe; margin-bottom: 0.5rem;">Whole Numbers ($\mathbb{W}$)</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            All natural numbers plus zero: $0, 1, 2, 3, \dots$ Essential for representing empty states.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 10px;">
+                        <h3 style="color: #00f2fe; margin-bottom: 0.5rem;">Integers ($\mathbb{Z}$)</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            Whole numbers and their negative opposites: $\dots, -3, -2, -1, 0, 1, 2, 3, \dots$
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 10px;">
+                        <h3 style="color: #00f2fe; margin-bottom: 0.5rem;">Rational Numbers ($\mathbb{Q}$)</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            Any number that can be expressed as a fraction $\frac{p}{q}$ where $p, q \in \mathbb{Z}$ and $q \neq 0$. Examples: $\frac{3}{4}, -2.5, 0.\bar{3}$.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 10px;">
+                        <h3 style="color: #00f2fe; margin-bottom: 0.5rem;">Irrational Numbers ($\mathbb{I}$)</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            Numbers that cannot be written as fractions. Their decimals run infinitely without repeating: $\pi, e, \sqrt{2}$.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 10px;">
+                        <h3 style="color: #00f2fe; margin-bottom: 0.5rem;">Real Numbers ($\mathbb{R}$)</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            The complete union of rational and irrational number sets. Every point on a standard line graph is a real number.
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            <!-- PRACTICE PROMPTS -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Try These</h2>
-                <ul class="practice-list">
-                    <li>Identify the variable in <strong>7 + y</strong>.</li>
-                    <li>Evaluate <strong>2(3 + 4)</strong>.</li>
-                    <li>Simplify <strong>5 + 3 × 2</strong>.</li>
-                </ul>
+                <h2 class="neon">Order of Operations (PEMDAS / BODMAS)</h2>
+                <p>
+                    To eliminate ambiguity in multi-step numerical calculations, mathematicians established a universal hierarchy. Without this agreed-upon sequence, an expression like $6 + 2 \times 4$ could produce either $32$ or $14$.
+                </p>
+
+                <div style="background: rgba(0, 242, 254, 0.05); border-left: 4px solid #00f2fe; padding: 1.2rem; margin: 1.5rem 0; border-radius: 6px;">
+                    <h3 style="color: #00f2fe; margin-bottom: 0.8rem;">The Operational Hierarchy Breakdown</h3>
+                    <ol style="margin-left: 1.4rem; line-height: 1.9; color: var(--text-main);">
+                        <li>
+                            <strong>P / B — Parentheses & Brackets:</strong> Resolve grouping symbols first from the inside out: $( ), [ ], \{ \}$. Fractional numerators and denominators act as implicit grouping brackets!
+                        </li>
+                        <li>
+                            <strong>E / O — Exponents & Orders:</strong> Evaluate powers, roots, and absolute value magnitudes next (e.g., $3^3, \sqrt{16}, |-5|$).
+                        </li>
+                        <li>
+                            <strong>M & D — Multiplication & Division:</strong> These share <strong>equal precedence</strong>. Execute them strictly from <em>left to right</em> as they appear in the sequence.
+                        </li>
+                        <li>
+                            <strong>A & S — Addition & Subtraction:</strong> These also share <strong>equal precedence</strong>. Execute them strictly from <em>left to right</em> as they appear in the sequence.
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="interactive-example">
+                    <p><strong>Guided Example 1 (Standard Operations):</strong> Simplify $18 \div 3 \times 2 + (5 - 2)^2$</p>
+                    <button class="btn-secondary" data-reveal="fnd-ex1">Show Detailed Solution Steps</button>
+                    <div id="fnd-ex1" class="answer hidden" style="margin-top: 1rem;">
+                        <p><strong>Step 1 (Parentheses):</strong> $(5 - 2) = 3 \implies 18 \div 3 \times 2 + 3^2$</p>
+                        <p><strong>Step 2 (Exponents):</strong> $3^2 = 9 \implies 18 \div 3 \times 2 + 9$</p>
+                        <p><strong>Step 3 (Division & Multiplication Left-to-Right):</strong></p>
+                        <p style="padding-left: 1rem;">First operation left-to-right is division: $18 \div 3 = 6 \implies 6 \times 2 + 9$</p>
+                        <p style="padding-left: 1rem;">Next operation is multiplication: $6 \times 2 = 12 \implies 12 + 9$</p>
+                        <p><strong>Step 4 (Addition):</strong> $12 + 9 = \mathbf{21}$</p>
+                    </div>
+                </div>
+
+                <div class="interactive-example" style="margin-top: 1.5rem;">
+                    <p><strong>Guided Example 2 (Fractional Grouping Pitfall):</strong> Evaluate $\frac{4^2 + 8}{2 \times (7 - 4)}$</p>
+                    <button class="btn-secondary" data-reveal="fnd-ex2">Show Detailed Solution Steps</button>
+                    <div id="fnd-ex2" class="answer hidden" style="margin-top: 1rem;">
+                        <p><em>Note: Treat numerator and denominator as separate bracketed expressions: $\frac{(4^2 + 8)}{(2 \times (7 - 4))}$</em></p>
+                        <p><strong>Step 1 (Numerator Exponent):</strong> $4^2 = 16 \implies \text{Numerator} = 16 + 8 = 24$</p>
+                        <p><strong>Step 2 (Denominator Parentheses):</strong> $(7 - 4) = 3 \implies \text{Denominator} = 2 \times 3 = 6$</p>
+                        <p><strong>Step 3 (Final Fraction Division):</strong> $\frac{24}{6} = \mathbf{4}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Mastering Operations with Signed Numbers</h2>
+                <p>
+                    Mismanaging positive and negative signs is one of the most common causes of arithmetic errors in algebra. Master these core mechanics until they become second nature.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                    
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1.2rem;">
+                        <h3 style="color: #00f2fe; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Addition & Subtraction</h3>
+                        <p style="margin-top: 0.8rem; line-height: 1.6;">
+                            <strong>Same Signs:</strong> Add the absolute values together and keep the common sign.<br />
+                            <em>Example:</em> $-5 + (-8) = -13$
+                        </p>
+                        <p style="margin-top: 0.8rem; line-height: 1.6;">
+                            <strong>Different Signs:</strong> Subtract the smaller magnitude from the larger magnitude. Assign the sign of the larger magnitude number.<br />
+                            <em>Example:</em> $-12 + 7 = -5$
+                        </p>
+                        <p style="margin-top: 0.8rem; line-height: 1.6;">
+                            <strong>Double Negatives:</strong> Subtracting a negative is mathematically identical to adding a positive: $a - (-b) = a + b$.<br />
+                            <em>Example:</em> $4 - (-9) = 4 + 9 = 13$
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1.2rem;">
+                        <h3 style="color: #00f2fe; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Multiplication & Division</h3>
+                        <p style="margin-top: 0.8rem; line-height: 1.6;">
+                            <strong>Like Signs Yield Positive:</strong><br />
+                            $(+) \times (+) = (+)$<br />
+                            $(-) \times (-) = (+)$<br />
+                            <em>Example:</em> $(-6) \times (-4) = +24$
+                        </p>
+                        <p style="margin-top: 0.8rem; line-height: 1.6;">
+                            <strong>Unlike Signs Yield Negative:</strong><br />
+                            $(+) \times (-) = (-)$<br />
+                            $(-) \times (+) = (-)$<br />
+                            <em>Example:</em> $(-20) \div 5 = -4$
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="lesson-section fade-in">
+                <h2 class="neon">Fundamental Field Axioms of Algebra</h2>
+                <p>
+                    Every algebraic transformation—whether simplifying terms or expanding equations—is legally governed by fundamental properties of real numbers.
+                </p>
+
+                <div style="overflow-x: auto; margin: 1.5rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; background: rgba(255,255,255,0.02); border-radius: 10px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: rgba(0, 242, 254, 0.1); color: #00f2fe; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <th style="padding: 1rem;">Property Name</th>
+                                <th style="padding: 1rem;">Addition Rule</th>
+                                <th style="padding: 1rem;">Multiplication Rule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem;"><strong>Commutative</strong></td>
+                                <td style="padding: 1rem;">$a + b = b + a$</td>
+                                <td style="padding: 1rem;">$a \cdot b = b \cdot a$</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem;"><strong>Associative</strong></td>
+                                <td style="padding: 1rem;">$(a + b) + c = a + (b + c)$</td>
+                                <td style="padding: 1rem;">$(a \cdot b) \cdot c = a \cdot (b \cdot c)$</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem;"><strong>Identity Element</strong></td>
+                                <td style="padding: 1rem;">$a + 0 = a$ (Additive Identity: 0)</td>
+                                <td style="padding: 1rem;">$a \cdot 1 = a$ (Multiplicative Identity: 1)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem;"><strong>Inverse Element</strong></td>
+                                <td style="padding: 1rem;">$a + (-a) = 0$</td>
+                                <td style="padding: 1rem;">$a \cdot \frac{1}{a} = 1$ (where $a \neq 0$)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;"><strong>Distributive</strong></td>
+                                <td colspan="2" style="padding: 1rem; text-align: center; color: #00f2fe;">
+                                    $a(b + c) = ab + ac$ &nbsp;|&nbsp; Multiplies across addition/subtraction
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
         </section>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar slide-in-right">
-            <h2 class="neon">On This Page</h2>
-            <ul class="outline-list">
-                <li>What Is Algebra?</li>
-                <li>Variables</li>
-                <li>Order of Operations</li>
-                <li>Practice</li>
-            </ul>
-
-            <div class="sidebar-card">
-                <h3 class="neon">Test Yourself</h3>
-                <button class="btn-primary" onclick="quizEngine.startQuiz('foundations')">
-                    Take Foundations Quiz
-                </button>
-            </div>
-        </aside>
-
     </div>
 
-</div>
-
-<footer class="site-footer">
-    <p>Strong foundations lead to strong mastery.</p>
-</footer>
-
-<!-- MODAL -->
-<div class="modal-backdrop">
-    <div class="modal">
-        <div class="modal-header">
-            <h3 class="modal-title">Quiz</h3>
-            <button class="modal-close">✕</button>
-        </div>
-        <div class="modal-body"></div>
-    </div>
 </div>
 
 </body>
