@@ -965,11 +965,29 @@ document.addEventListener("click", (e) => {
 });
 
 // =========================
-// LIVE EQUATION BALANCE SIMULATOR
+// FIXED LIVE EQUATION BALANCE SIMULATOR
 // =========================
-function evaluateSide(expr) {
+
+// Converts algebra syntax into JS-friendly syntax
+function cleanExpression(expr) {
+    return expr
+        .replace(/\s+/g, "")        // remove spaces
+        .replace(/(\d)([a-zA-Z])/g, "$1*$2") // 2x → 2*x
+        .replace(/\^/g, "**");      // ^ → **
+}
+
+// Evaluate an expression safely
+function safeEval(expr) {
     try {
-        return Function("x", "return " + expr)(1); // x = 1 placeholder
+        expr = cleanExpression(expr);
+
+        // If expression contains a variable, assume x = 1
+        if (/[a-zA-Z]/.test(expr)) {
+            return Function("x", "return " + expr)(1);
+        }
+
+        // Otherwise evaluate normally
+        return Function("return " + expr)();
     } catch {
         return null;
     }
@@ -991,8 +1009,8 @@ document.addEventListener("click", (e) => {
         }
 
         const [left, right] = input.split("=").map(s => s.trim());
-        const L = evaluateSide(left);
-        const R = evaluateSide(right);
+        const L = safeEval(left);
+        const R = safeEval(right);
 
         if (L === null || R === null) {
             output.textContent = "I couldn't understand part of your equation.";
@@ -1030,18 +1048,16 @@ document.addEventListener("click", (e) => {
             return;
         }
 
-        const [left, right] = input.split("=").map(s => s.trim());
-
         output.classList.remove("hidden");
         output.innerHTML = `
-            <strong>Solving Steps (General Guide):</strong><br><br>
+            <strong>General Solving Guide:</strong><br><br>
             1. Start with your equation: <strong>${input}</strong><br>
             2. Identify the variable and isolate it.<br>
             3. Undo addition/subtraction first.<br>
             4. Undo multiplication/division next.<br>
-            5. Keep the equation balanced by doing the same to both sides.<br>
+            5. Keep both sides balanced.<br>
             6. Simplify until the variable stands alone.<br><br>
-            <em>This simulator gives a general solving path. For exact steps, use the examples above!</em>
+            <em>Use the examples above for exact solving steps.</em>
         `;
     }
 });
