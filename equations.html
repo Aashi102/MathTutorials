@@ -28,11 +28,15 @@
 <div class="page-shell fade-in-up">
 
     <header class="section-header">
-        <h1>Solving <span class="neon">Equations</span></h1>
+        <h1>Mastering <span class="neon">Equations</span></h1>
         <p>
-            Equations are statements that two expressions are equal. Solving an
-            equation means finding the value of the variable that makes the
-            statement true.
+            Equations are the foundation of algebra — they’re like puzzles waiting to be solved.
+            Each equation tells a story of balance: whatever you do to one side, you must do to the other.
+            Understanding this balance helps you find the value of the variable that makes the statement true.
+        </p>
+        <p>
+            In this lesson, you’ll learn how to solve equations step‑by‑step, from simple one‑step problems
+            to multi‑step and complex equations involving parentheses, fractions, and decimals.
         </p>
     </header>
 
@@ -44,16 +48,21 @@
             <section class="lesson-section fade-in">
                 <h2 class="neon">What Is an Equation?</h2>
                 <p>
-                    An equation contains an equals sign (<strong>=</strong>). It tells us that
-                    two expressions have the same value.
+                    An <strong>equation</strong> is a mathematical statement that shows two expressions are equal.
+                    It always includes an equals sign (<strong>=</strong>).
+                    Think of it like a balance scale — both sides must weigh the same.
+                </p>
+                <p>
+                    The goal of solving an equation is to find the value of the variable (like x or y)
+                    that keeps both sides balanced.
                 </p>
 
                 <div class="example">
                     <p><strong>Examples:</strong></p>
                     <ul>
-                        <li>x + 5 = 12</li>
-                        <li>3y − 2 = 10</li>
-                        <li>2(a + 1) = 14</li>
+                        <li><strong>x + 5 = 12</strong> → both sides are equal when x = 7</li>
+                        <li><strong>3y − 2 = 10</strong> → both sides are equal when y = 4</li>
+                        <li><strong>2(a + 1) = 14</strong> → both sides are equal when a = 6</li>
                     </ul>
                 </div>
             </section>
@@ -62,16 +71,32 @@
             <section class="lesson-section fade-in">
                 <h2 class="neon">One‑Step Equations</h2>
                 <p>
-                    Use inverse operations to isolate the variable. If the
-                    equation adds something, subtract it. If it multiplies,
-                    divide.
+                    A one‑step equation can be solved in a single move.
+                    You use the <strong>inverse operation</strong> — the opposite of what’s happening — to isolate the variable.
+                    If the equation adds something, subtract it. If it multiplies, divide.
                 </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> Solve <strong>x + 7 = 12</strong></p>
+                    <p><strong>Example 1 (Easy):</strong> Solve <strong>x + 7 = 12</strong></p>
                     <button class="btn-secondary" data-reveal="eq1">Show Steps</button>
                     <p id="eq1" class="answer hidden">
                         Subtract 7 from both sides → x = <strong>5</strong>.
+                    </p>
+                </div>
+
+                <div class="interactive-example">
+                    <p><strong>Example 2 (Medium):</strong> Solve <strong>5x = 20</strong></p>
+                    <button class="btn-secondary" data-reveal="eq1b">Show Steps</button>
+                    <p id="eq1b" class="answer hidden">
+                        Divide both sides by 5 → x = <strong>4</strong>.
+                    </p>
+                </div>
+
+                <div class="interactive-example">
+                    <p><strong>Example 3 (Complex):</strong> Solve <strong>x / 8 = 6</strong></p>
+                    <button class="btn-secondary" data-reveal="eq1c">Show Steps</button>
+                    <p id="eq1c" class="answer hidden">
+                        Multiply both sides by 8 → x = <strong>48</strong>.
                     </p>
                 </div>
             </section>
@@ -80,67 +105,64 @@
             <section class="lesson-section fade-in">
                 <h2 class="neon">Two‑Step Equations</h2>
                 <p>
-                    Undo addition/subtraction first, then multiplication/division.
+                    Two‑step equations require two moves to isolate the variable.
+                    First undo addition or subtraction, then undo multiplication or division.
+                    Always work backward from the operations closest to the variable.
                 </p>
 
                 <div class="interactive-example">
-                    <p><strong>Example:</strong> Solve <strong>2x − 4 = 10</strong></p>
+                    <p><strong>Example 1 (Easy):</strong> Solve <strong>2x − 4 = 10</strong></p>
                     <button class="btn-secondary" data-reveal="eq2">Show Steps</button>
                     <p id="eq2" class="answer hidden">
-                        Add 4 → 2x = 14 → divide by 2 → x = <strong>7</strong>.
+                        Add 4 to both sides → 2x = 14 → divide by 2 → x = <strong>7</strong>.
+                    </p>
+                </div>
+
+                <div class="interactive-example">
+                    <p><strong>Example 2 (Medium):</strong> Solve <strong>3x + 2 = 17</strong></p>
+                    <button class="btn-secondary" data-reveal="eq2b">Show Steps</button>
+                    <p id="eq2b" class="answer hidden">
+                        Subtract 2 → 3x = 15 → divide by 3 → x = <strong>5</strong>.
+                    </p>
+                </div>
+
+                <div class="interactive-example">
+                    <p><strong>Example 3 (Complex):</strong> Solve <strong>4x / 2 − 3 = 5</strong></p>
+                    <button class="btn-secondary" data-reveal="eq2c">Show Steps</button>
+                    <p id="eq2c" class="answer hidden">
+                        Add 3 → 4x / 2 = 8 → multiply both sides by 2 → 4x = 16 → divide by 4 → x = <strong>4</strong>.
                     </p>
                 </div>
             </section>
 
-            <!-- PRACTICE -->
+            <!-- MULTI-STEP EQUATIONS -->
             <section class="lesson-section fade-in">
-                <h2 class="neon">Practice Problems</h2>
-                <ul class="practice-list">
-                    <li>Solve: x − 3 = 9</li>
-                    <li>Solve: 5x = 20</li>
-                    <li>Solve: 3x + 2 = 17</li>
-                    <li>Solve: 4y − 6 = 10</li>
-                </ul>
-            </section>
+                <h2 class="neon">Multi‑Step Equations</h2>
+                <p>
+                    Multi‑step equations combine several operations — parentheses, distribution, and combining like terms.
+                    Simplify each side first, then isolate the variable step by step.
+                    The key is patience and keeping both sides balanced.
+                </p>
 
-        </section>
+                <div class="interactive-example">
+                    <p><strong>Example 1 (Easy):</strong> Solve <strong>2(x + 3) = 14</strong></p>
+                    <button class="btn-secondary" data-reveal="eq3">Show Steps</button>
+                    <p id="eq3" class="answer hidden">
+                        Distribute → 2x + 6 = 14 → subtract 6 → 2x = 8 → divide by 2 → x = <strong>4</strong>.
+                    </p>
+                </div>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar slide-in-right">
-            <h2 class="neon">On This Page</h2>
-            <ul class="outline-list">
-                <li>What Is an Equation?</li>
-                <li>One‑Step Equations</li>
-                <li>Two‑Step Equations</li>
-                <li>Practice</li>
-            </ul>
+                <div class="interactive-example">
+                    <p><strong>Example 2 (Medium):</strong> Solve <strong>3x + 4 = 2x + 9</strong></p>
+                    <button class="btn-secondary" data-reveal="eq3b">Show Steps</button>
+                    <p id="eq3b" class="answer hidden">
+                        Subtract 2x from both sides → x + 4 = 9 → subtract 4 → x = <strong>5</strong>.
+                    </p>
+                </div>
 
-            <div class="sidebar-card">
-                <h3 class="neon">Try a Quiz</h3>
-                <button class="btn-primary" onclick="quizEngine.startQuiz('equations')">
-                    Take Equations Quiz
-                </button>
-            </div>
-        </aside>
-
-    </div>
-
-</div>
-
-<footer class="site-footer">
-    <p>Every equation has a story to tell.</p>
-</footer>
-
-<!-- MODAL -->
-<div class="modal-backdrop">
-    <div class="modal">
-        <div class="modal-header">
-            <h3 class="modal-title">Quiz</h3>
-            <button class="modal-close">✕</button>
-        </div>
-        <div class="modal-body"></div>
-    </div>
-</div>
-
-</body>
-</html>
+                <div class="interactive-example">
+                    <p><strong>Example 3 (Complex):</strong> Solve <strong>4(x − 2) + 3 = 19</strong></p>
+                    <button class="btn-secondary" data-reveal="eq3c">Show Steps</button>
+                    <p id="eq3c" class="answer hidden">
+                        Distribute → 4x − 8 + 3 = 19 → combine like terms → 4x − 5 = 19 → add 5 → 4x = 24 → divide by 4 → x = <strong>6</strong>.
+                    </p>
