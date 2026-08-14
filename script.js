@@ -933,3 +933,27 @@ function renderQuizModal() {
 
 // Expose globally for inline onclick handlers
 window.quizEngine = quizEngine;
+
+
+// =========================
+// REVEAL BUTTONS FOR SUBJECT PAGES
+// =========================
+
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-reveal]");
+    if (!btn) return;
+
+    const targetId = btn.getAttribute("data-reveal");
+    const answer = document.getElementById(targetId);
+
+    if (!answer) return;
+
+    answer.classList.toggle("hidden");
+
+    // Optional: change button text
+    if (answer.classList.contains("hidden")) {
+        btn.textContent = "Show Steps";
+    } else {
+        btn.textContent = "Hide Steps";
+    }
+});
