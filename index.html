@@ -4,16 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algebra Mastery | Home</title>
+
+    <!-- Link to main stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Extra styles used for visual effects -->
+    <style>
+        .glow {
+            text-shadow: 0 0 12px rgba(0,255,255,0.6);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a 40%, #111 80%);
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 0 40px rgba(0,255,255,0.15);
+        }
+        .section-card {
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 20px rgba(0,255,255,0.25);
+        }
+        .neon {
+            color: #00eaff;
+        }
+        .practice-list li {
+            padding: .4rem 0;
+            transition: color .3s ease, transform .3s ease;
+        }
+        .practice-list li:hover {
+            color: #00eaff;
+            transform: translateX(6px);
+        }
+    </style>
+
+    <!-- Main JavaScript file -->
     <script type="module" src="script.js"></script>
 </head>
 
 <body>
 
+<!-- Top navigation bar -->
 <header class="top-nav">
     <div class="top-nav-inner">
-        <div class="logo">Algebra<span>Mastery</span></div>
 
+        <!-- Logo -->
+        <div class="logo glow">Algebra<span>Mastery</span></div>
+
+        <!-- Navigation links -->
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
@@ -21,6 +65,7 @@
             <a href="finalexam.html">Final Exam</a>
         </nav>
 
+        <!-- Theme toggle button -->
         <button class="theme-toggle">
             <span class="theme-toggle-icon"></span>
             Theme
@@ -28,44 +73,43 @@
     </div>
 </header>
 
+<!-- Main page wrapper -->
 <div class="page-shell fade-in-up">
 
-    <!-- HERO -->
-    <header class="section-header">
-        <h1>Welcome to <span class="neon">Algebra Mastery</span></h1>
+    <!-- Hero section -->
+    <header class="section-header hero-gradient fade-in">
+        <h1 class="glow">Welcome to <span class="neon">Algebra Mastery</span></h1>
         <p>
-            A complete, modern, structured learning system designed to help you
-            understand algebra deeply — not just memorize steps.
+            A complete, modern learning system designed to help you understand algebra deeply —
+            not just memorize steps.
         </p>
     </header>
 
-    <!-- WHY ALGEBRA -->
+    <!-- Why algebra matters section -->
     <section class="lesson-section fade-in">
-        <h2 class="neon">Why Algebra Matters</h2>
+        <h2 class="neon glow">Why Algebra Matters</h2>
         <p>
-            Algebra is the foundation of logical thinking. It teaches you how to
-            break down problems, recognize patterns, and build relationships
-            between quantities. These skills show up everywhere — science,
-            programming, finance, engineering, and everyday decisions.
+            Algebra builds logical thinking. It teaches you how to break down problems,
+            recognize patterns, and understand relationships between quantities.
         </p>
 
-        <div class="example">
+        <!-- Example box -->
+        <div class="example section-card">
             <p><strong>Example:</strong></p>
             <p>
-                A phone plan charges a base fee plus a cost per gigabyte. That’s
-                an algebraic relationship. When you write it as an equation, you
-                can compare plans and predict costs.
+                A phone plan charges a base fee plus a cost per gigabyte.
+                That’s an algebraic relationship — write it as an equation,
+                and you can compare plans and predict costs.
             </p>
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- How the platform works section -->
     <section class="lesson-section fade-in">
-        <h2 class="neon">How This Platform Works</h2>
-        <p>
-            Each topic page follows a consistent structure so you always know
-            what to expect:
-        </p>
+        <h2 class="neon glow">How This Platform Works</h2>
+        <p>Each topic follows a consistent structure so you always know what to expect:</p>
+
+        <!-- List of learning components -->
         <ul>
             <li><strong>Concept Overview</strong> — What the idea means.</li>
             <li><strong>Guided Examples</strong> — Step‑by‑step walkthroughs.</li>
@@ -74,9 +118,11 @@
         </ul>
     </section>
 
-    <!-- LEARNING PATH -->
+    <!-- Learning path section -->
     <section class="lesson-section fade-in">
-        <h2 class="neon">Your Learning Path</h2>
+        <h2 class="neon glow">Your Learning Path</h2>
+
+        <!-- Ordered list of topics -->
         <ol class="practice-list">
             <li>Foundations</li>
             <li>Expressions</li>
@@ -89,43 +135,40 @@
             <li>Functions</li>
             <li>Word Problems</li>
         </ol>
+
         <p class="text-soft">
-            After completing the topics, take the <strong>Final Exam</strong> and
-            earn your certificate.
+            After completing the topics, take the <strong>Final Exam</strong> and earn your certificate.
         </p>
     </section>
 
-    <!-- FEATURES -->
+    <!-- Features section -->
     <section class="lesson-section fade-in">
-        <h2 class="neon">What Makes This Different</h2>
+        <h2 class="neon glow">What Makes This Different</h2>
 
+        <!-- Three feature cards -->
         <div class="content-area" style="gap: var(--space-md);">
-            <div class="lesson-section" style="padding: var(--space-md);">
+            <div class="section-card">
                 <h3 class="neon">Clarity First</h3>
-                <p>
-                    Every explanation is written to be direct and understandable.
-                </p>
+                <p>Every explanation is written to be direct and understandable.</p>
             </div>
 
-            <div class="lesson-section" style="padding: var(--space-md);">
+            <div class="section-card">
                 <h3 class="neon">Structured Progress</h3>
-                <p>
-                    Topics build on each other so you never feel lost.
-                </p>
+                <p>Topics build on each other so you never feel lost.</p>
             </div>
 
-            <div class="lesson-section" style="padding: var(--space-md);">
+            <div class="section-card">
                 <h3 class="neon">Active Learning</h3>
-                <p>
-                    Interactive examples and quizzes help you learn by doing.
-                </p>
+                <p>Interactive examples and quizzes help you learn by doing.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Call to action section -->
     <section class="lesson-section fade-in center">
-        <h2 class="neon">Ready to Begin?</h2>
+        <h2 class="neon glow">Ready to Begin?</h2>
+
+        <!-- Buttons for navigation -->
         <div class="mt-md" style="display:flex; justify-content:center; gap: var(--space-sm); flex-wrap:wrap;">
             <a class="btn-primary" href="practice.html">Start Practicing</a>
             <a class="btn-secondary" href="quizzes.html">Take a Quiz</a>
@@ -135,17 +178,22 @@
 
 </div>
 
+<!-- Footer -->
 <footer class="site-footer">
     <p>Built for clarity. Designed for mastery.</p>
 </footer>
 
-<!-- MODAL -->
+<!-- Modal for quizzes -->
 <div class="modal-backdrop">
     <div class="modal">
+
+        <!-- Modal header -->
         <div class="modal-header">
             <h3 class="modal-title">Quiz</h3>
             <button class="modal-close">✕</button>
         </div>
+
+        <!-- Modal content -->
         <div class="modal-body"></div>
     </div>
 </div>
