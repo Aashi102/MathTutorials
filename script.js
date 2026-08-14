@@ -957,3 +957,82 @@ document.addEventListener("click", (e) => {
         btn.textContent = "Hide Steps";
     }
 });
+
+
+// =========================
+// LIVE EQUATION BALANCE SIMULATOR
+// =========================
+
+function evaluateSide(expr) {
+    try {
+        return Function("x", "return " + expr)(1); // x=1 placeholder
+    } catch {
+        return null;
+    }
+}
+
+document.addEventListener("click", (e) => {
+    if (e.target.id === "balance-check") {
+        const input = document.getElementById("balance-input").value;
+        const output = document.getElementById("balance-output");
+        const visual = document.getElementById("balance-visual");
+
+        if (!input.includes("=")) {
+            output.textContent = "Your equation must include an equals sign (=).";
+            output.classList.remove("hidden");
+            return;
+        }
+
+        const [left, right] = input.split("=").map(s => s.trim());
+        const L = evaluateSide(left);
+        const R = evaluateSide(right);
+
+        if (L === null || R === null) {
+            output.textContent = "I couldn't understand part of your equation.";
+            output.classList.remove("hidden");
+            return;
+        }
+
+        output.classList.remove("hidden");
+
+        if (L === R) {
+            output.textContent = "Balanced! Both sides equal the same value.";
+            visual.style.transform = "rotate(0deg)";
+            visual.textContent = "⚖️ Perfect Balance";
+        } else if (L > R) {
+            output.textContent = "Left side is heavier (greater).";
+            visual.style.transform = "rotate(-12deg)";
+            visual.textContent = "↙️ Left Side Heavier";
+        } else {
+            output.textContent = "Right side is heavier (greater).";
+            visual.style.transform = "rotate(12deg)";
+            visual.textContent = "↘️ Right Side Heavier";
+        }
+    }
+
+    if (e.target.id === "balance-steps") {
+        const input = document.getElementById("balance-input").value;
+        const output = document.getElementById("balance-output");
+
+        if (!input.includes("=")) {
+            output.textContent = "Your equation must include an equals sign (=).";
+            output.classList.remove("hidden");
+            return;
+        }
+
+        const [left, right] = input.split("=").map(s => s.trim());
+
+        output.classList.remove("hidden");
+        output.innerHTML = `
+            <strong>Solving Steps (General Guide):</strong><br><br>
+            1. Start with your equation: <strong>${input}</strong><br>
+            2. Identify the variable and isolate it.<br>
+            3. Undo addition/subtraction first.<br>
+            4. Undo multiplication/division next.<br>
+            5. Keep the equation balanced by doing the same to both sides.<br>
+            6. Simplify until the variable stands alone.<br><br>
+            <em>This simulator gives a general solving path. For exact steps, use the examples above!</em>
+        `;
+    }
+});
+
