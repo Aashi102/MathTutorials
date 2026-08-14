@@ -113,81 +113,64 @@ body {
 }
 
 /* =========================
-   THEME TOGGLE
+   MODERN THEME TOGGLE SWITCH
    ========================= */
+
 .theme-toggle {
-    background: transparent;
-    border: 1px solid rgba(0, 200, 255, 0.4);
-    color: var(--neon-primary);
-    padding: 0.4rem 0.9rem;
-    border-radius: var(--radius-pill);
+    position: relative;
+    width: 52px;
+    height: 26px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    background: rgba(0, 229, 255, 0.12);
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.12);
-    background-image: radial-gradient(circle at top left, rgba(0, 229, 255, 0.18), transparent 55%);
-    transition: background var(--transition-fast), box-shadow var(--transition-fast),
-        transform var(--transition-fast);
+    padding: 0;
+    transition: background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .theme-toggle:hover {
     box-shadow: 0 0 18px rgba(0, 229, 255, 0.45);
-    transform: translateY(-1px);
 }
 
+/* Toggle track glow */
+.theme-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at top left, rgba(0, 229, 255, 0.25), transparent 60%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Sliding icon */
 .theme-toggle-icon {
-    width: 14px;
-    height: 14px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: var(--neon-primary);
-    box-shadow: 0 0 8px var(--neon-primary);
+    box-shadow: 0 0 10px var(--neon-primary);
+    position: absolute;
+    left: 2px;
+    transition: transform 300ms ease, background 300ms ease, box-shadow 300ms ease;
 }
 
-/* =========================
-   PAGE SHELL & LAYOUT
-   ========================= */
-.page-shell {
-    max-width: 1120px;
-    margin: 1.75rem auto 2.5rem;
-    padding: 0 1.5rem;
+/* Light mode → sun */
+.theme-light .theme-toggle-icon {
+    transform: translateX(26px);
+    background: #ffd54a;
+    box-shadow: 0 0 10px #ffd54a;
 }
 
-.section-header {
-    margin-bottom: 1.75rem;
-    max-width: 720px;
+/* Dark mode → moon */
+.theme-dark .theme-toggle-icon {
+    transform: translateX(0);
+    background: #00e5ff;
+    box-shadow: 0 0 10px #00e5ff;
 }
 
-.section-header h1 {
-    font-size: 2.1rem;
-    letter-spacing: 0.03em;
-    margin: 0 0 0.5rem;
-}
-
-.section-header p {
-    margin: 0;
-    color: var(--text-soft);
-    line-height: 1.6;
-}
-
-.neon {
-    color: var(--neon-primary);
-    text-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
-}
-
-.layout-two-column {
-    display: grid;
-    grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1fr);
-    gap: 1.75rem;
-    align-items: flex-start;
-}
-
-.content-area {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
 
 /* =========================
    LESSON SECTIONS
