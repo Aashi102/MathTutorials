@@ -730,62 +730,46 @@ const quizEngine = (function () {
     let timeRemaining = 0;
     let isFinalExam = false;
 
-    function startQuiz(topicKey) {
-        const quiz = quizBank[topicKey];
-        if (!quiz) return;
+   function startQuiz(topicKey) {
+    const quiz = quizBank[topicKey];
+    if (!quiz) return;
 
-        isFinalExam = false;
-        currentQuiz = quiz;
-        currentQuestions = quiz.questions;
-        currentIndex = 0;
-        userAnswers = new Array(currentQuestions.length).fill(null);
-        timeRemaining = quiz.timeLimitSeconds;
+    isFinalExam = false;
+    currentQuiz = quiz;
+    currentQuestions = quiz.questions;
+    currentIndex = 0;
+    userAnswers = new Array(currentQuestions.length).fill(null);
+    timeRemaining = quiz.timeLimitSeconds;
 
-        renderQuizModal();
-        startTimer();
-    }
+    renderQuizModal();   // loads question
+    startTimer();        // starts timer ONCE
+}
 
-    function startFinalExam() {
-        isFinalExam = true;
-        currentQuiz = {
-            title: finalExamConfig.title,
-            timeLimitSeconds: finalExamConfig.timeLimitSeconds
-        };
-        currentQuestions = buildFinalExamQuestions();
-        currentIndex = 0;
-        userAnswers = new Array(currentQuestions.length).fill(null);
-        timeRemaining = finalExamConfig.timeLimitSeconds;
+function startFinalExam() {
+    isFinalExam = true;
+    currentQuiz = {
+        title: finalExamConfig.title,
+        timeLimitSeconds: finalExamConfig.timeLimitSeconds
+    };
+    currentQuestions = buildFinalExamQuestions();
+    currentIndex = 0;
+    userAnswers = new Array(currentQuestions.length).fill(null);
+    timeRemaining = finalExamConfig.timeLimitSeconds;
 
-        renderQuizModal();
-        startTimer();
-    }
+    renderQuizModal();   // loads question
+    startTimer();        // starts timer ONCE
+}
 
-    function startTimer() {
-        const timerEl = modalBody.querySelector('.quiz-timer');
-        updateTimerDisplay(timerEl);
+function renderQuizModal() {
+    // ❌ REMOVE startTimer() from here
+    // DO NOT restart timer when switching questions
 
-        if (timerId) clearInterval(timerId);
-        timerId = setInterval(() => {
-            timeRemaining--;
-            updateTimerDisplay(timerEl);
-            if (timeRemaining <= 0) {
-                clearInterval(timerId);
-                autoSubmit();
-            }
-        }, 1000);
-    }
+    const q = currentQuestions[currentIndex];
+    const total = currentQuestions.length;
 
-    function updateTimerDisplay(el) {
-        if (!el) return;
-        const minutes = Math.floor(timeRemaining / 60);
-        const seconds = timeRemaining % 60;
-        el.textContent = `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
-        if (timeRemaining <= 30) {
-            el.classList.add('timer-warning');
-        } else {
-            el.classList.remove('timer-warning');
-        }
-    }
+    const timerEl = modalBody.querySelector('.quiz-timer');
+    updateTimerDisplay(timerEl); // ✔️ only update display
+}
 
     function renderQuizModal() {
         const q = currentQuestions[currentIndex];
