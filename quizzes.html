@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- basic setup -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- page title -->
     <title>Algebra Mastery | Quizzes</title>
+
+    <!-- main stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- main script -->
     <script type="module" src="script.js"></script>
 </head>
 
 <body>
 
+<!-- top navigation -->
 <header class="top-nav">
     <div class="top-nav-inner">
+
+        <!-- logo -->
         <div class="logo">Algebra<span>Mastery</span></div>
 
+        <!-- navigation links -->
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="practice.html">Practice</a>
@@ -21,6 +32,7 @@
             <a href="finalexam.html">Final Exam</a>
         </nav>
 
+        <!-- theme toggle -->
         <button class="theme-toggle">
             <span class="theme-toggle-icon"></span>
             Theme
@@ -28,100 +40,167 @@
     </div>
 </header>
 
+<!-- main wrapper -->
 <div class="page-shell fade-in-up">
 
+    <!-- page header -->
     <header class="section-header">
         <h1>Topic <span class="neon">Quizzes</span></h1>
-        <p>Test your understanding with focused quizzes for each topic.</p>
+        <p>
+            Welcome to the Algebra Mastery Quiz Center — the place to test your understanding,
+            strengthen your skills, and measure your progress across every topic.
+            Each quiz is designed to be short, focused, and aligned with the lessons you’ve already practiced.
+        </p>
+        <p>
+            Choose a topic below to begin. Your quiz will open instantly, and you’ll receive feedback
+            as you answer each question. If you miss something, simply return to the practice page
+            for that topic and review the concept.
+        </p>
     </header>
 
+    <!-- two-column layout -->
     <div class="layout-two-column">
 
+        <!-- left column: quizzes -->
         <section class="content-area">
 
+            <!-- foundations quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Foundations</h2>
+                <p>
+                    Test your understanding of variables, constants, expressions, and the order of operations.
+                    This quiz checks your ability to identify algebraic structure and apply basic rules correctly.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('foundations')">
-                    Start Quiz
+                    Start Foundations Quiz
                 </button>
             </section>
 
+            <!-- expressions quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Expressions</h2>
+                <p>
+                    Evaluate your ability to simplify expressions, combine like terms, and substitute values.
+                    These questions focus on fluency and accuracy with algebraic manipulation.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('expressions')">
-                    Start Quiz
+                    Start Expressions Quiz
                 </button>
             </section>
 
+            <!-- equations quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Equations</h2>
+                <p>
+                    Practice solving one‑step, two‑step, and multi‑step equations.
+                    This quiz helps you master balancing, isolating variables, and checking solutions.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('equations')">
-                    Start Quiz
+                    Start Equations Quiz
                 </button>
             </section>
 
+            <!-- inequalities quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Inequalities</h2>
+                <p>
+                    Test your ability to solve inequalities, interpret solution sets,
+                    and understand how inequality rules differ from equation rules.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('inequalities')">
-                    Start Quiz
+                    Start Inequalities Quiz
                 </button>
             </section>
 
+            <!-- graphing quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Graphing</h2>
+                <p>
+                    Check your understanding of coordinate pairs, slope, intercepts,
+                    and graphing linear relationships. These questions reinforce visual algebra skills.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('graphing')">
-                    Start Quiz
+                    Start Graphing Quiz
                 </button>
             </section>
 
+            <!-- polynomials quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Polynomials</h2>
+                <p>
+                    Test your ability to add, subtract, multiply, and analyze polynomial expressions.
+                    This quiz focuses on structure, degree, and combining polynomial terms.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('polynomials')">
-                    Start Quiz
+                    Start Polynomials Quiz
                 </button>
             </section>
 
+            <!-- factoring quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Factoring</h2>
+                <p>
+                    Evaluate your skill in factoring expressions, identifying common factors,
+                    and breaking down trinomials into simpler components.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('factoring')">
-                    Start Quiz
+                    Start Factoring Quiz
                 </button>
             </section>
 
+            <!-- quadratics quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Quadratics</h2>
+                <p>
+                    Test your understanding of parabolas, roots, vertex form, and the quadratic formula.
+                    These questions help you master solving and interpreting quadratic equations.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('quadratics')">
-                    Start Quiz
+                    Start Quadratics Quiz
                 </button>
             </section>
 
+            <!-- functions quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Functions</h2>
+                <p>
+                    Check your ability to evaluate functions, interpret notation,
+                    and understand domain and range. These questions reinforce input‑output relationships.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('functions')">
-                    Start Quiz
+                    Start Functions Quiz
                 </button>
             </section>
 
+            <!-- word problems quiz -->
             <section class="lesson-section fade-in">
                 <h2 class="neon">Word Problems</h2>
+                <p>
+                    Test your skill in translating real‑world situations into algebraic expressions and equations.
+                    These questions strengthen reasoning, interpretation, and modeling skills.
+                </p>
                 <button class="btn-primary" onclick="quizEngine.startQuiz('wordproblems')">
-                    Start Quiz
+                    Start Word Problems Quiz
                 </button>
             </section>
 
         </section>
 
+        <!-- right sidebar -->
         <aside class="sidebar slide-in-right">
+
             <h2 class="neon">How to Use Quizzes</h2>
             <p class="text-soft">
-                Use these quizzes after you’ve worked through the practice pages.
-                If you miss questions, go back to that topic and review.
+                Use these quizzes after completing the practice pages for each topic.
+                If you miss a question, simply return to that topic’s lesson and review the explanation.
+                Quizzes are meant to reinforce learning, not replace it.
             </p>
 
             <div class="sidebar-card">
                 <h3 class="neon">Final Exam</h3>
                 <p class="text-soft">
-                    When you’re comfortable with most topics, try the full final exam.
+                    Once you feel confident across most topics, challenge yourself with the full final exam.
+                    It covers everything you’ve learned and gives you a complete mastery score.
                 </p>
                 <a class="btn-secondary" href="finalexam.html">Go to Final Exam</a>
             </div>
@@ -131,11 +210,12 @@
 
 </div>
 
+<!-- footer -->
 <footer class="site-footer">
     <p>Check your understanding. Then level up.</p>
 </footer>
 
-<!-- MODAL -->
+<!-- quiz modal -->
 <div class="modal-backdrop">
     <div class="modal">
         <div class="modal-header">
